@@ -1,6 +1,6 @@
 ---
 title: "Getting Started"
-description: "Install CraftedSignal (SaaS or self-hosted), connect your SIEM, import or create detection rules, and deploy your first rule in minutes with csctl."
+description: "Install CraftedSignal (SaaS or self-hosted), connect your SIEM, import or create detection rules, add runbooks and playbooks, and deploy your first rule in minutes with csctl."
 weight: 1
 section: "Getting Started"
 ---
@@ -11,7 +11,7 @@ section: "Getting Started"
 
 Sign up at [app.craftedsignal.io](https://app.craftedsignal.io) and start using CraftedSignal immediately. No installation required.
 
-The free tier includes all core features: rule editing, testing, deployment, rollback, MITRE coverage, noise tracking, and AI assistance.
+The free tier includes all core features: rule editing, runbooks and playbooks, testing, deployment, rollback, MITRE coverage, noise tracking, and AI assistance.
 
 ### Self-hosted
 
@@ -89,6 +89,8 @@ You have three options:
 - **Library**: Import rules from shared rule repositories
 - **Create**: Write a new rule in the editor or generate one with AI
 
+Rules and hunts can include runbooks and playbooks. Imported content can bring those response steps with it, and AI can draft them from rule context when AI assistance is enabled.
+
 ### 4. Test and deploy
 
 In the web UI, run tests directly on your rule page. Tests execute against your actual SIEM.
@@ -130,6 +132,8 @@ export CSCTL_URL="https://app.craftedsignal.io"    # or your self-hosted URL
 ```
 
 See the full [CLI Reference](/docs/cli/) for all commands, flags, rule format, and CI/CD examples.
+
+See [Runbooks & Playbooks](/docs/runbooks-playbooks/) for response steps linked to rules, hunts, libraries, and threat briefs.
 
 ---
 

@@ -10,11 +10,12 @@ hero_alt: "CraftedSignal approval diff and projected impact screen"
 quick_points:
   - "Author in Sigma or native SIEM language with per-rule control."
   - "Run positive and negative tests against live Splunk, Sentinel, CrowdStrike, and Rapid7."
+  - "Attach runbooks and playbooks so analysts know what to validate, collect, escalate, and improve."
   - "Use approvals, impact previews, audit logs, Git sync, and one-click rollback."
 outcomes:
   - label: "Quality"
     title: "Rules are tested before production"
-    body: "Validation and live SIEM tests catch syntax, translation, and signal problems early."
+    body: "Validation, live SIEM tests, and rule-linked runbooks catch signal and response problems early."
   - label: "Governance"
     title: "Approvals match severity"
     body: "Junior changes, critical rules, and high-impact deploys can require the right reviewers."
@@ -25,6 +26,9 @@ docs:
   - title: "Rules"
     url: "/docs/rules/"
     description: "Rule metadata, implementations, tests, lifecycle states, and versioning."
+  - title: "Runbooks & Playbooks"
+    url: "/docs/runbooks-playbooks/"
+    description: "Markdown response steps linked to rules, hunts, library entries, and threat briefs."
   - title: "Testing"
     url: "/docs/testing/"
     description: "Positive, negative, enrichment, and live SIEM tests."
@@ -50,6 +54,8 @@ That makes every change feel like a gamble. Junior engineers wait on senior revi
 CraftedSignal treats detection content as governed code. Engineers can author in Sigma or keep a rule in a native SIEM language when that is the better fit. The platform compiles, validates, and shows translation diffs so reviewers know what will actually ship to each platform.
 
 Rules can carry generated or manually written tests. Positive tests confirm known-bad behavior fires. Negative tests confirm expected benign behavior stays quiet. Tests run against live SIEMs, because the real question is not whether the YAML parses; it is whether the rule works against the data shape you actually have.
+
+Rules and hunts can also carry runbooks and playbooks. The runbook gives analysts the concrete triage path: alert intent, evidence to collect, false-positive checks, and escalation criteria. The playbook covers broader response work such as containment, recovery, communications, and follow-up detection work. AI can draft both from the rule logic, tests, ATT&CK mapping, and threat context, but the content remains editable and reviewable before analysts rely on it.
 
 ## Approval and impact preview
 

@@ -1,13 +1,13 @@
 ---
 title: "Threat Feed"
-description: "Curated threat briefs with Sigma rules, IOCs, MITRE mappings, and affected vendor/product/OS metadata. Briefs are scored against your context, related to your modeled risks, and can be adopted, hunted, watchlisted, or dismissed per-tenant."
+description: "Curated threat briefs with Sigma rules, IOCs, runbooks, playbooks, MITRE mappings, and affected vendor/product/OS metadata. Briefs are scored against your context, related to your modeled risks, and can be adopted, hunted, watchlisted, or dismissed per-tenant."
 weight: 8
 section: "Core Concepts"
 ---
 
 ## Overview
 
-The threat feed delivers curated briefs to the platform as signed bundles. Each brief carries a narrative, a set of Sigma rules, IOCs, MITRE ATT&CK mappings, and metadata about the vendors, products, and operating systems it affects. The platform indexes and scores every brief against your company context so you triage what matters first.
+The threat feed delivers curated briefs to the platform as signed bundles. Each brief carries a narrative, a set of Sigma rules, IOCs, runbooks, playbooks, MITRE ATT&CK mappings, and metadata about the vendors, products, and operating systems it affects. The platform indexes and scores every brief against your company context so you triage what matters first.
 
 Regulated and air-gapped deployments can upload bundles manually; SaaS deployments receive them automatically over a signed channel.
 
@@ -18,6 +18,7 @@ Regulated and air-gapped deployments can upload bundles manually; SaaS deploymen
 - **Narrative** — what the threat does, who is behind it, how it spreads.
 - **Suggested rules** — Sigma YAML, normalized and deduplicated against your existing library.
 - **IOCs** — domains, IPs, hashes, user agents, with suggested hunting queries pre-generated.
+- **Runbooks and playbooks** — response steps that can move with adopted rules and hunts.
 - **MITRE mapping** — tactics, techniques, sub-techniques. Feeds the threat-model weight.
 - **Threat actor** — free-text actor name on the brief, normalized against the [threat-actor catalog](/docs/threat-actors/) on ingest.
 - **Affected vendors / products / OS** — structured lists. Briefs render vendor, product, and OS chips when these fields are populated, so you can scan a feed and immediately see which entries hit your stack.
@@ -56,7 +57,7 @@ A brief's MITRE techniques are matched against your accepted attack paths: overl
 ## The adoption flow
 
 1. **Review** — narrative, affected vendors/products/OS, MITRE coverage of the brief, and the suggested rules.
-2. **Adopt** a rule in one click: creates a detection in your library linked back to the brief.
+2. **Adopt** a rule in one click: creates a detection in your library linked back to the brief, including any runbook or playbook content carried by the brief.
 3. **Hunt the IOCs** — the brief page generates platform-specific queries from the brief's IOC list. A **Create hunt** button turns the generated query into a new hunt immediately. The hunt is pre-populated with:
    - Title: `"IOC Hunt: <brief title>"`.
    - MITRE tactics and techniques pulled from the brief's TTP list.
@@ -108,3 +109,4 @@ See [Air-gapped Mode](/docs/airgapped/) for the full constraint envelope.
 - [Threat Actors](/docs/threat-actors/) — how brief actor strings are normalized into the catalog.
 - [Hunts](/docs/hunts/) — IOC queries seed new hunts.
 - [Rules](/docs/rules/) — adopt a brief's detection into your library.
+- [Runbooks & Playbooks](/docs/runbooks-playbooks/) — response steps attached to rules, hunts, libraries, and briefs.

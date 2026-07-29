@@ -39,7 +39,7 @@ other = "Detection Engineering Control Plane"
 
 
 [schemaDescription]
-other = "Detection Engineering Control Plane for SOC teams. Write in Sigma or native SIEM languages, convert to Splunk, Sentinel, CrowdStrike, and Rapid7. Live testing, approval workflows, feature toggles, and white-label branding."
+other = "Detection Engineering Control Plane for SOC teams. Write in Sigma or native SIEM languages, convert to Splunk, Sentinel, CrowdStrike, and Rapid7. Live testing, approval workflows, runbooks, playbooks, feature toggles, and white-label branding."
 
 # ──────────────────────────────────────────────
 # Homepage – Hero (hero-new.html)
@@ -100,13 +100,19 @@ other = "Industry data says only 5% of deployed detections actually work. We sur
 other = "Approve with impact preview"
 
 [valueProp3Desc]
-other = "See the impact of every rule change before it hits your team. Juniors submit, seniors approve. Rollback in one click. Every action logged."
+other = "See the impact of every rule change before it hits your team. Juniors submit, seniors approve. Runbooks and playbooks travel with the rule. Rollback in one click. Every action logged."
 
 [valueProp4Title]
 other = "Write Sigma, deploy everywhere"
 
 [valueProp4Desc]
 other = "Author in Sigma and convert to Splunk, Sentinel, CrowdStrike, and Rapid7. Import native rules and translate to Sigma for portability, or keep writing in your SIEM's own language."
+
+[valueProp16Title]
+other = "Runbooks that stay with the rule"
+
+[valueProp16Desc]
+other = "Attach runbooks and playbooks to detections and hunts. AI can draft response steps from the rule, threat brief, tests, and ATT&CK context for your team to review."
 
 [valuePropLearnMore]
 other = "Learn more →"
@@ -152,7 +158,7 @@ other = "Launch a hunt against your live SIEMs. Cluster hits. Verdict them. Keep
 other = "Prove it before you ship"
 
 [howItWorksRuleDesc]
-other = "Generate positive and negative test cases and run them live against every SIEM dialect. Keep only the rules that fire on real data, nothing promotes until it passes."
+other = "Generate positive and negative test cases plus analyst runbooks and incident playbooks. Run tests live against every SIEM dialect, then review the response steps before anything promotes."
 
 [howItWorksCoverageTitle]
 other = "Deploy, watch, retire"
@@ -208,7 +214,7 @@ other = "Built for security teams who can't compromise"
 other = "AI on your terms"
 
 [trustNewCard1Desc]
-other = "AI assists but never auto-deploys. Disable it entirely if your policy requires it. We never train on your data."
+other = "AI drafts rules, tests, runbooks, and playbooks, but never auto-deploys. Disable it entirely if your policy requires it. We never train on your data."
 
 [trustNewCard2Title]
 other = "Batteries included"
@@ -276,7 +282,7 @@ other = "For Detection Engineers"
 other = "Generate, test, and deploy detections as code"
 
 [engineersDescription]
-other = "Write in Sigma, your SIEM's native language, or let AI generate rules for you. Import existing rules and translate them to Sigma for portability. Test live, deploy with approval, and roll back in one click."
+other = "Write in Sigma, your SIEM's native language, or let AI generate rules for you. Add analyst runbooks and incident playbooks from the same rule context. Test live, deploy with approval, and roll back in one click."
 
 [engineersSourcesLabel]
 other = "Rule sources"
@@ -291,10 +297,10 @@ other = "Threat intelligence feed"
 other = "Ready-to-use detections for trending and novel threats. Applicability filtering shows what's relevant to your environment."
 
 [engineersSource2Title]
-other = "AI-generated rules"
+other = "AI-generated rules and response steps"
 
 [engineersSource2Desc]
-other = "Describe what you want to detect. AI generates the rule and tests. Review, edit, and approve before anything ships."
+other = "Describe what you want to detect. AI generates the rule, tests, runbook, and playbook. Review, edit, and approve before anything ships."
 
 [engineersSource3Title]
 other = "Your own repository"

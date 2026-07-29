@@ -41,6 +41,7 @@ Separation of duties ensures the author of a rule cannot approve their own deplo
 
 - **Mandatory review** — configurable per workspace. When enabled, all deployments require at least one approval
 - **Impact summaries** — approvers see projected alert volume, noise delta, cost impact, and a full diff
+- **Runbook and playbook review** — reviewers can check whether analyst response steps match the rule logic, telemetry, and escalation policy
 - **Min approvers** — require multiple reviewers for high-risk changes
 - **Audit trail** — every approval, rejection, and comment is logged permanently
 

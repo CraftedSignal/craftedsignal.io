@@ -20,7 +20,7 @@ outcomes:
     body: "MSSPs can separate customer data, branding, feature toggles, and approval policy."
   - label: "Control"
     title: "AI stays governed"
-    body: "AI assists generation, triage, and refinement, but humans approve and local models are supported."
+    body: "AI assists rule, test, runbook, and playbook generation, but humans approve and local models are supported."
 docs:
   - title: "Deployment Guide"
     url: "/docs/deployment/"
@@ -31,6 +31,9 @@ docs:
   - title: "AI Assistance"
     url: "/docs/ai/"
     description: "Optional AI with local Ollama support, audit trails, and human approvals."
+  - title: "Runbooks & Playbooks"
+    url: "/docs/runbooks-playbooks/"
+    description: "Reviewable response steps for rules, hunts, library entries, and threat briefs."
   - title: "API Reference"
     url: "/docs/api/"
     description: "REST API for CI/CD, automation, dashboards, testing, and deployment."
@@ -58,7 +61,7 @@ Air-gapped mode blocks outbound network access except private and loopback targe
 
 MSSP and MDR teams can keep customer data separated by tenant. Feature toggles can differ by customer: AI on for one, off for another; threat feed enabled for one, mirrored manually for another; different approval policy by severity or customer contract.
 
-White-label branding supports customer-facing surfaces without changing the underlying workflow. The important part is that rules, risks, hunts, approvals, and audit trails stay tenant-scoped.
+White-label branding supports customer-facing surfaces without changing the underlying workflow. The important part is that rules, risks, hunts, runbooks, playbooks, approvals, and audit trails stay tenant-scoped.
 
 ## APIs, CLI, SDK, and automation
 
@@ -66,4 +69,4 @@ CraftedSignal exposes a web UI for operators, `csctl` for detections-as-code wor
 
 ## AI on your terms
 
-AI can generate, refine, translate, and triage detection content, but it does not auto-deploy. Suggestions are reviewable and audit-logged. For privacy-sensitive deployments, local model support through Ollama keeps customer data inside your infrastructure, and AI can be disabled entirely when policy requires it.
+AI can generate, refine, translate, and triage detection content, including runbooks and playbooks for rule and hunt response. It does not auto-deploy. Suggestions are reviewable and audit-logged. For privacy-sensitive deployments, local model support through Ollama keeps customer data inside your infrastructure, and AI can be disabled entirely when policy requires it.

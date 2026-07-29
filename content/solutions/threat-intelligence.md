@@ -8,7 +8,7 @@ nav_summary: "Make intelligence actionable for your own stack."
 hero_image: "/screenshots/dashboard.png"
 hero_alt: "CraftedSignal dashboard showing risk and coverage context"
 quick_points:
-  - "Curated briefs include rules, tests, IOCs, ATT&CK mappings, and affected products."
+  - "Curated briefs include rules, tests, IOCs, runbooks, playbooks, ATT&CK mappings, and affected products."
   - "Relevance is calculated against your modeled business and technology context."
   - "Briefs can be adopted, hunted, watchlisted, dismissed, or mirrored for air-gapped use."
 outcomes:
@@ -25,6 +25,9 @@ docs:
   - title: "Threat Feed"
     url: "/docs/threat-feed/"
     description: "Brief structure, scoring, rule adoption, IOCs, and air-gapped bundles."
+  - title: "Runbooks & Playbooks"
+    url: "/docs/runbooks-playbooks/"
+    description: "How response steps move from briefs and libraries into rules and hunts."
   - title: "Threat Actors"
     url: "/docs/threat-actors/"
     description: "Normalized actor catalog and pivoting across briefs, hunts, risks, and rules."
@@ -41,13 +44,13 @@ Pentest and red-team findings create the same problem in another form. The findi
 
 ## How CraftedSignal handles intelligence
 
-CraftedSignal treats a threat brief as a package of usable detection context. A brief can include narrative, affected vendors and products, IOCs, MITRE ATT&CK techniques, suggested Sigma rules, suggested hunts, tests, and actor metadata.
+CraftedSignal treats a threat brief as a package of usable detection context. A brief can include narrative, affected vendors and products, IOCs, MITRE ATT&CK techniques, suggested Sigma rules, suggested hunts, tests, runbooks, playbooks, and actor metadata.
 
 The platform scores every brief against your context. Modeled services, data assets, attack paths, operating systems, vendors, products, and existing rules all influence whether the item is urgent, useful, or noise.
 
 ## From brief to detection work
 
-Analysts can adopt suggested rules, start a hunt, link the brief to an existing risk, watchlist it, or dismiss it with a recorded reason. A threat that is relevant but not ready for a permanent rule can become a hunt first. A threat that maps to a critical path can raise priority on an existing risk.
+Analysts can adopt suggested rules, start a hunt, link the brief to an existing risk, watchlist it, or dismiss it with a recorded reason. When a brief includes runbooks or playbooks, those response steps move with the adopted rule or hunt instead of being left behind in the feed. A threat that is relevant but not ready for a permanent rule can become a hunt first. A threat that maps to a critical path can raise priority on an existing risk.
 
 This keeps the feed connected to the rest of the control plane. Intelligence is not a separate inbox; it becomes backlog, hunts, rules, and coverage evidence.
 

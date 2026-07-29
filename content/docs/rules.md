@@ -7,7 +7,7 @@ section: "Core Concepts"
 
 ## Rule model
 
-Every detection in CraftedSignal is a **rule** — a structured object that contains metadata, logic, platform-specific implementations, tests, and context.
+Every detection in CraftedSignal is a **rule** — a structured object that contains metadata, logic, platform-specific implementations, tests, runbooks, playbooks, and context.
 
 ### Metadata
 
@@ -96,9 +96,9 @@ CraftedSignal includes a curated TI feed that translates trending and novel thre
 
 ### AI-generated rules
 
-Describe what you want to detect in natural language. AI generates the rule, tests, and MITRE mapping. You review and approve before anything ships.
+Describe what you want to detect in natural language. AI generates the rule, tests, MITRE mapping, and optional runbook/playbook draft. You review and approve before anything ships.
 
-Use the web UI to describe what you want to detect. AI generates the rule, tests, and MITRE mapping for review.
+Use the web UI to describe what you want to detect. AI generates the rule, tests, MITRE mapping, and response steps for review.
 
 ### Your own repository
 
@@ -147,8 +147,10 @@ Each rule includes context that helps reviewers and analysts:
 - **Rationale**: Why this detection exists
 - **Assumptions**: What must be true for this rule to work (log sources, data quality)
 - **Noise expectations**: Expected false positive rate and known blind spots
-- **Linked runbooks**: What analysts should do when the rule fires
+- **Runbooks and playbooks**: What analysts should validate, collect, escalate, contain, and improve when the rule fires
 - **Required enrichments**: Lookups, threat lists, or data sources the rule depends on
+
+See [Runbooks & Playbooks](/docs/runbooks-playbooks/) for the response content model and AI draft workflow.
 
 ---
 

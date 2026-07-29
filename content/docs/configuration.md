@@ -379,14 +379,14 @@ All emails are sent asynchronously via Temporal workflows with automatic retries
 
 ### AI
 
-CraftedSignal's AI features use LLMs for rule generation, analysis, test case creation, and recommendations. The AI engine connects to any OpenAI-compatible API endpoint — typically a local [Ollama](https://ollama.ai) instance for on-prem deployments.
+CraftedSignal's AI features use LLMs for rule generation, runbook and playbook drafts, analysis, test case creation, and recommendations. The AI engine connects to any OpenAI-compatible API endpoint — typically a local [Ollama](https://ollama.ai) instance for on-prem deployments.
 
 | Key | Env var | Type | Default | Description |
 |-----|---------|------|---------|-------------|
 | `ai.enabled` | `AI_ENABLED` | bool | `false` | Enable AI features |
 | `ai.ollama_url` | `AI_OLLAMA_URL` | string | `http://localhost:11434` | Ollama or OpenAI-compatible API endpoint |
 | `ai.ollama_model` | `AI_OLLAMA_MODEL` | string | `qwen2.5-coder:14b` | Primary model for code-heavy tasks (rule generation, fixing broken rules) |
-| `ai.ollama_test_gen_model` | `AI_OLLAMA_TEST_GEN_MODEL` | string | Same as primary | Model specifically for test case generation |
+| `ai.ollama_test_gen_model` | `AI_OLLAMA_TEST_GEN_MODEL` | string | Same as primary | Model specifically for test case and response-step generation |
 | `ai.api_key` | `AI_API_KEY` | string | — | API key (required for non-Ollama endpoints) |
 | `ai.max_tokens` | `AI_MAX_TOKENS` | int | `16384` | Max output tokens per request |
 | `ai.timeout_seconds` | `AI_TIMEOUT_SECONDS` | int | `1200` | Request timeout in seconds (20 minutes default — large models can be slow) |
@@ -407,7 +407,7 @@ You can configure a secondary LLM provider for language-oriented tasks, letting 
 When configured, tasks are routed automatically:
 
 - **Primary model** — rule generation (code-heavy, needs a strong code model)
-- **Secondary model** — test generation, rule analysis, recommendations, summaries, feedback triage, overlap analysis
+- **Secondary model** — test generation, runbook and playbook drafts, rule analysis, recommendations, summaries, feedback triage, overlap analysis
 
 This lets you use a powerful but expensive code model (e.g., `qwen2.5-coder:14b` on GPU) for generation while routing language tasks to a faster, cheaper model (e.g., Llama 3 on Groq or Together AI).
 
@@ -441,7 +441,7 @@ Admins control platform capabilities from **Settings > Features**. Each toggle s
 
 | Key | Env var | Type | Default | Per-rule override | Description |
 |-----|---------|------|---------|-------------------|-------------|
-| `features.ai_assist` | `FEATURES_AI_ASSIST` | bool | `true` | No | Enable AI rule generation, suggestions, and autofix |
+| `features.ai_assist` | `FEATURES_AI_ASSIST` | bool | `true` | No | Enable AI rule generation, runbook and playbook drafts, suggestions, and autofix |
 | `features.sigma_compilation` | `FEATURES_SIGMA_COMPILATION` | bool | `true` | Yes | Auto-compile Sigma rules to connected SIEMs |
 | `features.auto_deploy` | `FEATURES_AUTO_DEPLOY` | bool | `false` | Yes | Deploy rules automatically after tests pass and approval is granted |
 | `features.threat_feed` | `FEATURES_THREAT_FEED` | bool | `true` | No | Sync and display threat intelligence feed |

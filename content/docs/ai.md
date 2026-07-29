@@ -1,6 +1,6 @@
 ---
 title: "AI Assistance"
-description: "AI-assisted detection engineering: rule generation, translation linting, health insights, and autofix. Self-hosted via Ollama with full data privacy and human approval."
+description: "AI-assisted detection engineering: rule generation, runbook and playbook drafts, translation linting, health insights, and autofix. Self-hosted via Ollama with full data privacy and human approval."
 weight: 8
 section: "Features"
 ---
@@ -21,8 +21,18 @@ Describe what you want to detect. AI generates:
 - Positive and negative test cases
 - MITRE ATT&CK mapping
 - Context (rationale, assumptions, noise expectations)
+- Runbook and playbook draft, when response content is enabled
 
-AI-generated rules are created in the web UI. Describe the threat, select your target platform, and the AI produces a complete rule with tests and MITRE mapping for you to review before pushing.
+AI-generated rules are created in the web UI. Describe the threat, select your target platform, and the AI produces a complete rule with tests, MITRE mapping, and optional response steps for you to review before pushing.
+
+### Runbook and playbook drafts
+
+AI can draft Markdown response steps for a rule. The draft uses this structure:
+
+- **Runbook**: alert intent, triage steps, evidence to collect, false-positive checks, and escalation criteria.
+- **Playbook**: containment, eradication and recovery, communications and handoff, and follow-up detection work.
+
+Drafts are grounded in the rule logic, platform, data sources, fields, severity, MITRE mapping, tags, tests, and company context. They remain suggestions until a human reviews and saves them.
 
 ### Translation linting
 
@@ -35,6 +45,7 @@ AI analyzes rule performance and suggests improvements:
 - Tuning recommendations for noisy rules
 - Query optimization suggestions
 - Coverage gap recommendations from threat intel
+- Missing runbook and playbook recommendations for rules that do not yet explain the analyst response
 
 ### Autofix
 
@@ -80,6 +91,7 @@ Every AI suggestion includes:
 
 - The prompt that was used
 - The diff between current and suggested rule
+- The suggested runbook/playbook draft, when one is generated
 - A confidence score
 - Reasoning for the suggestion
 
@@ -91,7 +103,7 @@ Every AI suggestion includes:
 
 ### Safety checks
 
-AI-generated rules go through the same validation pipeline as human-written rules: lint, test, shadow eval, approval.
+AI-generated rules go through the same validation pipeline as human-written rules: lint, test, shadow eval, approval. AI-generated runbooks and playbooks remain editable Markdown and should be reviewed against the rule before analysts use them.
 
 ---
 
@@ -119,7 +131,7 @@ ai:
   enabled: false
 ```
 
-All AI features are removed from the UI and CLI. The platform works fully without AI — it's an enhancement, not a dependency.
+All AI features are removed from the UI and CLI. The platform works fully without AI — it's an enhancement, not a dependency. Runbooks and playbooks can still be written and reviewed manually.
 
 ---
 
@@ -128,3 +140,5 @@ All AI features are removed from the UI and CLI. The platform works fully withou
 - CraftedSignal **never trains on your data**
 - AI interactions are logged in the immutable audit trail
 - You control which AI model is used and where it runs
+
+See [Runbooks & Playbooks](/docs/runbooks-playbooks/) for the response content structure and review checklist.

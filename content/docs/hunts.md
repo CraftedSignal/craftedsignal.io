@@ -1,13 +1,13 @@
 ---
 title: "Threat Hunting"
-description: "Hypothesis-driven hunts that fan out across every connected SIEM. Cluster results, verdict them in batch, and promote winning queries to tested Sigma detections — with a full audit trail of every cluster you've touched."
+description: "Hypothesis-driven hunts that fan out across every connected SIEM. Cluster results, verdict them in batch, attach runbooks and playbooks, and promote winning queries to tested Sigma detections with a full audit trail."
 weight: 6
 section: "Core Concepts"
 ---
 
 ## Overview
 
-A hunt is a bounded investigation of a threat hypothesis against one or more connected SIEMs. Unlike alerts, hunts are expected to produce many hits, most of them benign. The platform helps you cluster the hits, verdict them efficiently, and promote the queries that survive into formal detection rules.
+A hunt is a bounded investigation of a threat hypothesis against one or more connected SIEMs. Unlike alerts, hunts are expected to produce many hits, most of them benign. The platform helps you cluster the hits, verdict them efficiently, document runbooks and playbooks, and promote the queries that survive into formal detection rules.
 
 Hunts are multi-SIEM by default: a single hypothesis fans out across every SIEM you have connected, and a Sigma-authored query recompiles to each SIEM's dialect at run time. Per-SIEM results are tracked separately so you can see exactly which platforms hit, which failed, and retry only the ones that need it.
 
@@ -37,6 +37,8 @@ The dashboard's **Top Uncovered Techniques** card links directly to a hunt seede
    - Query level: `promising`, `noisy`, `dead`, `untriaged`, `awaiting triage`.
 6. **Promote** — a query marked `promising` graduates to a detection rule. The platform pre-selects target SIEMs based on which ones the hunt actually ran against.
 7. **Mark** — every verdicted cluster lands in the Marked tab as a ledger for audit and retrospective.
+
+Hunts can also carry runbooks and playbooks. Use them to capture what analysts should validate while the hunt is active, then what should happen if a cluster or query confirms suspicious behavior. When a query is promoted, the response steps can move into the resulting detection workflow.
 
 ---
 
@@ -100,6 +102,7 @@ Every field is editable from the hunt detail page:
 - Linked business function and company attack path (clearable).
 - SIEM scope (multi-select; at least one SIEM must remain).
 - AI iteration and pre-triage toggles.
+- Runbook and playbook Markdown for analyst response steps.
 
 The form is partial-tolerant: omitted fields keep their current value. Title is required; nothing else is.
 
@@ -153,5 +156,6 @@ Both query helpers can be disabled per-hunt with the Edit tab's AI toggles, or g
 - [Risks](/docs/risks/) — accepted risks anchor hunts and feed the proposer.
 - [Detection Rules](/docs/rules/) — the destination for a promising hunt query.
 - [Threat Feed](/docs/threat-feed/) — briefs that seed new hunts.
+- [Runbooks & Playbooks](/docs/runbooks-playbooks/) — response steps attached to hunts and promoted rules.
 - [Testing](/docs/testing/) — tests that accompany a promoted rule.
 - [Platforms](/docs/platforms/) — Sigma compilation per-SIEM.
