@@ -31,6 +31,12 @@ docs:
   - title: "Noise Budgets"
     url: "/docs/noise-budgets/"
     description: "Daily alert limits by company, team, service, and rule."
+  - title: "Recommendations"
+    url: "/docs/recommendations/"
+    description: "Prioritized action queue for coverage, tuning, mappings, and stale response steps."
+  - title: "AI Quality"
+    url: "/docs/ai-quality/"
+    description: "Owner-facing metrics for AI operation quality, retries, errors, and proposals."
   - title: "Git-native Backups"
     url: "/docs/git-backup/"
     description: "Scheduled Git mirrors for rules, versions, tests, and restore points."
@@ -47,6 +53,8 @@ Traditional dashboards make this hard to see. Noise, rule health, test failures,
 CraftedSignal keeps health signals attached to the rule lifecycle. Each deployed rule can show recent firing behavior, test status, drift state, noise budget impact, ownership, platform deployment state, and coverage context.
 
 The platform surfaces one operational queue for rules that need attention: dead rules, unexpectedly noisy rules, drifted rules, failing tests, missing ATT&CK mappings, missing owners, and other quality issues. The queue is designed for action, not just observation.
+
+Recommendations turn those signals into next steps: tune this rule, add tests, fix this mapping, review stale runbooks and playbooks, generate a rule for this coverage gap, or retire low-value content.
 
 ## Noise, drift, and silent failure
 

@@ -248,6 +248,26 @@ csctl sync -token YOUR_TOKEN -resolve=remote
 
 Exit codes: `0` = success, `1` = error, `2` = conflicts detected.
 
+Sync includes rule metadata, query, groups, tests, and response steps. If runbooks or playbooks change in Git or in the web UI, `csctl diff` and `csctl sync` show that change with the rule instead of treating it as a separate artifact.
+
+---
+
+### simulate
+
+Run controlled attack simulations and report correlation results to the platform.
+
+```bash
+csctl simulate adapters
+csctl simulate list
+csctl simulate plan T1059.001
+csctl simulate run T1059.001 --live
+csctl simulate run --rule <detection-id> --live
+csctl simulate status <run-id>
+csctl simulate cleanup T1059.001
+```
+
+Dry-run is the default. Add `--live` only in an approved lab or controlled target. Use `--scope simulations.yaml` to restrict adapters, techniques, targets, and cleanup policy. See [Simulations](/docs/simulations/) for the full workflow.
+
 ---
 
 ### library
@@ -350,6 +370,21 @@ tests:
     - name: "Successful login"
       data:
         - { src_ip: "10.0.0.1", action: "success", sourcetype: "auth" }
+  simulate:
+    - technique: T1059.001
+      adapters: ["atomic"]
+      expected: true
+
+operational_guidance: |
+  ## Runbook
+
+  ### Alert intent
+  Detect repeated failed login attempts from a single source.
+
+  ## Playbook
+
+  ### Follow-up detection work
+  Review failed login thresholds after one week of monitoring.
 ```
 
 | Field | Required | Description |
@@ -368,6 +403,8 @@ tests:
 | `tags` | No | Custom labels |
 | `groups` | No | Logical groups for filtering |
 | `tests` | No | Positive and negative test cases |
+| `tests.simulate` | No | Expected simulation bindings by ATT&CK technique and adapter |
+| `operational_guidance` | No | Runbook and playbook Markdown kept for sync compatibility |
 
 ---
 

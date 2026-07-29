@@ -119,3 +119,12 @@ Emergency deployments can bypass approval workflows when time-critical response 
 - Triggers automatic retroactive review
 - Alerts all admins
 - Requires post-incident justification
+
+---
+
+## Related docs
+
+- [Approvals](/docs/approvals/) - review queue, impact preview, signatures, and audit trail.
+- [Groups](/docs/groups/) - deployable rule sets with target and approval policy.
+- [Runbooks & Playbooks](/docs/runbooks-playbooks/) - response-step review and stale-content checks.
+- [Deployment & Rollback](/docs/deployment/) - monitoring mode, rollback, and drift.

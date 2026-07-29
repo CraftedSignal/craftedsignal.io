@@ -34,6 +34,8 @@ AI can draft Markdown response steps for a rule. The draft uses this structure:
 
 Drafts are grounded in the rule logic, platform, data sources, fields, severity, MITRE mapping, tags, tests, and company context. They remain suggestions until a human reviews and saves them.
 
+Existing runbooks and playbooks can also inform later AI refinement of the rule, tests, escalation criteria, and follow-up detection work. The goal is to keep the rule and response steps aligned in both directions.
+
 ### Translation linting
 
 When a rule is translated across platforms (e.g., SPL to KQL), AI highlights semantic differences that could affect detection accuracy.
@@ -46,6 +48,7 @@ AI analyzes rule performance and suggests improvements:
 - Query optimization suggestions
 - Coverage gap recommendations from threat intel
 - Missing runbook and playbook recommendations for rules that do not yet explain the analyst response
+- Stale runbook and playbook recommendations when rule or hunt context changes
 
 ### Autofix
 
@@ -141,4 +144,4 @@ All AI features are removed from the UI and CLI. The platform works fully withou
 - AI interactions are logged in the immutable audit trail
 - You control which AI model is used and where it runs
 
-See [Runbooks & Playbooks](/docs/runbooks-playbooks/) for the response content structure and review checklist.
+See [Runbooks & Playbooks](/docs/runbooks-playbooks/) for sync behavior, response content structure, and the review checklist.

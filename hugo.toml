@@ -1,5 +1,5 @@
 baseURL = 'https://craftedsignal.io/'
-languageCode = 'en'
+locale = 'en'
 title = 'CraftedSignal'
 defaultContentLanguage = 'en'
 defaultContentLanguageInSubdir = false
@@ -18,20 +18,20 @@ enableMissingTranslationPlaceholders = false
 
 [languages]
   [languages.en]
-    languageName = "English"
+    label = "English"
     weight = 1
     [languages.en.params]
       subtitle = "Detection Engineering Control Plane"
 
   # Ready for future languages
   # [languages.de]
-  #   languageName = "Deutsch"
+  #   label = "Deutsch"
   #   weight = 2
   #   [languages.de.params]
   #     subtitle = "Detection Engineering Kontrollzentrum"
 
   # [languages.nl]
-  #   languageName = "Nederlands"
+  #   label = "Nederlands"
   #   weight = 3
 
 [markup]

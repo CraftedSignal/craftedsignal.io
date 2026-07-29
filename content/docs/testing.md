@@ -128,6 +128,21 @@ Monitoring lets you understand real-world impact before fully activating a rule.
 
 ---
 
+## Attack simulations
+
+Positive and negative tests validate known fixtures. Simulations validate technique-shaped activity from an approved lab or controlled target.
+
+Use simulations when you need to prove that telemetry, mappings, and rule logic line up end to end:
+
+```bash
+csctl simulate plan T1059.001
+csctl simulate run T1059.001 --live
+```
+
+Simulation results can be correlated to detections and tracked as coverage gaps. See [Simulations](/docs/simulations/) for the full workflow.
+
+---
+
 ## Continuous validation
 
 After deployment, CraftedSignal continuously monitors:

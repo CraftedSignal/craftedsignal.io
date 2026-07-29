@@ -54,6 +54,14 @@ A brief's MITRE techniques are matched against your accepted attack paths: overl
 
 ---
 
+## Brief customization
+
+When Threat Feed, AI, and Brief Customization are enabled for a tenant, CraftedSignal can generate company-specific context for a brief. The customization uses the tenant's industry, modeled services, technology stack, and existing detection context to explain why the brief matters and what action is likely useful.
+
+The original brief remains the source of truth. Customized content is tenant-scoped, AI-generated, and reviewable.
+
+---
+
 ## The adoption flow
 
 1. **Review** — narrative, affected vendors/products/OS, MITRE coverage of the brief, and the suggested rules.
@@ -105,8 +113,10 @@ See [Air-gapped Mode](/docs/airgapped/) for the full constraint envelope.
 ## Related
 
 - [Threat Model](/docs/threat-model/) — briefs re-weight your risk score.
+- [Threat Intake](/docs/threat-intake/) — candidate threats queued for SOC review.
 - [Risks](/docs/risks/) — where briefs relate to your modeled risks.
 - [Threat Actors](/docs/threat-actors/) — how brief actor strings are normalized into the catalog.
+- [Library](/docs/library/) — reusable rule and hunt templates.
 - [Hunts](/docs/hunts/) — IOC queries seed new hunts.
 - [Rules](/docs/rules/) — adopt a brief's detection into your library.
 - [Runbooks & Playbooks](/docs/runbooks-playbooks/) — response steps attached to rules, hunts, libraries, and briefs.

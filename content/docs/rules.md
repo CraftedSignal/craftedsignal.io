@@ -86,6 +86,8 @@ The format is controlled per-rule. Admins set the company default under **Settin
 
 When importing existing native SIEM rules, CraftedSignal auto-converts them to Sigma. The original native query is preserved for reference.
 
+When Sigma Auto-Translation is enabled, rules authored in Sigma can compile to the selected target language on save. This keeps Sigma as the portable source while still showing the exact native query that will run on the SIEM.
+
 ---
 
 ## Rule sources
@@ -99,6 +101,8 @@ CraftedSignal includes a curated TI feed that translates trending and novel thre
 Describe what you want to detect in natural language. AI generates the rule, tests, MITRE mapping, and optional runbook/playbook draft. You review and approve before anything ships.
 
 Use the web UI to describe what you want to detect. AI generates the rule, tests, MITRE mapping, and response steps for review.
+
+AI can also use existing runbooks and playbooks as context when refining a rule. That keeps detection logic, tests, and analyst response steps aligned instead of turning the runbook into stale documentation.
 
 ### Your own repository
 
@@ -150,7 +154,7 @@ Each rule includes context that helps reviewers and analysts:
 - **Runbooks and playbooks**: What analysts should validate, collect, escalate, contain, and improve when the rule fires
 - **Required enrichments**: Lookups, threat lists, or data sources the rule depends on
 
-See [Runbooks & Playbooks](/docs/runbooks-playbooks/) for the response content model and AI draft workflow.
+See [Runbooks & Playbooks](/docs/runbooks-playbooks/) for the response content model, AI draft workflow, and sync behavior.
 
 ---
 

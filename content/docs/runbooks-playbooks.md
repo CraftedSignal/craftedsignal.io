@@ -1,6 +1,6 @@
 ---
 title: "Runbooks & Playbooks"
-description: "Attach Markdown runbooks and playbooks to rules, hunts, library entries, and threat briefs, with AI-generated drafts that stay reviewable."
+description: "Attach Markdown runbooks and playbooks to rules, hunts, library entries, and threat briefs. Keep response steps synced with rule changes and AI-generated drafts."
 weight: 6
 section: "Core Concepts"
 ---
@@ -30,6 +30,20 @@ When a library entry or threat brief is adopted, its response content moves with
 
 ---
 
+## Sync with rules
+
+Runbooks and playbooks are part of the detection lifecycle, not side documents.
+
+- `csctl push`, `pull`, and `sync` preserve response steps with the rule.
+- Rule sync includes response steps in change detection, so edits made in Git or the web UI are visible in diffs.
+- When rule logic, Sigma source, query, severity, ATT&CK mapping, tags, or hunt context changes, CraftedSignal can mark the response steps stale.
+- Hunt promotion carries the hunt's response steps into the new detection.
+- Library and threat-feed adoption carries response steps into the created rule or hunt.
+
+This keeps the rule and analyst workflow moving together. A query change can prompt a runbook/playbook review, and existing response steps can be used as context when AI helps refine a rule, tests, or follow-up detection work.
+
+---
+
 ## AI-generated drafts
 
 When AI assistance is enabled, AI can draft the runbook and playbook while analyzing a rule. The draft is grounded in:
@@ -41,6 +55,8 @@ When AI assistance is enabled, AI can draft the runbook and playbook while analy
 - Available company and threat context
 
 AI-generated drafts are suggestions. They are editable, previewable, and audit-visible. They do not deploy a rule, change an alert, or publish response steps without a human choosing to use them.
+
+AI can also use existing response steps as context when refining the related rule or tests, so the detection logic and the analyst workflow do not drift into two separate truths.
 
 The generated draft is expected to stay specific to the rule. It should not invent ticket queues, internal tools, hostnames, team names, or contacts. If a useful local reference is unknown, it should leave a short placeholder for your team to fill in.
 

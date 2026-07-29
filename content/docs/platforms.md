@@ -22,6 +22,8 @@ The compiler handles field mapping, log source resolution, and platform-specific
 
 Portability scores flag rules that use Sigma features unsupported on a target platform.
 
+See [Targets & Mappings](/docs/targets-mappings/) for target setup, read-only targets, automatic sync, field mappings, log source mappings, and suggested overrides.
+
 ---
 
 ## Splunk

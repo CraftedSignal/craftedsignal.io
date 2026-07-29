@@ -69,6 +69,8 @@ When the threat feed surfaces a brief that matches your industry, an affected pr
 
 This keeps the threat model a living surface: briefs continuously point at the techniques you have not yet modeled against your declared business surface, but the analyst decides what becomes a tracked risk.
 
+Candidate threats can also land in [Threat Intake](/docs/threat-intake/) for SOC triage before they become risks, hunts, simulations, or detection work.
+
 ---
 
 ## Automated follow-through
@@ -97,6 +99,8 @@ The **Intelligence** tab next to it surfaces the feed-side of the same model: KE
 
 - [Risks](/docs/risks/) — the lifecycle every accepted path enters.
 - [Threat Feed](/docs/threat-feed/) — input that re-weights the model and relates briefs to risks.
+- [Threat Intake](/docs/threat-intake/) — triage candidate threats before committing them to sustained work.
 - [Threat Actors](/docs/threat-actors/) — the catalog briefs are enriched against.
 - [Hunts](/docs/hunts/) — action on technique gaps.
+- [Recommendations](/docs/recommendations/) — prioritized actions from exposure and coverage gaps.
 - [Rules](/docs/rules/) — the ultimate closure for an accepted threat.

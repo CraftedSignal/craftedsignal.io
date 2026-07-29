@@ -1,6 +1,6 @@
 ---
 title: "Roles & Permissions"
-description: "Role-based access control with Admin, User, and Viewer roles. Covers separation of duties, permission matrix, SSO/OIDC, passkey MFA, and instance claiming."
+description: "Role-based access control with Owner, Admin, User, and Viewer roles. Covers separation of duties, permission matrix, SSO/OIDC, passkey MFA, and instance claiming."
 weight: 10
 section: "Administration"
 ---
@@ -32,26 +32,30 @@ On SaaS, registration stays open and each signup creates a new workspace.
 
 | Role | Description |
 |------|-------------|
-| **Admin** | User management, SSO/OIDC configuration, audit logs, company settings. |
+| **Owner** | Platform-level oversight role for SaaS or bootstrap administration. Can access owner-only surfaces such as AI Quality. |
+| **Admin** | Company administration, user management, SSO/OIDC configuration, audit logs, and company settings. |
 | **User** | Create, edit, test, and deploy rules. Full write access to detection content. |
 | **Viewer** | Read-only access to dashboards, rules, tests, and deployments. |
+
+Admins can invite Viewer, User, and Admin accounts within their company. Owner accounts are reserved for platform oversight and are not assigned through normal company invitations.
 
 ---
 
 ## Permission matrix
 
-| Action | Admin | User | Viewer |
-|--------|-------|------|--------|
-| View dashboards & rules | Yes | Yes | Yes |
-| Create / edit rules | Yes | Yes | No |
-| Run tests | Yes | Yes | No |
-| Deploy rules | Yes | Yes | No |
-| Approve deployments | Yes | Yes | If added as approver |
-| Manage API keys | Yes | No | No |
-| View audit logs | Yes | No | No |
-| Manage users | Yes | No | No |
-| Configure SSO/OIDC | Yes | No | No |
-| Company settings | Yes | No | No |
+| Action | Owner | Admin | User | Viewer |
+|--------|-------|-------|------|--------|
+| View dashboards & rules | Yes | Yes | Yes | Yes |
+| Create / edit rules | Yes | Yes | Yes | No |
+| Run tests | Yes | Yes | Yes | No |
+| Deploy rules | Yes | Yes | Yes | No |
+| Approve deployments | Yes | Yes | Yes | If added as approver |
+| Manage API keys | Yes | Yes | No | No |
+| View audit logs | Yes | Yes | No | No |
+| Manage users | Yes | Yes | No | No |
+| Configure SSO/OIDC | Yes | Yes | No | No |
+| Company settings | Yes | Yes | No | No |
+| View AI Quality | Yes | No | No | No |
 
 ---
 

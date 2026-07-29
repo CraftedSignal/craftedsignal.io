@@ -28,6 +28,12 @@ docs:
   - title: "Testing"
     url: "/docs/testing/"
     description: "How promoted rules get positive and negative tests against live SIEMs."
+  - title: "Simulations"
+    url: "/docs/simulations/"
+    description: "Run technique-shaped activity and correlate whether detections fire."
+  - title: "Runbooks & Playbooks"
+    url: "/docs/runbooks-playbooks/"
+    description: "Response steps that move from hunts into promoted rules."
   - title: "Rules"
     url: "/docs/rules/"
     description: "Rule structure, metadata, lifecycle states, tests, and ATT&CK mappings."
@@ -50,6 +56,8 @@ Results are clustered so analysts can verdict patterns instead of individual row
 Each cluster can be marked true positive, false positive, or inconclusive. That decision is not just a comment. It becomes evidence for whether the hypothesis was real, whether a rule should exist, and whether the risk it came from is still open.
 
 When a query produces useful signal, CraftedSignal can promote it into a detection rule. The workflow then moves into authoring, testing, approval, deployment, and monitoring. A hunt is no longer a dead-end investigation; it is one way the detection library grows.
+
+Runbooks and playbooks attached to the hunt can move into the promoted rule, so the analyst handoff stays with the detection work that came out of the hunt.
 
 ## Where hunts fit in the loop
 

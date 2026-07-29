@@ -20,7 +20,7 @@ outcomes:
     body: "MSSPs can separate customer data, branding, feature toggles, and approval policy."
   - label: "Control"
     title: "AI stays governed"
-    body: "AI assists rule, test, runbook, and playbook generation, but humans approve and local models are supported."
+    body: "AI assists rule, test, runbook, and playbook generation, keeps context aligned, but humans approve and local models are supported."
 docs:
   - title: "Deployment Guide"
     url: "/docs/deployment/"
@@ -37,6 +37,12 @@ docs:
   - title: "API Reference"
     url: "/docs/api/"
     description: "REST API for CI/CD, automation, dashboards, testing, and deployment."
+  - title: "Targets & Mappings"
+    url: "/docs/targets-mappings/"
+    description: "SIEM targets, read-only mode, field mappings, log source mappings, and suggestions."
+  - title: "AI Quality"
+    url: "/docs/ai-quality/"
+    description: "AI operation metrics, retries, quality trends, errors, and improvement proposals."
   - title: "Security"
     url: "/docs/security/"
     description: "Data boundaries, encryption, credentials, audit logs, SSO, and supply chain."
@@ -69,4 +75,4 @@ CraftedSignal exposes a web UI for operators, `csctl` for detections-as-code wor
 
 ## AI on your terms
 
-AI can generate, refine, translate, and triage detection content, including runbooks and playbooks for rule and hunt response. It does not auto-deploy. Suggestions are reviewable and audit-logged. For privacy-sensitive deployments, local model support through Ollama keeps customer data inside your infrastructure, and AI can be disabled entirely when policy requires it.
+AI can generate, refine, translate, and triage detection content, including runbooks and playbooks for rule and hunt response. Existing response steps can be used as context when refining a rule, and rule changes can mark those response steps stale for review. AI does not auto-deploy. Suggestions are reviewable and audit-logged. For privacy-sensitive deployments, local model support through Ollama keeps customer data inside your infrastructure, and AI can be disabled entirely when policy requires it.

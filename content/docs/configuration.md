@@ -437,7 +437,7 @@ Controls rule versioning and review lifecycle.
 
 ### Feature toggles
 
-Admins control platform capabilities from **Settings > Features**. Each toggle sets the company-wide default. Engineers can override specific toggles per-rule when allowed by the admin.
+Admins control platform capabilities from **Admin > Features**. Each toggle sets company-wide availability for the current tenant.
 
 | Key | Env var | Type | Default | Per-rule override | Description |
 |-----|---------|------|---------|-------------------|-------------|
@@ -451,6 +451,33 @@ Admins control platform capabilities from **Settings > Features**. Each toggle s
 When `sigma_compilation` is enabled, rules authored in Sigma are auto-compiled to all connected SIEMs. When `rule_language_override` is enabled, engineers can choose to write individual rules in a native SIEM language instead of Sigma.
 
 Toggle changes are recorded in the audit log with the admin who made the change.
+
+The web app also stores per-company feature names for product surfaces:
+
+| Feature name | Admin label | Description |
+|--------------|-------------|-------------|
+| `ai` | AI Features | AI-powered analysis, recommendations, rule generation, test generation, and response-step drafts. |
+| `rule_generation` | AI Rule Generation | Generate detection rules from natural-language descriptions. |
+| `test_generation` | AI Test Generation | Generate test cases for detection rules. |
+| `rule_suggestions` | AI Rule Suggestions | Show AI-powered improvement suggestions and insights in the rule sidebar. |
+| company setting | Approval Workflow | Require approval before deploying rule changes. |
+| `maturity` | Rule Monitoring | Require new rules to run in monitoring mode before activation. |
+| `auto_graduation` | Auto-Graduation | Automatically approve monitored rules when monitoring gates pass. |
+| `simulations` | Attack Simulations | Run attack simulations and verify detection coverage. |
+| `library` | Rule and Hunt Library | Browse and import reusable rule and hunt templates. |
+| `cloud_library_disabled` | Cloud Libraries | Explicit opt-out from CraftedSignal-managed cloud library content. |
+| `threat_feed` | Threat Feed | Receive curated threat briefs with related detections. |
+| `brief_customization` | Brief Customization | AI-tailor threat briefs to the tenant's stack and context. |
+| `sigma_auto_translation` | Sigma Auto-Translation | Auto-translate Sigma rules to the target SIEM query language on save. |
+| `feedback` | Feedback & Discussion | Allow rule feedback and discussion. |
+| `hunts` | Hunts | Enable hypothesis-driven threat hunting. |
+| `error_reporting` | Error Reporting | Enable encrypted remote error reporting. |
+| `bug_reporting` | Bug Reports | Let signed-in users submit current-page bug reports. |
+| `dashboards_disabled` | Dashboards | Explicit opt-out from dashboard, report, recommendation, and overview pages. |
+| `siem_integrations_disabled` | SIEM Integrations | Explicit opt-out from targets, live hunts/tests, and SIEM deployments. |
+| `rules_disabled` | Rules | Explicit opt-out from detection Rules pages and navigation. |
+| `groups_disabled` | Groups | Explicit opt-out from detection Groups pages and navigation. |
+| `response_guidance_disabled` | Runbooks & Playbooks | Explicit opt-out from runbook/playbook panels and editors. |
 
 ---
 

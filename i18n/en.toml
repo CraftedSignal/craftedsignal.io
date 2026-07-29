@@ -109,10 +109,10 @@ other = "Write Sigma, deploy everywhere"
 other = "Author in Sigma and convert to Splunk, Sentinel, CrowdStrike, and Rapid7. Import native rules and translate to Sigma for portability, or keep writing in your SIEM's own language."
 
 [valueProp16Title]
-other = "Runbooks that stay with the rule"
+other = "Runbooks that stay in sync"
 
 [valueProp16Desc]
-other = "Attach runbooks and playbooks to detections and hunts. AI can draft response steps from the rule, threat brief, tests, and ATT&CK context for your team to review."
+other = "Attach runbooks and playbooks to detections and hunts. AI can draft them from rule context, use existing response steps when refining rules, and flag stale content when the rule changes."
 
 [valuePropLearnMore]
 other = "Learn more →"
@@ -158,7 +158,7 @@ other = "Launch a hunt against your live SIEMs. Cluster hits. Verdict them. Keep
 other = "Prove it before you ship"
 
 [howItWorksRuleDesc]
-other = "Generate positive and negative test cases plus analyst runbooks and incident playbooks. Run tests live against every SIEM dialect, then review the response steps before anything promotes."
+other = "Generate positive and negative test cases plus analyst runbooks and incident playbooks. Keep them in sync with the rule as logic changes, then review everything before anything promotes."
 
 [howItWorksCoverageTitle]
 other = "Deploy, watch, retire"
@@ -214,7 +214,7 @@ other = "Built for security teams who can't compromise"
 other = "AI on your terms"
 
 [trustNewCard1Desc]
-other = "AI drafts rules, tests, runbooks, and playbooks, but never auto-deploys. Disable it entirely if your policy requires it. We never train on your data."
+other = "AI drafts rules, tests, runbooks, and playbooks, and can use existing response steps while refining rules. It never auto-deploys. Disable it entirely if policy requires it."
 
 [trustNewCard2Title]
 other = "Batteries included"

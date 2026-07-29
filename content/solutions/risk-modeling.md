@@ -28,6 +28,12 @@ docs:
   - title: "Risk Ops Board"
     url: "/docs/risks/"
     description: "Risk states, lifecycle transitions, coverage, and audit history."
+  - title: "Threat Intake"
+    url: "/docs/threat-intake/"
+    description: "SOC triage queue for candidate threats before they become sustained risk work."
+  - title: "Recommendations"
+    url: "/docs/recommendations/"
+    description: "Action queue for high-priority exposure, coverage, and quality gaps."
   - title: "D3FEND Coverage"
     url: "/docs/dfend/"
     description: "How active detections map to defensive techniques and posture."
@@ -50,6 +56,8 @@ Coverage is tracked across the layers where detection actually happens: endpoint
 Accepted attack paths become operational risks. Each risk has a state, owner, priority, coverage, and timeline. Analysts can hunt it, accept residual risk, escalate it, schedule re-hunts, or link it to rules that reduce the exposure.
 
 The important shift is that risk is not a PDF attached to a ticket. It is a live object that can create hunts, explain why a rule exists, and show whether the detection program is closing the right gaps.
+
+Threat Intake sits just before this risk lifecycle. SOC reviewers can accept candidate threats that need detection, hunting, simulation, or validation work and dismiss candidates that do not apply.
 
 ## What the SOC gets
 

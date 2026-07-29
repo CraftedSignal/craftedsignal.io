@@ -81,6 +81,8 @@ Monitor key metrics in the web UI:
 
 Promote to active or roll back based on observed behavior.
 
+When Auto-Graduation is enabled, monitored rules can be automatically approved after they satisfy the configured monitoring gates, such as minimum monitoring duration, trigger threshold, and error threshold. The graduation action is still recorded and notified like other deployment events.
+
 ### Approval workflows
 
 Configure rules to require approval before deployment. Reviewers see:
@@ -91,7 +93,7 @@ Configure rules to require approval before deployment. Reviewers see:
 
 Approvals are managed in the web UI with full audit trail.
 
-See [Roles & Permissions](/docs/roles-permissions/) for the approval permission matrix.
+See [Approvals](/docs/approvals/) for the review queue and [Roles & Permissions](/docs/roles-permissions/) for the approval permission matrix.
 
 ### Noise budgets
 
@@ -152,3 +154,5 @@ Deploy the same rule to multiple SIEMs. CraftedSignal maintains platform-specifi
 ```bash
 csctl diff -token YOUR_TOKEN
 ```
+
+Use [Groups](/docs/groups/) when you want to deploy a release set of related rules together.

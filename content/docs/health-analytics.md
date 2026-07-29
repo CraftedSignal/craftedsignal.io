@@ -22,6 +22,8 @@ See which techniques you detect and where gaps exist:
 
 Coverage is calculated from the MITRE mappings on each active rule.
 
+Simulation coverage adds a second signal: whether controlled technique-shaped activity actually correlated to a detection. See [Simulations](/docs/simulations/) for the run history and gaps workflow.
+
 ---
 
 ## Noise & signal metrics
@@ -84,6 +86,8 @@ CraftedSignal scores each rule's value to your organization:
 
 Low-value rules are surfaced for retirement or improvement.
 
+See [Recommendations](/docs/recommendations/) for the action queue that turns coverage, noise, mapping, AI, and response-step signals into specific next steps.
+
 ---
 
 ## Policies
@@ -135,7 +139,7 @@ Owners get a dedicated **AI Quality** screen at `/ai-quality` that surfaces ever
 
 Aggregate views show per-activity volume, cost over time, and the trailing-30-day spend per company. Useful for budget reviews, model swaps, and catching prompt regressions early.
 
-The same data backs cost analytics on multi-tenant deployments — see [AI Assistance](/docs/ai/) for the activity catalog and the off-switch.
+The same data backs cost analytics on multi-tenant deployments. See [AI Quality](/docs/ai-quality/) for the owner-facing metrics view and [AI Assistance](/docs/ai/) for the activity catalog and the off-switch.
 
 ---
 
@@ -149,3 +153,5 @@ Group rules by any dimension to monitor and control:
 - By compliance framework (SOC2, NIS2, PCI-DSS)
 
 Each group gets its own dashboard with independent health metrics.
+
+See [Groups](/docs/groups/) for deployable rule sets, group quality, and group health.

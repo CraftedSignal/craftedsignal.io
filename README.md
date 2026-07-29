@@ -76,7 +76,7 @@ The site is prepared for internationalization. All user-facing strings are extra
 3. Uncomment the language in `hugo.toml`:
    ```toml
    [languages.de]
-     languageName = "Deutsch"
+     label = "Deutsch"
      weight = 2
    ```
 

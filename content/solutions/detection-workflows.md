@@ -10,12 +10,12 @@ hero_alt: "CraftedSignal approval diff and projected impact screen"
 quick_points:
   - "Author in Sigma or native SIEM language with per-rule control."
   - "Run positive and negative tests against live Splunk, Sentinel, CrowdStrike, and Rapid7."
-  - "Attach runbooks and playbooks so analysts know what to validate, collect, escalate, and improve."
+  - "Attach runbooks and playbooks, keep them in sync with rule changes, and let AI draft or refine both sides."
   - "Use approvals, impact previews, audit logs, Git sync, and one-click rollback."
 outcomes:
   - label: "Quality"
     title: "Rules are tested before production"
-    body: "Validation, live SIEM tests, and rule-linked runbooks catch signal and response problems early."
+    body: "Validation, live SIEM tests, and synced runbooks catch signal and response problems early."
   - label: "Governance"
     title: "Approvals match severity"
     body: "Junior changes, critical rules, and high-impact deploys can require the right reviewers."
@@ -35,6 +35,15 @@ docs:
   - title: "Deployment & Rollback"
     url: "/docs/deployment/"
     description: "Dry-run previews, deployment state, rollback, and supported platforms."
+  - title: "Approvals"
+    url: "/docs/approvals/"
+    description: "Review queue, impact preview, multi-approver policy, and audit history."
+  - title: "Groups"
+    url: "/docs/groups/"
+    description: "Deployable rule groups with targets, health, and approval policy."
+  - title: "Simulations"
+    url: "/docs/simulations/"
+    description: "CLI-run attack simulations, scenario bindings, and correlation results."
   - title: "CLI Reference"
     url: "/docs/cli/"
     description: "csctl push, pull, sync, validate, diff, and CI/CD integration."
@@ -55,7 +64,9 @@ CraftedSignal treats detection content as governed code. Engineers can author in
 
 Rules can carry generated or manually written tests. Positive tests confirm known-bad behavior fires. Negative tests confirm expected benign behavior stays quiet. Tests run against live SIEMs, because the real question is not whether the YAML parses; it is whether the rule works against the data shape you actually have.
 
-Rules and hunts can also carry runbooks and playbooks. The runbook gives analysts the concrete triage path: alert intent, evidence to collect, false-positive checks, and escalation criteria. The playbook covers broader response work such as containment, recovery, communications, and follow-up detection work. AI can draft both from the rule logic, tests, ATT&CK mapping, and threat context, but the content remains editable and reviewable before analysts rely on it.
+Rules and hunts can also carry runbooks and playbooks. The runbook gives analysts the concrete triage path: alert intent, evidence to collect, false-positive checks, and escalation criteria. The playbook covers broader response work such as containment, recovery, communications, and follow-up detection work.
+
+Those response steps stay connected to the detection. CLI sync preserves them with the rule, rule edits can mark them stale for review, and hunt promotion carries them into the resulting detection. AI can draft runbooks and playbooks from rule logic, tests, ATT&CK mapping, and threat context. It can also use existing response steps when refining rule logic or tests, but the content remains editable and reviewable before analysts rely on it.
 
 ## Approval and impact preview
 

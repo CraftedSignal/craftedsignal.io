@@ -72,7 +72,7 @@ See the full [Configuration](/docs/configuration/) reference for production conf
 
 ### 2. Connect a SIEM
 
-Go to **Settings > Targets** and add your SIEM connection:
+Go to **Detection > Targets** and add your SIEM connection:
 
 - **Splunk**: REST API endpoint + auth token
 - **Microsoft Sentinel**: Workspace ID + app registration
@@ -81,15 +81,17 @@ Go to **Settings > Targets** and add your SIEM connection:
 
 All credentials are encrypted at rest with your master secret.
 
+See [Targets & Mappings](/docs/targets-mappings/) for read-only targets, automatic sync, field mappings, log source mappings, and suggested overrides.
+
 ### 3. Import or create rules
 
 You have three options:
 
 - **TI feed**: Browse ready-to-use detections from trending threats
-- **Library**: Import rules from shared rule repositories
+- **Library**: Import rules and hunts from shared template repositories
 - **Create**: Write a new rule in the editor or generate one with AI
 
-Rules and hunts can include runbooks and playbooks. Imported content can bring those response steps with it, and AI can draft them from rule context when AI assistance is enabled.
+Rules and hunts can include runbooks and playbooks. Imported content can bring those response steps with it, AI can draft them from rule context, and sync keeps them attached to the rule as it moves between Git and the web UI.
 
 ### 4. Test and deploy
 
@@ -122,6 +124,7 @@ csctl push -m "Add webshell detection"               # Push rules (tests run aut
 csctl push -deploy                                   # Push and deploy to SIEM
 csctl pull                                           # Pull latest from platform
 csctl sync                                           # Bidirectional sync
+csctl simulate list                                  # List available attack simulations
 ```
 
 Configure authentication via environment variable:
@@ -134,6 +137,8 @@ export CSCTL_URL="https://app.craftedsignal.io"    # or your self-hosted URL
 See the full [CLI Reference](/docs/cli/) for all commands, flags, rule format, and CI/CD examples.
 
 See [Runbooks & Playbooks](/docs/runbooks-playbooks/) for response steps linked to rules, hunts, libraries, and threat briefs.
+
+See [Groups](/docs/groups/) for deployable rule sets and [Approvals](/docs/approvals/) for review queues.
 
 ---
 

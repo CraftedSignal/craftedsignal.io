@@ -120,6 +120,74 @@ POST /api/v1/rules/rollback
 
 ---
 
+## Sync endpoints
+
+### Sync status
+
+```
+GET /api/v1/detections/sync-status
+```
+
+Returns rule IDs, titles, groups, hashes, versions, and update timestamps for conflict detection.
+
+### Import or sync rules
+
+```
+POST /api/v1/detections/import
+```
+
+```json
+{
+  "mode": "sync",
+  "message": "Sync detections from Git",
+  "atomic": true,
+  "rules": [
+    {
+      "title": "Suspicious PowerShell",
+      "platform": "splunk",
+      "query": "index=windows EventCode=4104",
+      "enabled": true,
+      "tests": {
+        "positive": [{ "name": "Encoded command", "data": [{ "EventCode": 4104 }] }]
+      },
+      "operational_guidance": "## Runbook\n\n### Alert intent\nReview suspicious PowerShell activity.\n"
+    }
+  ]
+}
+```
+
+Rule sync includes metadata, query, groups, tests, and runbook/playbook Markdown. The `operational_guidance` field name is kept for API and YAML compatibility; the visible product concept is runbooks and playbooks.
+
+### Diff a rule
+
+```
+POST /api/v1/detections/{id}/diff
+```
+
+Returns field-level changes between incoming YAML and the current platform rule, including response-step changes.
+
+---
+
+## Simulation endpoints
+
+Simulation tokens should include `simulations:read` and `simulations:write`.
+
+```
+POST /api/v1/simulations/scenarios/sync
+POST /api/v1/simulations/runs
+GET /api/v1/simulations/runs
+GET /api/v1/simulations/runs/{id}
+DELETE /api/v1/simulations/runs/{id}
+GET /api/v1/simulations/coverage
+GET /api/v1/simulations/gaps
+POST /api/v1/simulations/verify/{id}
+GET /api/v1/simulations/verify/{id}
+```
+
+The CLI uses these endpoints to sync adapter scenario catalogs, report live runs, trigger detection correlation, and fetch coverage gaps.
+
+---
+
 ## Approval endpoints
 
 ### Submit for approval
@@ -197,4 +265,3 @@ X-RateLimit-Reset: 1708300800
 ```
 
 Exceeded limits return `429 Too Many Requests`. Resource limits return `403 Forbidden`.
-
