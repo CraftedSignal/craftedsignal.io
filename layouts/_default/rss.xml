@@ -1,0 +1,42 @@
+{{- $pctx := . -}}
+{{- if .IsHome }}{{ $pctx = .Site }}{{ end -}}
+{{- $pages := slice -}}
+{{- if or $.IsHome $.IsSection -}}
+  {{- $pages = $pctx.RegularPages -}}
+{{- else -}}
+  {{- $pages = $pctx.Pages -}}
+{{- end -}}
+{{- $limit := .Site.Config.Services.RSS.Limit -}}
+{{- if ge $limit 1 -}}
+  {{- $pages = $pages | first $limit -}}
+{{- end -}}
+{{- printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:webfeeds="http://webfeeds.org/rss/1.0">
+  <channel>
+    <title>{{ if eq .Title .Site.Title }}{{ .Site.Title | html }}{{ else }}{{ with .Title }}{{ . | html }} on {{ end }}{{ .Site.Title | html }}{{ end }}</title>
+    <link>{{ .Permalink }}</link>
+    <description>{{ .Site.Params.description | html }}</description>
+    <generator>Hugo</generator>
+    {{ with .Site.Language.Locale }}<language>{{ . }}</language>{{ end }}
+    {{ with .OutputFormats.Get "RSS" }}
+    <atom:link href="{{ .Permalink }}" rel="self" type="{{ .MediaType.Type }}" />
+    {{ end }}
+    <image>
+      <url>{{ "favicon-32x32.png" | absURL }}</url>
+      <title>{{ .Site.Title | html }}</title>
+      <link>{{ .Site.BaseURL }}</link>
+      <width>32</width>
+      <height>32</height>
+    </image>
+    <webfeeds:icon>{{ "favicon.svg" | absURL }}</webfeeds:icon>
+    {{ range $pages }}
+    <item>
+      <title>{{ .Title | html }}</title>
+      <link>{{ .Permalink }}</link>
+      {{ if not .Date.IsZero }}<pubDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" }}</pubDate>{{ end }}
+      <guid>{{ .Permalink }}</guid>
+      <description>{{ with .Description }}{{ . | html }}{{ else }}{{ .Summary | plainify | html }}{{ end }}</description>
+    </item>
+    {{ end }}
+  </channel>
+</rss>
