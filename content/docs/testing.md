@@ -82,6 +82,8 @@ If tests fail, the push is blocked. Use `-force-sync` to override (use with caut
 
 Navigate to a rule and click **Run Tests**. Results show pass/fail with details inline.
 
+For Microsoft Sentinel, live runtime tests require the shared test-data DCR described in [Platform Guides > Microsoft Sentinel](/docs/platforms/#runtime-test-validation-dcr). CraftedSignal uses one stream, `Custom-CraftedSignalTest`, and one table, `CraftedSignalTest_CL`; it does not require a stream per Sentinel source table.
+
 ### In CI/CD
 
 Tests run automatically as part of the pipeline:

@@ -71,6 +71,68 @@ Add a Sentinel target in **Settings > Targets**:
 
 The app registration needs `Microsoft Sentinel Contributor` and `Log Analytics Reader` permissions.
 
+### Runtime test validation DCR
+
+Sentinel runtime test validation uses one shared Log Analytics custom table. Do not create a stream or table per Sentinel source table.
+
+Add a Data Collection Endpoint (DCE), then create one Data Collection Rule (DCR) with:
+
+| Setting | Value |
+|---------|-------|
+| **Stream** | `Custom-CraftedSignalTest` |
+| **Output table** | `CraftedSignalTest_CL` |
+| **Columns** | `TimeGenerated`, `TestMarker`, `SourceTable`, `Event` |
+
+Use this DCR creation payload, replacing the location and workspace resource ID:
+
+```json
+{
+  "location": "<same-region-as-log-analytics-workspace>",
+  "kind": "Direct",
+  "properties": {
+    "streamDeclarations": {
+      "Custom-CraftedSignalTest": {
+        "columns": [
+          { "name": "TimeGenerated", "type": "dateTime" },
+          { "name": "TestMarker", "type": "string" },
+          { "name": "SourceTable", "type": "string" },
+          { "name": "Event", "type": "dynamic" }
+        ]
+      }
+    },
+    "destinations": {
+      "logAnalytics": [
+        {
+          "workspaceResourceId": "/subscriptions/<subscription-id>/resourceGroups/<resource-group>/providers/Microsoft.OperationalInsights/workspaces/<workspace-name>",
+          "name": "sentinelWorkspace"
+        }
+      ]
+    },
+    "dataFlows": [
+      {
+        "streams": ["Custom-CraftedSignalTest"],
+        "destinations": ["sentinelWorkspace"],
+        "transformKql": "source",
+        "outputStream": "Custom-CraftedSignalTest_CL"
+      }
+    ]
+  }
+}
+```
+
+Then set these fields on the Sentinel target:
+
+| Field | Value |
+|-------|-------|
+| **DCR Ingestion Endpoint** | DCE URL, for example `https://my-dce.eastus-1.ingest.monitor.azure.com` |
+| **DCR Immutable ID** | `properties.immutableId` from the DCR resource JSON |
+| **DCR Stream** | `Custom-CraftedSignalTest` |
+| **DCR Table** | Leave blank unless your output table is not `CraftedSignalTest_CL` |
+
+The app registration also needs `Monitoring Metrics Publisher` on the DCR for ingestion and workspace query access, such as `Log Analytics Reader`, on the Log Analytics workspace.
+
+When you save the Sentinel target, CraftedSignal validates the DCR by ingesting a canary row into `Custom-CraftedSignalTest` and querying `CraftedSignalTest_CL` for its `TestMarker`.
+
 ### What CraftedSignal manages
 
 - Analytics rules (scheduled and NRT)
