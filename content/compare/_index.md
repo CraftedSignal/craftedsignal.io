@@ -1,6 +1,6 @@
 ---
 title: "Compare CraftedSignal"
-description: "Compare CraftedSignal with the status quo, Anvilogic, CardinalOps, Cymulate, Picus, AttackIQ, SOC Prime, Panther, SnapAttack and Elastic Security."
+description: "Compare CraftedSignal against the status quo and adjacent security platforms by fit, operating model and detection governance depth."
 ---
 
 Security teams rarely buy from a blank slate. They compare tools that find gaps, validate exposure, generate content, replace SIEM workflows, or govern the detection lifecycle.
