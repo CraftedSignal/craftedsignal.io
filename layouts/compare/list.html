@@ -1,0 +1,59 @@
+{{ define "main" }}
+{{ $pages := .Pages.ByWeight }}
+<section class="px-6 pt-20 pb-14 md:pt-28 md:pb-20">
+  <div class="max-w-6xl mx-auto space-y-10">
+    <header class="max-w-4xl space-y-5">
+      <p class="text-xs font-semibold uppercase tracking-[0.14em] text-accent">Compare</p>
+      <h1 class="font-display text-4xl md:text-6xl font-semibold leading-tight">{{ .Title }}</h1>
+      <p class="text-xl text-muted">{{ .Description }}</p>
+      <div class="prose prose-invert max-w-none prose-p:text-muted">
+        {{ .Content }}
+      </div>
+    </header>
+
+    <div class="grid md:grid-cols-3 gap-4">
+      <div class="rounded-2xl border border-stroke bg-panel/60 p-5 space-y-2">
+        <p class="font-mono text-xs text-accent">Find</p>
+        <h2 class="font-display text-lg font-semibold">Gaps come from everywhere.</h2>
+        <p class="text-sm text-muted">Threat intel, ethical hack findings, BAS, posture tools, analyst feedback, drift and dead rules all create detection work.</p>
+      </div>
+      <div class="rounded-2xl border border-stroke bg-panel/60 p-5 space-y-2">
+        <p class="font-mono text-xs text-accent">Fix</p>
+        <h2 class="font-display text-lg font-semibold">Changes need control.</h2>
+        <p class="text-sm text-muted">Rules, tests, runbooks, approvals, impact preview, monitoring mode and rollback stay in one governed loop.</p>
+      </div>
+      <div class="rounded-2xl border border-stroke bg-panel/60 p-5 space-y-2">
+        <p class="font-mono text-xs text-accent">Prove</p>
+        <h2 class="font-display text-lg font-semibold">Evidence survives the sprint.</h2>
+        <p class="text-sm text-muted">Export what changed, who approved it, where it deployed, which tests passed and whether the detection stayed healthy.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="px-6 py-14 md:py-20 bg-panel/35 border-y border-stroke">
+  <div class="max-w-6xl mx-auto space-y-8">
+    <div class="max-w-3xl space-y-3">
+      <p class="text-xs font-semibold uppercase tracking-[0.14em] text-accent">Vendor fit</p>
+      <h2 class="font-display text-2xl md:text-3xl font-semibold">Choose by the job you need done.</h2>
+      <p class="text-sm text-muted">These comparisons are intentionally fit-based. A broader AI SOC platform, a posture tool and a BAS platform solve different problems than a detection engineering control plane.</p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-4">
+      {{ range $pages }}
+      {{ $isHighlighted := .Params.highlight }}
+      <a href="{{ .RelPermalink }}" class="group rounded-2xl border p-5 space-y-4 transition {{ if $isHighlighted }}md:col-span-3 border-accent/45 bg-accent/10 shadow-soft hover:border-accent/70{{ else }}border-stroke bg-base/70 hover:border-accent/40 hover:bg-base/90{{ end }}">
+        <div class="flex items-start justify-between gap-3">
+          <span class="rounded-lg border {{ if $isHighlighted }}border-accent/35 bg-accent/10{{ else }}border-stroke bg-panel/80{{ end }} px-2 py-1 font-mono text-xs text-accent">{{ if $isHighlighted }}Status quo{{ else }}vs {{ .Params.competitor }}{{ end }}</span>
+          <span class="text-muted group-hover:text-accent transition" aria-hidden="true">-&gt;</span>
+        </div>
+        <div class="space-y-2">
+          <h3 class="font-display text-xl font-semibold text-text">{{ .Title }}</h3>
+          <p class="text-sm text-muted">{{ .Description }}</p>
+        </div>
+      </a>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}

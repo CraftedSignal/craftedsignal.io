@@ -23,35 +23,50 @@
     </aside>
 
     <article class="min-w-0">
-      <header class="grid lg:grid-cols-[1fr_0.9fr] gap-8 items-center border-b border-stroke pb-10">
-        <div class="space-y-5">
-          <p class="text-xs font-semibold uppercase tracking-[0.14em] text-accent">{{ .Params.stage }} · {{ .Params.eyebrow }}</p>
-          <h1 class="font-display text-4xl md:text-5xl font-semibold leading-tight">{{ .Title }}</h1>
-          <p class="text-xl text-muted">{{ .Description }}</p>
-          {{ with .Params.quick_points }}
-          <ul class="grid sm:grid-cols-2 gap-2 pt-2">
-            {{ range . }}
-            <li class="rounded-xl border border-stroke bg-panel/60 px-3 py-2 text-sm text-muted">{{ . }}</li>
-            {{ end }}
-          </ul>
+      <header class="border-b border-stroke pb-8 md:pb-10">
+        <div class="grid lg:grid-cols-[1fr_0.9fr] gap-8 items-center">
+          <div class="space-y-5">
+            <p class="text-xs font-semibold uppercase tracking-[0.14em] text-accent">{{ .Params.stage }} · {{ .Params.eyebrow }}</p>
+            <h1 class="font-display text-4xl md:text-5xl font-semibold leading-tight">{{ .Title }}</h1>
+            <p class="text-xl text-muted">{{ .Description }}</p>
+          </div>
+
+          {{ with .Params.hero_image }}
+          <figure class="rounded-2xl border border-stroke bg-panel/60 overflow-hidden shadow-soft">
+            <img src="{{ . }}" alt="{{ $.Params.hero_alt | default $.Title }}" class="w-full aspect-[16/10] object-cover object-top bg-base/60" loading="eager">
+          </figure>
           {{ end }}
         </div>
 
-        {{ with .Params.hero_image }}
-        <figure class="rounded-2xl border border-stroke bg-panel/60 overflow-hidden shadow-soft">
-          <img src="{{ . }}" alt="{{ $.Params.hero_alt | default $.Title }}" class="w-full aspect-[16/10] object-cover object-top bg-base/60" loading="eager">
-        </figure>
+        {{ with .Params.quick_points }}
+        <ol class="mt-8 space-y-2">
+          {{ range $index, $point := . }}
+          {{ $numberTone := cond (eq (mod $index 3) 1) "text-accent2" (cond (eq (mod $index 3) 2) "text-emerald-300" "text-accent") }}
+          {{ $rowTone := cond (eq (mod $index 3) 1) "border-l-accent2 bg-accent2/5" (cond (eq (mod $index 3) 2) "border-l-emerald-400 bg-emerald-400/5" "border-l-accent bg-accent/5") }}
+          <li class="{{ $rowTone }} grid grid-cols-[2.5rem_minmax(0,1fr)] gap-3 rounded-lg border-l-2 px-4 py-3 text-sm text-muted">
+            <span class="{{ $numberTone }} pt-1 font-mono text-xs font-semibold tabular-nums">{{ printf "%02d" (add $index 1) }}</span>
+            <span class="leading-6">{{ $point }}</span>
+          </li>
+          {{ end }}
+        </ol>
         {{ end }}
       </header>
 
       {{ with .Params.outcomes }}
       <section class="py-10 border-b border-stroke">
-        <div class="grid md:grid-cols-3 gap-4">
-          {{ range . }}
-          <div class="rounded-2xl border border-stroke bg-panel/60 p-5 space-y-2">
-            <p class="font-mono text-xs text-accent">{{ .label }}</p>
-            <h2 class="font-display text-lg font-semibold text-text">{{ .title }}</h2>
-            <p class="text-sm text-muted">{{ .body }}</p>
+        <div class="mb-5 space-y-2">
+          <p class="text-xs font-semibold uppercase tracking-[0.14em] text-accent">Outcomes</p>
+          <h2 class="font-display text-2xl font-semibold text-text">What this changes for the team.</h2>
+        </div>
+        <div class="overflow-hidden rounded-xl border border-stroke bg-panel/35">
+          {{ range $index, $outcome := . }}
+          {{ $labelTone := cond (eq (mod $index 3) 1) "text-accent2" (cond (eq (mod $index 3) 2) "text-emerald-300" "text-accent") }}
+          <div class="grid gap-2 border-t border-stroke p-4 first:border-t-0 md:grid-cols-[8rem_minmax(0,1fr)] md:gap-5 md:p-5">
+            <p class="{{ $labelTone }} pt-1 font-mono text-xs font-semibold uppercase tracking-[0.14em]">{{ .label }}</p>
+            <div class="min-w-0 space-y-1.5">
+              <h2 class="font-display text-lg font-semibold text-text">{{ .title }}</h2>
+              <p class="text-sm leading-6 text-muted">{{ .body }}</p>
+            </div>
           </div>
           {{ end }}
         </div>

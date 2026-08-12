@@ -10,7 +10,7 @@ enableMissingTranslationPlaceholders = false
 
 [params]
   description = "Detection Engineering Control Plane"
-  tagline = "Write rules once, deploy everywhere safely. Noise budgets, cost controls, and guardrails for Splunk, Sentinel, and CrowdStrike."
+  tagline = "Turn findings, threat intel and coverage gaps into tested, approved and monitored detections across your security stack."
   email = "hello@craftedsignal.io"
   salesEmail = "hello@craftedsignal.io"
   docsURL = "/docs/"

@@ -8,7 +8,7 @@
       Multi-tenant detection releases without deployment surprises.
     </h1>
     <p class="text-xl text-muted max-w-3xl mx-auto">
-      Template once, roll out in waves, and keep every tenant in policy. Delegated admin and health signals per tenant keep you ahead of SLAs.
+      Template once, roll out in waves and keep every tenant in policy. Reduce bespoke customer handholding, protect analyst time and keep detection delivery margin intact.
     </p>
     <div class="flex flex-wrap justify-center gap-4 pt-4">
       <a class="inline-flex px-6 py-3 rounded-xl bg-accent text-white font-semibold shadow-soft hover:scale-[1.01] transition" href="https://app.craftedsignal.io/" target="_blank" rel="noopener noreferrer">
@@ -22,21 +22,49 @@
 </section>
 
 <section class="px-6 py-14 md:py-20 bg-panel/40 border-y border-stroke">
+  <div class="max-w-6xl mx-auto space-y-8">
+    <div class="text-center space-y-3">
+      <p class="text-xs font-semibold uppercase tracking-[0.14em] text-accent">MSSP economics</p>
+      <h2 class="font-display text-2xl md:text-3xl font-semibold">More reusable delivery. Less customer-by-customer drag.</h2>
+      <p class="text-sm text-muted max-w-3xl mx-auto mb-4">CraftedSignal helps MSSPs turn detection engineering into a repeatable service motion instead of a pile of bespoke rule changes, status calls and spreadsheet evidence.</p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="rounded-2xl border border-stroke bg-base/70 p-6 space-y-3">
+        <p class="text-xs font-semibold uppercase tracking-[0.14em] text-accent">Time</p>
+        <h3 class="font-display text-xl font-semibold">Reuse the rollout path</h3>
+        <p class="text-sm text-muted">Build a detection pack once, apply scoped tenant overrides and move it through waves instead of repeating the same implementation work for every customer.</p>
+      </div>
+      <div class="rounded-2xl border border-stroke bg-base/70 p-6 space-y-3">
+        <p class="text-xs font-semibold uppercase tracking-[0.14em] text-accent">Handholding</p>
+        <h3 class="font-display text-xl font-semibold">Give customers evidence, not meetings</h3>
+        <p class="text-sm text-muted">Customer-ready exports show what changed, who approved it, where it deployed and whether it stayed healthy so teams can answer questions without another manual status pack.</p>
+      </div>
+      <div class="rounded-2xl border border-stroke bg-base/70 p-6 space-y-3">
+        <p class="text-xs font-semibold uppercase tracking-[0.14em] text-accent">Margin</p>
+        <h3 class="font-display text-xl font-semibold">Stop noisy tenants eating the service</h3>
+        <p class="text-sm text-muted">Noise budgets, health queues and tenant-level rollback keep one customer from consuming disproportionate analyst time after a release.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="px-6 py-14 md:py-20 bg-panel/40 border-y border-stroke">
   <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-6">
     <div class="rounded-2xl border border-stroke bg-base/70 p-6 space-y-3">
       <p class="text-xs font-semibold uppercase tracking-[0.14em] text-accent">Fleet rollouts</p>
       <h3 class="font-display text-xl font-semibold">Template → per-tenant overrides</h3>
-      <p class="text-sm text-muted">Standard packs with scoped overrides per tenant. Track parity with translation diffs before promotion.</p>
+      <p class="text-sm text-muted">Standard packs with scoped overrides per tenant. Track parity with translation diffs before promotion so delivery stays reusable.</p>
     </div>
     <div class="rounded-2xl border border-stroke bg-base/70 p-6 space-y-3">
       <p class="text-xs font-semibold uppercase tracking-[0.14em] text-accent">Delegated control</p>
       <h3 class="font-display text-xl font-semibold">Tenant-scoped RBAC + approvals</h3>
-      <p class="text-sm text-muted">Change windows, deployment guardrails, and delegated approvals keep customers safe while you move fast.</p>
+      <p class="text-sm text-muted">Change windows, deployment guardrails and delegated approvals keep customers safe while reducing custom review paths.</p>
     </div>
     <div class="rounded-2xl border border-stroke bg-base/70 p-6 space-y-3">
       <p class="text-xs font-semibold uppercase tracking-[0.14em] text-accent">Health at scale</p>
       <h3 class="font-display text-xl font-semibold">Noise ratio and stale-rule cleanup</h3>
-      <p class="text-sm text-muted">Per-tenant dashboards surface noisy or dead rules. Roll back or retire before SLAs take a hit.</p>
+      <p class="text-sm text-muted">Per-tenant dashboards surface noisy or dead rules. Roll back or retire before SLAs and margins take a hit.</p>
     </div>
   </div>
 </section>
@@ -46,11 +74,12 @@
     <div class="space-y-4">
       <p class="text-xs font-semibold uppercase tracking-[0.14em] text-accent">Wave planner</p>
       <h2 class="font-display text-2xl md:text-3xl font-semibold">Plan releases in waves with guardrails</h2>
-      <p class="text-sm text-muted">Wave 1 monitoring deploy on low-risk tenants, Wave 2 majority with automated health checks, Wave 3 full rollout with rollback SLA if noise/cost caps breach.</p>
+      <p class="text-sm text-muted">Wave 1 monitoring deploy on low-risk tenants, Wave 2 majority with automated health checks and Wave 3 full rollout with rollback SLA if noise or cost caps breach.</p>
       <ul class="space-y-2 text-sm text-text">
         <li>• Per-tenant approvals and blackout windows</li>
         <li>• Deploy metrics: projected alerts, cost, parser drift</li>
         <li>• Auto-rollback if noise budgets breached</li>
+        <li>• Evidence exports for customer success and QBRs</li>
       </ul>
     </div>
     <div class="rounded-2xl border border-stroke bg-panel/70 p-6 space-y-4">
@@ -83,7 +112,7 @@
       <div class="space-y-6">
         <p class="text-xs font-semibold uppercase tracking-[0.14em] text-accent">Fleet visibility</p>
         <h2 class="font-display text-2xl md:text-3xl font-semibold">Per-tenant health at a glance</h2>
-        <p class="text-muted">See noise ratios, coverage gaps, stale rules, and SLA status across your entire customer base. Drill into any tenant for detailed health metrics.</p>
+        <p class="text-muted">See noise ratios, coverage gaps, stale rules and SLA status across your entire customer base. Drill into any tenant for detailed health metrics before support time disappears.</p>
         <ul class="space-y-3">
           <li class="flex items-start gap-3">
             <svg aria-hidden="true" class="w-5 h-5 text-accent mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
@@ -91,7 +120,7 @@
           </li>
           <li class="flex items-start gap-3">
             <svg aria-hidden="true" class="w-5 h-5 text-accent mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-            <span class="text-sm">Drift detection across all tenants, catch out-of-band SIEM changes</span>
+            <span class="text-sm">Drift detection across all tenants to catch out-of-band SIEM changes</span>
           </li>
           <li class="flex items-start gap-3">
             <svg aria-hidden="true" class="w-5 h-5 text-accent mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
@@ -150,7 +179,7 @@
   <div class="max-w-6xl mx-auto space-y-8">
     <div class="text-center space-y-4">
       <p class="text-xs font-semibold uppercase tracking-[0.14em] text-accent">Platforms</p>
-      <h2 class="font-display text-2xl md:text-3xl font-semibold">Splunk, Sentinel, CrowdStrike, Rapid7, managed as a fleet</h2>
+      <h2 class="font-display text-2xl md:text-3xl font-semibold">Multi-platform customers, managed as a fleet</h2>
     </div>
     <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
       <div class="rounded-2xl border border-stroke bg-base/70 p-5 space-y-2">
@@ -159,7 +188,7 @@
       </div>
       <div class="rounded-2xl border border-stroke bg-base/70 p-5 space-y-2">
         <h3 class="font-semibold text-sm">Tenant overrides</h3>
-        <p class="text-xs text-muted">Scoped exceptions, custom thresholds, and per-tenant exclusion lists without forking the baseline.</p>
+        <p class="text-xs text-muted">Scoped exceptions, custom thresholds and per-tenant exclusion lists without forking the baseline.</p>
       </div>
       <div class="rounded-2xl border border-stroke bg-base/70 p-5 space-y-2">
         <h3 class="font-semibold text-sm">Translation diffs</h3>
@@ -167,7 +196,7 @@
       </div>
       <div class="rounded-2xl border border-stroke bg-base/70 p-5 space-y-2">
         <h3 class="font-semibold text-sm">Onboarding playbook</h3>
-        <p class="text-xs text-muted">Baseline template, change-window configuration, and rollback checklist included in your pilot.</p>
+        <p class="text-xs text-muted">Baseline template, change-window configuration and rollback checklist included in your pilot.</p>
       </div>
     </div>
   </div>
@@ -178,7 +207,7 @@
 <section class="px-6 py-14 md:py-20">
   <div class="max-w-3xl mx-auto text-center space-y-6">
     <h2 class="font-display text-2xl md:text-3xl font-semibold">Plan your next wave.</h2>
-    <p class="text-muted">We'll map tenants into waves, set deployment guardrails, and run the first rollout together.</p>
+    <p class="text-muted">We'll map tenants into waves, set deployment guardrails and run the first rollout together.</p>
     <div class="flex flex-wrap justify-center gap-4">
       <a class="inline-flex px-6 py-3 rounded-xl bg-accent text-white font-semibold shadow-soft hover:scale-[1.01] transition" href="https://app.craftedsignal.io/" target="_blank" rel="noopener noreferrer">
         Get started

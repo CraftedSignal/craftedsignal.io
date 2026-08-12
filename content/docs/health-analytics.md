@@ -1,6 +1,6 @@
 ---
 title: "Health & Analytics"
-description: "Monitor detection health with MITRE ATT&CK coverage heatmaps, noise budgets, signal-to-noise ratios, team workload metrics, MTTR, and ROI tracking dashboards."
+description: "Monitor detection health with MITRE ATT&CK coverage heatmaps, noise budgets, signal-to-noise ratios, team workload metrics, MTTR and ROI tracking dashboards."
 weight: 7
 section: "Core Concepts"
 ---
@@ -80,13 +80,13 @@ These metrics help SOC leaders balance workload and identify bottlenecks.
 CraftedSignal scores each rule's value to your organization:
 
 - **SNR score**: How clean is the signal?
-- **Detection value**: Based on severity, confidence, and MITRE coverage
+- **Detection value**: Based on severity, confidence and MITRE coverage
 - **Confidence decay**: Rules with declining accuracy are flagged
 - **Portability score**: Risk of semantic drift across platforms
 
 Low-value rules are surfaced for retirement or improvement.
 
-See [Recommendations](/docs/recommendations/) for the action queue that turns coverage, noise, mapping, AI, and response-step signals into specific next steps.
+See [Recommendations](/docs/recommendations/) for the action queue that turns coverage, noise, mapping, AI and response-step signals into specific next steps.
 
 ---
 
@@ -137,7 +137,7 @@ Owners get a dedicated **AI Quality** screen at `/ai-quality` that surfaces ever
 - The cost estimate (best-effort; $0 for self-hosted models that don't expose cost).
 - The prompt and the response, for spot-checking decisions.
 
-Aggregate views show per-activity volume, cost over time, and the trailing-30-day spend per company. Useful for budget reviews, model swaps, and catching prompt regressions early.
+Aggregate views show per-activity volume, cost over time and the trailing-30-day spend per company. Useful for budget reviews, model swaps and catching prompt regressions early.
 
 The same data backs cost analytics on multi-tenant deployments. See [AI Quality](/docs/ai-quality/) for the owner-facing metrics view and [AI Assistance](/docs/ai/) for the activity catalog and the off-switch.
 
@@ -150,8 +150,8 @@ Group rules by any dimension to monitor and control:
 - By team (SOC Tier 1, Tier 2, Threat Hunting)
 - By service (Web, Identity, Endpoint)
 - By environment (Production, Staging, Dev)
-- By compliance framework (SOC2, NIS2, PCI-DSS)
+- By evidence category, team, or internal control family
 
 Each group gets its own dashboard with independent health metrics.
 
-See [Groups](/docs/groups/) for deployable rule sets, group quality, and group health.
+See [Groups](/docs/groups/) for deployable rule sets, group quality and group health.

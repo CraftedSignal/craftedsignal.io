@@ -1,6 +1,6 @@
 ---
 title: "Configuration"
-description: "Complete YAML configuration reference for CraftedSignal covering HTTP, storage, security, Temporal, AI, email, logging, and production hardening options."
+description: "Complete YAML configuration reference for CraftedSignal covering HTTP, storage, security, Temporal, AI, email, logging and production hardening options."
 weight: 2
 section: "Getting Started"
 ---
@@ -65,7 +65,7 @@ Open `http://localhost:8080` and register — the first user claims the instance
 
 ## Production config
 
-A hardened config for production deployments with AI, email, TLS, and SSO-ready settings:
+A hardened config for production deployments with AI, email, TLS and SSO-ready settings:
 
 ```yaml
 # config.yaml — production
@@ -165,7 +165,7 @@ In development, `http://localhost:<port>` is always allowed automatically.
 
 ### Storage
 
-CraftedSignal supports two database backends. The database stores all application state: rules, test results, audit logs, user accounts, and encrypted credentials.
+CraftedSignal supports two database backends. The database stores all application state: rules, test results, audit logs, user accounts and encrypted credentials.
 
 | Key | Env var | Type | Default | Description |
 |-----|---------|------|---------|-------------|
@@ -292,7 +292,7 @@ User passwords are salted and hashed with Argon2id (3 iterations, 64 MB memory, 
 
 ### Temporal
 
-CraftedSignal uses [Temporal](https://temporal.io) as its workflow orchestration engine. All background work runs as Temporal workflows — durable, retryable, and observable. This includes:
+CraftedSignal uses [Temporal](https://temporal.io) as its workflow orchestration engine. All background work runs as Temporal workflows — durable, retryable and observable. This includes:
 
 - **Deployments and rollbacks** — pushing rules to SIEMs, rolling back on failure
 - **Testing** — executing positive/negative test cases against live SIEMs
@@ -334,7 +334,7 @@ The `max_concurrent` setting controls how many background activities can execute
 
 - **10** (default) — sufficient for small teams with 1–3 SIEMs
 - **20–30** — medium deployments with multiple SIEMs and active teams
-- **50+** — large deployments with many SIEMs, frequent deployments, and heavy AI usage
+- **50+** — large deployments with many SIEMs, frequent deployments and heavy AI usage
 
 AI tasks run on a separate task queue (`<task_queue>_ai`) so they don't block deployments or health checks.
 
@@ -379,7 +379,7 @@ All emails are sent asynchronously via Temporal workflows with automatic retries
 
 ### AI
 
-CraftedSignal's AI features use LLMs for rule generation, runbook and playbook drafts, analysis, test case creation, and recommendations. The AI engine connects to any OpenAI-compatible API endpoint — typically a local [Ollama](https://ollama.ai) instance for on-prem deployments.
+CraftedSignal's AI features use LLMs for rule generation, runbook and playbook drafts, analysis, test case creation and recommendations. The AI engine connects to any OpenAI-compatible API endpoint — typically a local [Ollama](https://ollama.ai) instance for on-prem deployments.
 
 | Key | Env var | Type | Default | Description |
 |-----|---------|------|---------|-------------|
@@ -441,11 +441,11 @@ Admins control platform capabilities from **Admin > Features**. Each toggle sets
 
 | Key | Env var | Type | Default | Per-rule override | Description |
 |-----|---------|------|---------|-------------------|-------------|
-| `features.ai_assist` | `FEATURES_AI_ASSIST` | bool | `true` | No | Enable AI rule generation, runbook and playbook drafts, suggestions, and autofix |
+| `features.ai_assist` | `FEATURES_AI_ASSIST` | bool | `true` | No | Enable AI rule generation, runbook and playbook drafts, suggestions and autofix |
 | `features.sigma_compilation` | `FEATURES_SIGMA_COMPILATION` | bool | `true` | Yes | Auto-compile Sigma rules to connected SIEMs |
 | `features.auto_deploy` | `FEATURES_AUTO_DEPLOY` | bool | `false` | Yes | Deploy rules automatically after tests pass and approval is granted |
 | `features.threat_feed` | `FEATURES_THREAT_FEED` | bool | `true` | No | Sync and display threat intelligence feed |
-| `features.notifications` | `FEATURES_NOTIFICATIONS` | bool | `true` | No | Send email and Slack notifications for deployments, health, and drift |
+| `features.notifications` | `FEATURES_NOTIFICATIONS` | bool | `true` | No | Send email and Slack notifications for deployments, health and drift |
 | `features.rule_language_override` | `FEATURES_RULE_LANGUAGE_OVERRIDE` | bool | `true` | — | Allow engineers to write individual rules in a native SIEM language instead of Sigma |
 
 When `sigma_compilation` is enabled, rules authored in Sigma are auto-compiled to all connected SIEMs. When `rule_language_override` is enabled, engineers can choose to write individual rules in a native SIEM language instead of Sigma.
@@ -456,7 +456,7 @@ The web app also stores per-company feature names for product surfaces:
 
 | Feature name | Admin label | Description |
 |--------------|-------------|-------------|
-| `ai` | AI Features | AI-powered analysis, recommendations, rule generation, test generation, and response-step drafts. |
+| `ai` | AI Features | AI-powered analysis, recommendations, rule generation, test generation and response-step drafts. |
 | `rule_generation` | AI Rule Generation | Generate detection rules from natural-language descriptions. |
 | `test_generation` | AI Test Generation | Generate test cases for detection rules. |
 | `rule_suggestions` | AI Rule Suggestions | Show AI-powered improvement suggestions and insights in the rule sidebar. |
@@ -473,8 +473,8 @@ The web app also stores per-company feature names for product surfaces:
 | `hunts` | Hunts | Enable hypothesis-driven threat hunting. |
 | `error_reporting` | Error Reporting | Enable encrypted remote error reporting. |
 | `bug_reporting` | Bug Reports | Let signed-in users submit current-page bug reports. |
-| `dashboards_disabled` | Dashboards | Explicit opt-out from dashboard, report, recommendation, and overview pages. |
-| `siem_integrations_disabled` | SIEM Integrations | Explicit opt-out from targets, live hunts/tests, and SIEM deployments. |
+| `dashboards_disabled` | Dashboards | Explicit opt-out from dashboard, report, recommendation and overview pages. |
+| `siem_integrations_disabled` | SIEM Integrations | Explicit opt-out from targets, live hunts/tests and SIEM deployments. |
 | `rules_disabled` | Rules | Explicit opt-out from detection Rules pages and navigation. |
 | `groups_disabled` | Groups | Explicit opt-out from detection Groups pages and navigation. |
 | `response_guidance_disabled` | Runbooks & Playbooks | Explicit opt-out from runbook/playbook panels and editors. |
@@ -497,9 +497,9 @@ When testing detection rules, CraftedSignal injects sample log events into your 
 |-----|---------|------|---------|-------------|
 | `audit_log.retention_days` | `AUDITLOG_RETENTION_DAYS` | int | `90` | Days to retain audit log entries. A daily Temporal workflow prunes entries older than this |
 
-Audit logs capture every significant action: rule changes, deployments, rollbacks, approvals, logins, settings changes, and AI interactions. They can be exported from **Settings > Audit Logs** in the web UI.
+Audit logs capture every significant action: rule changes, deployments, rollbacks, approvals, logins, settings changes and AI interactions. They can be exported from **Settings > Audit Logs** in the web UI.
 
-For compliance-sensitive deployments (SOC 2, NIS2), set this to 365 or higher.
+For audit-sensitive deployments, set this to 365 or higher.
 
 ---
 
@@ -512,7 +512,7 @@ The library provides shared detection rule templates that users can import and c
 | `library.disabled` | `LIBRARY_DISABLED` | bool | `false` | Disable the library feature entirely |
 | `library.repositories` | `LIBRARY_REPOSITORIES` | []string | `[craftedsignal/library]` | Git repository URLs containing rule templates |
 
-CraftedSignal periodically syncs library indexes from configured repositories. Each repository contains a signed `library.index.yaml` with detection templates including queries, test cases, MITRE mappings, and metadata.
+CraftedSignal periodically syncs library indexes from configured repositories. Each repository contains a signed `library.index.yaml` with detection templates including queries, test cases, MITRE mappings and metadata.
 
 You can add your own internal repositories alongside the default CraftedSignal library.
 
@@ -520,14 +520,14 @@ You can add your own internal repositories alongside the default CraftedSignal l
 
 ### Threat feed
 
-The threat feed delivers ready-to-use detection rules for trending and novel threats, including MITRE ATT&CK mappings, IOCs, and test cases.
+The threat feed delivers ready-to-use detection rules for trending and novel threats, including MITRE ATT&CK mappings, IOCs and test cases.
 
 | Key | Env var | Type | Default | Description |
 |-----|---------|------|---------|-------------|
 | `threat_feed.disabled` | `THREAT_FEED_DISABLED` | bool | `false` | Disable threat feed syncing |
 | `threat_feed.sync_interval_min` | `THREAT_FEED_SYNC_INTERVAL_MIN` | int | `30` | Minutes between checks for new feed updates |
 
-The sync workflow checks for new feed bundles, downloads and decrypts them using your license key, and imports threat indicators. After a successful sync, an AI relevance scoring pass ranks threats by applicability to your environment.
+The sync workflow checks for new feed bundles, downloads and decrypts them using your license key and imports threat indicators. After a successful sync, an AI relevance scoring pass ranks threats by applicability to your environment.
 
 The threat feed is a licensed feature — it requires `threat_feed` in your license's feature list.
 
@@ -580,11 +580,11 @@ Spans flush on shutdown with a 5-second timeout. Failures during exporter init a
 |-----|---------|------|---------|-------------|
 | `license_key` | `LICENSE_KEY` | string | — | License key for self-hosted deployments |
 
-License keys are signed tokens that encode your tier, quotas, and enabled features. The key is verified against an embedded public key on startup.
+License keys are signed tokens that encode your tier, quotas and enabled features. The key is verified against an embedded public key on startup.
 
-**Enforced limits** include: max detections, max enabled detections, max SIEMs, max users, max API keys, API requests per day, and storage.
+**Enforced limits** include: max detections, max enabled detections, max SIEMs, max users, max API keys, API requests per day and storage.
 
-**Feature flags** in the license control access to: API, export, SSO, audit logs, threat feed, and custom integrations.
+**Feature flags** in the license control access to: API, export, SSO, audit logs, threat feed and custom integrations.
 
 Without a license key, the instance runs on the free tier.
 

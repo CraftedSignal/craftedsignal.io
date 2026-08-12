@@ -1,13 +1,13 @@
 ---
 title: "Security"
-description: "CraftedSignal security architecture: data boundaries, AES-256 encryption with per-tenant keys, audit logging, SSO/MFA, and supply-chain security."
+description: "CraftedSignal security architecture: data boundaries, AES-256 encryption with per-tenant keys, audit logging, SSO/MFA and supply-chain security."
 weight: 13
 section: "Security"
 ---
 
 ## Overview
 
-CraftedSignal is a **control plane** — it manages rules, tests, approvals, and metadata. It does not ingest, store, or process your log data or telemetry. Your data stays in your SIEM.
+CraftedSignal is a **control plane** — it manages rules, tests, approvals and metadata. It does not ingest, store, or process your log data or telemetry. Your data stays in your SIEM.
 
 ---
 
@@ -52,7 +52,7 @@ master_secret
 **How it works:**
 
 - When a company first connects a SIEM, a random tenant key is generated and stored (wrapped) alongside the company record
-- On encrypt/decrypt, the tenant key is unwrapped in memory, used, and discarded
+- On encrypt/decrypt, the tenant key is unwrapped in memory, used and discarded
 - Each encryption operation uses a unique random salt and nonce (PBKDF2 key derivation + AES-256-GCM)
 - If a company doesn't yet have a tenant key (e.g. after upgrading from an older version), one is generated lazily on first credential access
 
@@ -101,11 +101,11 @@ See [Roles & Permissions](/docs/roles-permissions/) for the full permission matr
 - **Session management** — sessions use PASETO v2 tokens with encryption keys derived from the master secret via HKDF-SHA256. Sessions are server-side and revocable
 - **Password storage** — user passwords are salted and hashed with Argon2id (3 iterations, 64 MB memory, 4 threads)
 - **Credential encryption** — SIEM credentials are encrypted at rest with AES-256-GCM using [per-company encryption keys](#per-company-encryption-keys). OIDC secrets and webhook URLs are encrypted with keys derived from the master secret
-- **Content Security Policy** — strict CSP headers restrict script sources, frame embedding, and resource loading
+- **Content Security Policy** — strict CSP headers restrict script sources, frame embedding and resource loading
 
 ### Secure detection workflows
 
-CraftedSignal enforces security at every stage of the detection lifecycle — validation, testing, approval, deployment, and rollback. See [Secure Detection Workflows](/docs/secure-workflows/) for the full model.
+CraftedSignal enforces security at every stage of the detection lifecycle — validation, testing, approval, deployment and rollback. See [Secure Detection Workflows](/docs/secure-workflows/) for the full model.
 
 ---
 
@@ -120,7 +120,7 @@ CraftedSignal enforces security at every stage of the detection lifecycle — va
 
 ## Compliance
 
-CraftedSignal helps you meet NIS2, DORA, GDPR, and SOC 2 obligations, and is built to recognized standards itself, including readiness for the EU Cyber Resilience Act. See the [Trust](/trust/) page for the full breakdown.
+CraftedSignal helps teams produce detection governance evidence for NIS2, DORA, GDPR and internal audit workflows. See the [Trust](/trust/) page for the full breakdown.
 
 ---
 
@@ -131,5 +131,4 @@ For maximum control, deploy CraftedSignal on your own infrastructure:
 - Single binary, no external dependencies (SQLite + embedded Temporal)
 - AI via local Ollama instance — no data leaves your network
 - All the same features as SaaS
-- You manage upgrades, backups, and availability
-
+- You manage upgrades, backups and availability

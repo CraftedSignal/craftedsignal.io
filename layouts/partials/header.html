@@ -31,6 +31,10 @@
               <span class="block text-sm font-semibold text-text">All solutions</span>
               <span class="block text-xs text-muted">Browse the full detection engineering control plane.</span>
             </a>
+            <a href="/compare/" class="block rounded-xl px-3 py-3 hover:bg-panel/80 transition">
+              <span class="block text-sm font-semibold text-text">Compare platforms</span>
+              <span class="block text-xs text-muted">See where CraftedSignal fits against posture, BAS, AI SOC and native SIEM workflows.</span>
+            </a>
             <div class="grid grid-cols-2 gap-1 border-t border-stroke pt-2">
               <a href="/solutions/risk-modeling/" class="rounded-xl px-3 py-2 hover:bg-panel/80 transition">
                 <span class="block text-xs font-mono text-accent">01 · Risk</span>
@@ -60,7 +64,7 @@
           </div>
         </div>
       </div>
-      <a href="/trust/" class="hover:text-text transition">{{ i18n "navTrust" | default "Trust" }}</a>
+      <a href="/compare/" class="hover:text-text transition">{{ i18n "navCompare" | default "Compare" }}</a>
       <a href="/docs/" class="hover:text-text transition">{{ i18n "navDocs" | default "Documentation" }}</a>
     </nav>
 
@@ -77,6 +81,7 @@
         <div class="border-y border-stroke/70 py-2">
           <a href="/solutions/" class="block py-2 text-muted hover:text-text transition">{{ i18n "navSolutions" | default "Solutions" }}</a>
           <div class="grid gap-1 pl-3 pb-1">
+            <a href="/compare/" class="py-1 text-xs text-muted hover:text-text transition">Compare platforms</a>
             <a href="/solutions/risk-modeling/" class="py-1 text-xs text-muted hover:text-text transition">Risk Modeling</a>
             <a href="/solutions/threat-intelligence/" class="py-1 text-xs text-muted hover:text-text transition">Threat Intelligence</a>
             <a href="/solutions/threat-hunting/" class="py-1 text-xs text-muted hover:text-text transition">Threat Hunting</a>
@@ -85,7 +90,7 @@
             <a href="/solutions/platform-operations/" class="py-1 text-xs text-muted hover:text-text transition">Platform Operations</a>
           </div>
         </div>
-        <a href="/trust/" class="py-2 text-muted hover:text-text transition">{{ i18n "navTrust" | default "Trust" }}</a>
+        <a href="/compare/" class="py-2 text-muted hover:text-text transition">{{ i18n "navCompare" | default "Compare" }}</a>
         <a href="/docs/" class="py-2 text-muted hover:text-text transition">{{ i18n "navDocs" | default "Documentation" }}</a>
         <a href="mailto:{{ .Site.Params.email }}" class="py-2 text-muted hover:text-text transition">{{ i18n "navContact" | default "Contact" }}</a>
     </div>
