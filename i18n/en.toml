@@ -220,10 +220,10 @@ other = "AI on your terms"
 other = "AI drafts rules, tests, runbooks and playbooks and can use existing response steps while refining rules. It never auto-deploys. Disable it entirely if policy requires it."
 
 [trustNewCard2Title]
-other = "Batteries included"
+other = "Security controls included"
 
 [trustNewCard2Desc]
-other = "SSO, Passkey MFA, audit logs, RBAC and approval workflows. Every detection change is reviewable and exportable."
+other = "SSO, Passkey MFA, audit logs, RBAC, approval workflows and exportable evidence. Every detection change is reviewable."
 
 [trustNewCard3Title]
 other = "SaaS, self-hosted, air-gapped"
@@ -232,10 +232,10 @@ other = "SaaS, self-hosted, air-gapped"
 other = "Use managed SaaS, a self-hosted single binary, or an offline air-gapped deployment. Your logs stay in your SIEM."
 
 [trustNewCard4Title]
-other = "Feature toggles"
+other = "Hardened cloud runtime"
 
 [trustNewCard4Desc]
-other = "Control every capability from the admin page. Override per-rule when teams need flexibility. The platform adapts to your security policy, not the other way around."
+other = "Private GKE, private Cloud SQL, KMS/CMEK, brokered application keys, Binary Authorization attestations and sovereignty-ready deployment options."
 
 # ──────────────────────────────────────────────
 # Homepage – CTA (cta-new.html)
@@ -456,7 +456,7 @@ other = "For CISOs & Compliance"
 other = "See everything. Control everything. No black-box AI."
 
 [cisosDescription]
-other = "Immutable audit trails. Full visibility into AI suggestions. Every feature toggleable, with white-label branding for regulated and MSSP deployments. Deploy on your terms: SaaS or a single air-gapped binary."
+other = "Immutable audit trails. Full visibility into AI suggestions. Every feature toggleable, with cloud sovereignty options for secured SaaS, customer-controlled keys, private cloud or air-gapped deployments."
 
 [cisosPostureLabel]
 other = "Risk Posture"
@@ -493,10 +493,49 @@ other = "Board-ready metrics"
 other = "MTTD, MTTR, noise rate and MITRE coverage trending over time. Exportable. No spreadsheet archaeology the night before the meeting."
 
 [cisosCard4Title]
-other = "Everything toggleable"
+other = "Sovereignty-ready"
 
 [cisosCard4Desc]
-other = "Feature flags for AI, hunts, threat model and threat feed. White-label branding for regulated and MSSP deployments. SSO, Passkey MFA and RBAC included."
+other = "Secured SaaS, customer-governed KMS paths, on-premises and private-cloud deployment options for teams with data residency or infrastructure-control requirements."
+
+[cisosSovereigntyLabel]
+other = "Cloud Sovereignty"
+
+[cisosSovereigntyTitle]
+other = "Keep the control boundary where policy needs it"
+
+[cisosSovereigntyDescription]
+other = "Choose managed SaaS with hardened GCP controls, add customer-governed key access for sovereign cloud requirements, or run CraftedSignal in your own private cloud or air-gapped environment."
+
+[cisosSovereigntyCard1Title]
+other = "Secured SaaS"
+
+[cisosSovereigntyCard1Desc]
+other = "Private GKE and Cloud SQL, regional KMS/CMEK, Cloud Armor, signed releases, manual deployment approval and Binary Authorization attestations. Your logs stay in your SIEM."
+
+[cisosSovereigntyCard2Title]
+other = "Application-level encryption"
+
+[cisosSovereigntyCard2Desc]
+other = "Tenant data-encryption keys are wrapped by a KEK. Sovereign deployments can place that KEK under customer governance and release it through an attested key-broker path."
+
+[cisosSovereigntyCard3Title]
+other = "Confidential computing"
+
+[cisosSovereigntyCard3Desc]
+other = "Confidential Space can gate key access to stable attested workloads. Supported Confidential GKE Nodes or Confidential VMs add encrypted memory for data in use."
+
+[cisosSovereigntyCard4Title]
+other = "Private deployment"
+
+[cisosSovereigntyCard4Desc]
+other = "Run the same control plane on-premises, in a private cloud, or fully air-gapped with local AI, internal feed mirrors and customer-operated network boundaries."
+
+[cisosTestingTitle]
+other = "Independent penetration testing"
+
+[cisosTestingDesc]
+other = "Third-party penetration testing and major-change security reviews are part of the assurance program. Findings are triaged, remediated and tracked through closure."
 
 [cisosAiLabel]
 other = "AI Governance"

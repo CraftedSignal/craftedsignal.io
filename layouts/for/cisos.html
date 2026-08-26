@@ -51,8 +51,52 @@
   </div>
 </section>
 
-<!-- AI Governance -->
+<!-- Cloud Sovereignty -->
 <section class="px-6 py-14 md:py-20">
+  <div class="max-w-6xl mx-auto space-y-8">
+    <div class="text-center space-y-4">
+      <p class="text-xs font-semibold uppercase tracking-[0.14em] text-accent">{{ i18n "cisosSovereigntyLabel" | default "Cloud Sovereignty" }}</p>
+      <h2 class="font-display text-2xl md:text-3xl font-semibold">{{ i18n "cisosSovereigntyTitle" | default "Keep the control boundary where policy needs it" }}</h2>
+      <p class="text-sm text-muted max-w-3xl mx-auto">{{ i18n "cisosSovereigntyDescription" | default "Choose managed SaaS with hardened GCP controls, add customer-governed key access for sovereign cloud requirements, or run CraftedSignal in your own private cloud or air-gapped environment." }}</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div class="rounded-2xl border border-stroke bg-base/70 p-5 space-y-3">
+        <h3 class="font-semibold text-text">{{ i18n "cisosSovereigntyCard1Title" | default "Secured SaaS" }}</h3>
+        <p class="text-sm text-muted">{{ i18n "cisosSovereigntyCard1Desc" | default "Private GKE and Cloud SQL, regional KMS/CMEK, Cloud Armor, signed releases, manual deployment approval and Binary Authorization attestations. Your logs stay in your SIEM." }}</p>
+      </div>
+      <div class="rounded-2xl border border-stroke bg-base/70 p-5 space-y-3">
+        <h3 class="font-semibold text-text">{{ i18n "cisosSovereigntyCard2Title" | default "Application-level encryption" }}</h3>
+        <p class="text-sm text-muted">{{ i18n "cisosSovereigntyCard2Desc" | default "Tenant data-encryption keys are wrapped by a KEK. Sovereign deployments can place that KEK under customer governance and release it through an attested key-broker path." }}</p>
+      </div>
+      <div class="rounded-2xl border border-stroke bg-base/70 p-5 space-y-3">
+        <h3 class="font-semibold text-text">{{ i18n "cisosSovereigntyCard3Title" | default "Confidential computing" }}</h3>
+        <p class="text-sm text-muted">{{ i18n "cisosSovereigntyCard3Desc" | default "Confidential Space can gate key access to stable attested workloads. Supported Confidential GKE Nodes or Confidential VMs add encrypted memory for data in use." }}</p>
+      </div>
+      <div class="rounded-2xl border border-stroke bg-base/70 p-5 space-y-3">
+        <h3 class="font-semibold text-text">{{ i18n "cisosSovereigntyCard4Title" | default "Private deployment" }}</h3>
+        <p class="text-sm text-muted">{{ i18n "cisosSovereigntyCard4Desc" | default "Run the same control plane on-premises, in a private cloud, or fully air-gapped with local AI, internal feed mirrors and customer-operated network boundaries." }}</p>
+      </div>
+    </div>
+
+    <div class="rounded-2xl border border-stroke bg-panel/60 p-5 space-y-2">
+      <h3 class="font-semibold text-text">{{ i18n "cisosTestingTitle" | default "Independent penetration testing" }}</h3>
+      <p class="text-sm text-muted">{{ i18n "cisosTestingDesc" | default "Third-party penetration testing and major-change security reviews are part of the assurance program. Findings are triaged, remediated and tracked through closure." }}</p>
+    </div>
+
+    <div class="flex flex-wrap justify-center gap-3">
+      <a class="inline-flex px-5 py-2.5 rounded-xl border border-stroke text-sm font-semibold text-text hover:border-accent/60 transition" href="/docs/cloud-sovereignty/">
+        Cloud sovereignty docs
+      </a>
+      <a class="inline-flex px-5 py-2.5 rounded-xl border border-stroke text-sm font-semibold text-text hover:border-accent/60 transition" href="/docs/airgapped/">
+        Air-gapped guide
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- AI Governance -->
+<section class="px-6 py-14 md:py-20 bg-panel/40 border-y border-stroke">
   <div class="max-w-6xl mx-auto">
     <div class="grid lg:grid-cols-2 gap-10 items-center">
       <div class="space-y-6">
@@ -111,7 +155,7 @@
 </section>
 
 <!-- Governance Resources -->
-<section class="px-6 py-14 md:py-20 bg-panel/40 border-y border-stroke">
+<section class="px-6 py-14 md:py-20">
   <div class="max-w-6xl mx-auto space-y-8">
     <div class="text-center space-y-4">
       <p class="text-xs font-semibold uppercase tracking-[0.14em] text-accent">{{ i18n "cisosResourcesLabel" | default "Governance Resources" }}</p>
@@ -139,7 +183,7 @@
 </section>
 
 <!-- Deployment Options -->
-<section class="px-6 py-14 md:py-20">
+<section class="px-6 py-14 md:py-20 bg-panel/40 border-y border-stroke">
   <div class="max-w-6xl mx-auto space-y-8">
     <div class="text-center space-y-4">
       <p class="text-xs font-semibold uppercase tracking-[0.14em] text-accent">Deployment</p>
@@ -148,15 +192,15 @@
     <div class="grid md:grid-cols-3 gap-6">
       <div class="rounded-2xl border border-stroke bg-base/70 p-6 space-y-3">
         <h3 class="font-semibold">SaaS</h3>
-        <p class="text-sm text-muted">Managed by CraftedSignal. Automatic updates, zero infrastructure overhead. Your logs never leave your SIEM, we manage rules and metadata only.</p>
+        <p class="text-sm text-muted">Managed by CraftedSignal on hardened GCP infrastructure with private networking, KMS/CMEK, signed releases and Binary Authorization attestations. Your logs never leave your SIEM.</p>
       </div>
       <div class="rounded-2xl border border-stroke bg-base/70 p-6 space-y-3">
-        <h3 class="font-semibold">Self-hosted</h3>
-        <p class="text-sm text-muted">Single binary, no external dependencies. SQLite built in, optional PostgreSQL. Run AI locally via Ollama. You control upgrades, backups and availability.</p>
+        <h3 class="font-semibold">Private cloud</h3>
+        <p class="text-sm text-muted">Customer-operated infrastructure with the same detection workflow, optional customer KMS/HSM control, private ingress and internal release approval gates.</p>
       </div>
       <div class="rounded-2xl border border-stroke bg-base/70 p-6 space-y-3">
         <h3 class="font-semibold">Air-gapped</h3>
-        <p class="text-sm text-muted">Full functionality with no internet access. AI via local Ollama, all features offline. Agents are outbound-only, no inbound ports required.</p>
+        <p class="text-sm text-muted">No public outbound access, internal IP endpoints only, local AI, internal feed mirrors and manual bundle import. You control upgrades, backups and availability.</p>
       </div>
     </div>
   </div>

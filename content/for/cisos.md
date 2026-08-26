@@ -1,5 +1,5 @@
 ---
 title: "For CISOs & Compliance"
-description: "See everything. Control everything. No black-box AI."
+description: "Detection governance with audit trails, AI controls, cloud sovereignty options, KMS-backed encryption and deployable SaaS, private-cloud or air-gapped models."
 layout: "cisos"
 ---

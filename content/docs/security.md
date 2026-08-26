@@ -1,6 +1,6 @@
 ---
 title: "Security"
-description: "CraftedSignal security architecture: data boundaries, AES-256 encryption with per-tenant keys, audit logging, SSO/MFA and supply-chain security."
+description: "CraftedSignal security architecture: data boundaries, AES-256 encryption with per-tenant keys, hardened GCP infrastructure, audit logging, SSO/MFA and supply-chain security."
 weight: 13
 section: "Security"
 ---
@@ -65,6 +65,35 @@ master_secret
 
 ---
 
+## SaaS infrastructure controls
+
+CraftedSignal's managed GCP deployment is built as a private application substrate, not a broad public data plane:
+
+- **Private runtime** — GKE nodes use private networking and Cloud SQL has no public IPv4 endpoint.
+- **CMEK by default** — Cloud SQL, GKE secrets, Secret Manager, Artifact Registry and storage encryption are configured with Cloud KMS keys.
+- **Brokered application KEK** — GCP deployments include a dedicated `platform-kek` for wrapping tenant data-encryption keys. The key-broker identity receives KEK access by default; direct runtime service account access is opt-in.
+- **Signed and attested images** — production workloads deploy by digest. Binary Authorization can require KMS-backed attestations before GKE admits an image.
+- **Manual release gates** — current production deploys run through manually triggered GitHub Actions workflows with environment approval, image digest pinning and attestation creation before rollout.
+- **Customer-key path** — sovereign GCP deployments can use Confidential Space Workload Identity Federation so customer-owned KMS keys trust only stable attested workloads.
+- **Independent assurance** — third-party penetration testing and major-change security reviews are part of the security program, with findings tracked through remediation.
+
+---
+
+## Cloud sovereignty
+
+Teams with sovereignty requirements can choose the operating model that matches their risk boundary:
+
+- **Secured SaaS** — use the managed CraftedSignal service with private GCP networking, regional KMS/CMEK, signed releases, Binary Authorization attestations and audit evidence.
+- **Customer-controlled keys** — keep the key hierarchy under customer governance. Application-level encryption uses tenant data-encryption keys wrapped by a platform KEK, and sovereign GCP deployments can bind key access to Confidential Space attestation.
+- **Encrypted memory options** — for supported GCP deployments, Confidential Computing options such as Confidential GKE Nodes or Confidential VM/Confidential Space can encrypt workload memory while data is in use.
+- **Private deployment** — run CraftedSignal on-premises or in a private cloud when policy requires customer-owned infrastructure, private network boundaries or fully isolated operation.
+
+The practical result is that customers do not have to move logs into CraftedSignal to get detection governance. They can keep telemetry in their SIEM, keep key control aligned to internal policy, and choose SaaS, self-hosted, private-cloud or air-gapped deployment.
+
+See [Cloud Sovereignty](/docs/cloud-sovereignty/) for the detailed operating models, customer KMS path, Confidential Space boundary and air-gapped architecture.
+
+---
+
 ## Audit logging
 
 Every action is logged in an immutable audit trail:
@@ -112,8 +141,11 @@ CraftedSignal enforces security at every stage of the detection lifecycle — va
 ## Supply chain security
 
 - **Signed artifacts**: CLI binaries and Docker images are signed
+- **Digest-pinned deploys**: Kubernetes releases use immutable image digests, not mutable tags
+- **Binary Authorization**: GCP deployments can block images without a trusted KMS-backed attestation
 - **SBOM**: Software Bill of Materials published with each release
 - **Dependency scanning**: Automated vulnerability scanning in CI
+- **Independent penetration testing**: third-party penetration testing and major-change security reviews are tracked through remediation
 - **Rule attestation**: Rules from the TI feed include provenance and attestation metadata
 
 ---
