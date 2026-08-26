@@ -7,7 +7,7 @@ section: "Security"
 
 ## Overview
 
-CraftedSignal is a **control plane** — it manages rules, tests, approvals and metadata. It does not ingest, store, or process your log data or telemetry. Your data stays in your SIEM.
+CraftedSignal is a **control plane** — it manages rules, tests, approvals, evidence, health metrics and metadata. It queries connected SIEMs to validate detections and compute statistics, but it does not ingest or persist raw log streams as a data lake. Raw telemetry storage stays in your SIEM.
 
 ---
 
@@ -15,15 +15,16 @@ CraftedSignal is a **control plane** — it manages rules, tests, approvals and 
 
 | Data type | Where it lives |
 |-----------|---------------|
-| Log data / telemetry | Your SIEM (never leaves) |
+| Raw log data / telemetry streams | Your SIEM |
+| SIEM query execution | Your SIEM APIs via outbound-only agents |
+| Derived SIEM results and statistics | CraftedSignal (counts, verdicts, timings, health metrics and evidence) |
 | Detection rules & tests | CraftedSignal |
 | Approval decisions | CraftedSignal |
 | Audit logs | CraftedSignal (exportable) |
 | User credentials | CraftedSignal (salted and hashed with Argon2id) |
 | SIEM credentials | CraftedSignal (AES-256-GCM, per-company keys) |
-| Health metrics | CraftedSignal (derived from SIEM APIs, not raw logs) |
 
-Agents that connect to your SIEM are **outbound-only** — they initiate connections from your network to your SIEM. No inbound ports required.
+Agents that connect to your SIEM are **outbound-only** — they initiate connections from your network to your SIEM, run configured SIEM operations and queries, and return only the outputs needed for testing, health checks and evidence. No inbound ports required.
 
 ---
 
@@ -88,7 +89,7 @@ Teams with sovereignty requirements can choose the operating model that matches 
 - **Encrypted memory options** — for supported GCP deployments, Confidential Computing options such as Confidential GKE Nodes or Confidential VM/Confidential Space can encrypt workload memory while data is in use.
 - **Private deployment** — run CraftedSignal on-premises or in a private cloud when policy requires customer-owned infrastructure, private network boundaries or fully isolated operation.
 
-The practical result is that customers do not have to move logs into CraftedSignal to get detection governance. They can keep telemetry in their SIEM, keep key control aligned to internal policy, and choose SaaS, self-hosted, private-cloud or air-gapped deployment.
+The practical result is that customers do not have to move raw logs into CraftedSignal to get detection governance. They can keep telemetry storage in their SIEM, keep key control aligned to internal policy, and choose SaaS, self-hosted, private-cloud or air-gapped deployment.
 
 See [Cloud Sovereignty](/docs/cloud-sovereignty/) for the detailed operating models, customer KMS path, Confidential Space boundary and air-gapped architecture.
 

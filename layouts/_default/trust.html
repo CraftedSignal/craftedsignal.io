@@ -2,8 +2,8 @@
 <section class="px-6 py-16 md:py-24">
   <div class="max-w-5xl mx-auto space-y-6 text-center">
     <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/10 text-xs font-semibold uppercase tracking-[0.12em] text-accent">Trust</div>
-    <h1 class="font-display text-4xl md:text-5xl font-semibold leading-tight">Your data stays yours.<br>Every control stays visible.</h1>
-    <p class="text-xl text-muted max-w-3xl mx-auto">CraftedSignal is a control plane for detections, not a data lake. Your logs never leave your SIEM, every credential is encrypted with per-tenant keys and every action is logged. SaaS runs on hardened GCP infrastructure with private networking, KMS/CMEK and signed, attested deploys.</p>
+    <h1 class="font-display text-4xl md:text-5xl font-semibold leading-tight">Your raw logs stay in your SIEM.<br>Every control stays visible.</h1>
+    <p class="text-xl text-muted max-w-3xl mx-auto">CraftedSignal is a control plane for detections, not a data lake. It queries connected SIEMs for tests and health checks, stores governance data and derived statistics, and does not replicate raw log streams into CraftedSignal. Credentials are encrypted with per-tenant keys and every action is logged.</p>
     <div class="flex flex-wrap justify-center gap-4 pt-4">
       <a class="inline-flex px-6 py-3 rounded-xl bg-accent text-white font-semibold shadow-soft hover:scale-[1.01] transition" href="/docs/security/">Read the security model</a>
       <a class="inline-flex px-6 py-3 rounded-xl border border-stroke font-semibold text-text hover:border-accent/60 transition" href="#evidence">Review evidence controls</a>
@@ -16,16 +16,16 @@
   <div class="max-w-6xl mx-auto space-y-8">
     <div class="text-center space-y-4">
       <p class="text-xs font-semibold uppercase tracking-[0.14em] text-accent">Data boundaries</p>
-      <h2 class="font-display text-2xl md:text-3xl font-semibold">We manage rules, not your logs</h2>
-      <p class="text-sm text-muted max-w-2xl mx-auto">CraftedSignal stores detection rules, tests, approvals and metadata. Your telemetry stays in the SIEM you already run.</p>
+      <h2 class="font-display text-2xl md:text-3xl font-semibold">We manage rules, not raw log storage</h2>
+      <p class="text-sm text-muted max-w-2xl mx-auto">CraftedSignal stores detection rules, tests, approvals, evidence metadata and derived SIEM statistics. Telemetry storage stays in the SIEM you already run.</p>
     </div>
     <div class="grid md:grid-cols-3 gap-6">
       <div class="rounded-2xl border border-stroke bg-base/70 p-6 space-y-3">
         <div class="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center">
           <svg aria-hidden="true" class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.75 21h16.5M4.5 3h15M5.25 3v18m13.5-18v18M9 6.75h1.5m-1.5 3h1.5m-1.5 3h1.5m3-6H15m-1.5 3H15m-1.5 3H15M9 21v-3.375c0-.621.504-1.125 1.125-1.125h3.75c.621 0 1.125.504 1.125 1.125V21"/></svg>
         </div>
-        <h3 class="font-semibold">Your logs stay in your SIEM</h3>
-        <p class="text-sm text-muted">We store rules, tests, approvals and metadata, never your log data or telemetry. Health metrics are derived from SIEM APIs, not raw logs.</p>
+        <h3 class="font-semibold">Your raw logs stay in your SIEM</h3>
+        <p class="text-sm text-muted">We query SIEM APIs for validation, health and evidence workflows, and store returned statistics/results. We do not ingest or persist raw log streams as a CraftedSignal data lake.</p>
       </div>
       <div class="rounded-2xl border border-stroke bg-base/70 p-6 space-y-3">
         <div class="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center">
@@ -216,7 +216,7 @@
       </div>
       <div class="rounded-2xl border border-stroke bg-base/70 p-6 space-y-3">
         <h3 class="font-semibold">GDPR</h3>
-        <p class="text-sm text-muted">We process rules and metadata as a data processor, never your logs or PII. Data minimization by design, EU or US residency, DPIA and RoPA templates available.</p>
+        <p class="text-sm text-muted">We process account data, detection content, metadata and derived SIEM query results as a data processor. Raw SIEM event-stream ingestion is out of scope; DPIA and RoPA templates are available.</p>
       </div>
     </div>
     <div class="rounded-2xl border border-stroke bg-base/70 p-6 space-y-2">
@@ -236,7 +236,7 @@
     <div class="grid md:grid-cols-3 gap-6">
       <div class="rounded-2xl border border-stroke bg-base/70 p-6 space-y-3">
         <h3 class="font-semibold">SaaS</h3>
-        <p class="text-sm text-muted">Managed by CraftedSignal with EU or US data residency, hardened GCP infrastructure, private networking and KMS-backed controls. Your logs never leave your SIEM.</p>
+        <p class="text-sm text-muted">Managed by CraftedSignal with EU or US data residency, hardened GCP infrastructure, private networking and KMS-backed controls. Raw log storage stays in your SIEM.</p>
       </div>
       <div class="rounded-2xl border border-stroke bg-base/70 p-6 space-y-3">
         <h3 class="font-semibold">Self-hosted</h3>

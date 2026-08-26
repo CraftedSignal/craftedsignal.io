@@ -23,19 +23,22 @@ This Privacy Policy describes how CraftedSignal ("we", "us", "our") collects, us
 ### Detection content
 - Rules, tests, configurations, and metadata you create in the platform
 
+### SIEM-derived evidence
+- Detection test results, health metrics, query counts, timings, and other derived SIEM query outputs needed to operate detection workflows
+
 ### Payment data
 - Billing information is processed by our payment provider. We do not store credit card numbers.
 
 ## 2. What we do NOT collect
 
-- **No SIEM logs.** CraftedSignal agents are outbound-only. We never ingest, store, or process your security event data.
+- **No raw SIEM log lake.** CraftedSignal agents may query connected SIEMs to run tests, compute health/noise statistics, deploy detections and collect evidence. We store derived results and statistics needed for the service, not raw security event streams.
 - **No telemetry from self-hosted instances** unless you explicitly opt in.
 
 ## 3. How we use your data
 
 | Purpose | Data used |
 |---------|-----------|
-| Operate the Service | Account data, detection content |
+| Operate the Service | Account data, detection content, SIEM-derived results and statistics |
 | Improve the platform | Aggregated, anonymized usage data |
 | Communicate with you | Email address |
 | Billing | Payment data |

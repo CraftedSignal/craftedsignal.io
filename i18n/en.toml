@@ -137,7 +137,7 @@ other = "Most detection tools start with a rule. We start with the risk the rule
 other = "Connect your SIEMs"
 
 [howItWorksConnectDesc]
-other = "Plug CraftedSignal into the tools you already run: Splunk, Sentinel, CrowdStrike and Rapid7. Outbound-only agents, your logs never leave your SIEM."
+other = "Plug CraftedSignal into the tools you already run: Splunk, Sentinel, CrowdStrike and Rapid7. Outbound-only agents query your existing tools without moving raw logs into CraftedSignal."
 
 [howItWorksRiskTitle]
 other = "Model the business"

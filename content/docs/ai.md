@@ -100,9 +100,9 @@ Every AI suggestion includes:
 
 ### Data minimization
 
-- No raw logs leave your boundary
-- PII is redacted before processing
-- AI sees only rule logic and metadata, never customer telemetry
+- Raw SIEM log streams are not sent to hosted AI by default
+- PII redaction is applied before hosted AI processing where applicable
+- AI prompts use rule logic, metadata and explicit workflow context rather than raw customer telemetry streams
 
 ### Safety checks
 

@@ -36,7 +36,7 @@ The managed SaaS deployment is built as a private application substrate:
 - Independent penetration testing and major-change security reviews, with findings tracked through remediation.
 - Application audit logs for deploys, approvals, AI actions, settings changes and user administration.
 
-Your SIEM logs and telemetry stay in your SIEM. CraftedSignal stores the control-plane metadata needed to manage detections and evidence.
+Raw SIEM logs and telemetry storage stay in your SIEM. CraftedSignal queries SIEM APIs where needed and stores the control-plane metadata, evidence and derived statistics needed to manage detections.
 
 ---
 
