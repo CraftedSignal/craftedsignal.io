@@ -96,7 +96,7 @@ When Sigma Auto-Translation is enabled, rules authored in Sigma can compile to t
 
 CraftedSignal includes a curated TI feed that translates trending and novel threats into ready-to-use detection rules. Applicability filtering shows what's relevant to your environment and SIEM.
 
-### AI-generated rules
+### Generated rule drafts
 
 Describe what you want to detect in natural language. AI generates the rule, tests, MITRE mapping, and optional runbook/playbook draft. You review and approve before anything ships.
 

@@ -38,24 +38,24 @@ other = "Read the docs"
 # ──────────────────────────────────────────────
 
 [tagline]
-other = "Detection Engineering Control Plane"
+other = "Runtime detection risk and backlog platform"
 
 
 [schemaDescription]
-other = "Detection Engineering Control Plane for SOC teams. Turn findings, threat intelligence and coverage gaps into tested, approved and monitored detections across your security stack."
+other = "Runtime detection risk and backlog platform for SOC teams. Turn threats, findings, telemetry gaps and noisy rules into tested, approved and monitored detection work across your security stack."
 
 # ──────────────────────────────────────────────
 # Homepage – Hero (hero-new.html)
 # ──────────────────────────────────────────────
 
 [heroBanner]
-other = "Detection Engineering Control Plane"
+other = "Runtime detection risk and backlog"
 
 [heroNewTitle]
-other = "Run a SOC that protects what matters."
+other = "Know what affects you. Fix what matters."
 
 [heroNewDescription]
-other = "Turn risks, threat intel, ethical hack findings and validation gaps into tested, approved and monitored detections. Your logs stay in your SIEM and every change leaves evidence."
+other = "Connect your SIEMs, import rules, describe your business assets, and turn threats, pentest findings, telemetry gaps and noisy rules into one risk-scored Backlog. Your logs stay in your SIEM and every change leaves evidence."
 
 [heroNewCtaTry]
 other = "Start free"
@@ -88,22 +88,22 @@ other = "MSSP / MDR"
 # ──────────────────────────────────────────────
 
 [valueProp1Title]
-other = "Start with risk, not alerts"
+other = "Answer: does this affect us?"
 
 [valueProp1Desc]
-other = "Model business services and attack paths. Every MITRE technique gets weighted for your exposure. No more detections for threats you do not face and no more blind spots for the ones you do."
+other = "Start lightweight: import assets, paste a plain description, or add services manually. CraftedSignal uses that business surface with threats, findings and telemetry to show what is relevant."
 
 [valueProp2Title]
-other = "Catch silently broken rules"
+other = "One Backlog, risk-scored"
 
 [valueProp2Desc]
-other = "Industry data says only 5% of deployed detections actually work. We surface the dead ones the day they stop firing, plus noise, drift, failing tests and missing mappings, in a single queue."
+other = "New detections, false-positive tuning, missing telemetry, broken rules, mappings, tests and approvals land in the same queue. Meta-work inherits priority from what it unblocks."
 
 [valueProp3Title]
-other = "Approve with impact preview"
+other = "Fix safely, then prove it"
 
 [valueProp3Desc]
-other = "See the impact of every rule change before it hits your team. Juniors submit, seniors approve. Runbooks and playbooks travel with the rule. Rollback in one click. Every action logged."
+other = "Operators get direct actions: tune, map, test, enable telemetry, adopt a rule, hunt, accept residual risk or roll back. Impact preview and approvals keep production controlled."
 
 [valueProp4Title]
 other = "Write Sigma, deploy everywhere"
@@ -115,7 +115,7 @@ other = "Author in Sigma and convert to Splunk, Sentinel, CrowdStrike and Rapid7
 other = "Runbooks that stay in sync"
 
 [valueProp16Desc]
-other = "Attach runbooks and playbooks to detections and hunts. AI can draft them from rule context, use existing response steps when refining rules and flag stale content when the rule changes."
+other = "Attach runbooks and playbooks to detections and hunts. Draft, review and refresh them from the same rule, test, threat and business details operators already inspect."
 
 [valuePropLearnMore]
 other = "Learn more →"
@@ -128,53 +128,53 @@ other = "Learn more →"
 other = "How it works"
 
 [howItWorksTitle]
-other = "From business risk to proven detection"
+other = "From threat to risk-reducing work"
 
 [howItWorksLede]
-other = "Most detection tools start with a rule. We start with the risk the rule is supposed to protect and we do not stop until coverage is proven, measured and safe to retire."
+other = "Most detection tools start with a rule. CraftedSignal starts with the question that matters: does this affect us, can we see it, and are we covered?"
 
 [howItWorksConnectTitle]
-other = "Connect your SIEMs"
+other = "Connect and import"
 
 [howItWorksConnectDesc]
-other = "Plug CraftedSignal into the tools you already run: Splunk, Sentinel, CrowdStrike and Rapid7. Outbound-only agents query your existing tools without moving raw logs into CraftedSignal."
+other = "Plug into Splunk, Sentinel, CrowdStrike and Rapid7, then import the rules you already run. Outbound-only agents query existing tools without moving raw logs into CraftedSignal."
 
 [howItWorksRiskTitle]
-other = "Model the business"
+other = "Add business surface"
 
 [howItWorksRiskDesc]
-other = "Declare your services, crown-jewel data and attack paths. Industry profile and threat briefs weight every technique by actual risk to you."
+other = "Give as much or as little context as you have: manual services, regular imports, a free-text asset description today; CMDB, scanners and mapping later."
 
 [howItWorksThreatTitle]
-other = "Map the gaps"
+other = "Triage threats and findings"
 
 [howItWorksThreatDesc]
-other = "Every MITRE ATT&CK technique on your attack paths gets scored for exposure. See exactly which uncovered techniques matter, ranked by weight."
+other = "Threat briefs, critical CVEs, pentest findings and future CTEM inputs are scored against the business surface, telemetry and current rule coverage."
 
 [howItWorksHuntTitle]
-other = "Prove the hypothesis"
+other = "Work one Backlog"
 
 [howItWorksHuntDesc]
-other = "Launch a hunt against your live SIEMs. Cluster hits. Verdict them. Keep only what fires on real adversary behavior and discard the noise."
+other = "Analysts and engineers see one risk-scored queue for rules, tuning, hunts, missing log sources, broken tests, mappings, approvals and residual-risk decisions."
 
 [howItWorksRuleTitle]
-other = "Prove it before you ship"
+other = "Verify in your environment"
 
 [howItWorksRuleDesc]
-other = "Generate positive and negative test cases plus analyst runbooks and incident playbooks. Keep them in sync with the rule as logic changes, then review everything before anything promotes."
+other = "Run tests and hunts against live SIEMs, check source mappings, preview alert volume and keep response steps with the rule before anything promotes."
 
 [howItWorksCoverageTitle]
-other = "Deploy, watch, retire"
+other = "Watch runtime risk"
 
 [howItWorksCoverageDesc]
-other = "Ship through impact preview and approval gates, then watch health and noise in real time. Catch silently broken rules the day they die and feed results back into risk. The loop closes."
+other = "Risk scores change as threats move, assets change, rules break, false positives rise or telemetry disappears. Dashboards show what to know and what to focus on."
 
 # Legacy keys retained for pages still using them.
 [howItWorksStep1Title]
 other = "Connect & import"
 
 [howItWorksStep1Desc]
-other = "Connect your SIEM and import existing rules; they're auto-converted to Sigma for portability. Or start from our TI feed and standard rules repo."
+other = "Connect your SIEM and import existing rules; they're auto-converted to Sigma for portability. Or start from threat briefs, findings and the standard rules repo."
 
 [howItWorksStep2Title]
 other = "Generate & test"
@@ -195,7 +195,7 @@ other = "Some visual examples"
 other = "See the platform in action"
 
 [screenshotsLede]
-other = "Every screen below is real product. No mockups, no composited dashboards. This is what a SOC team uses on a Monday morning."
+other = "Every screen below is real product. No mockups, no composited dashboards. This is what a SOC team uses to see risk, coverage and work on a Monday morning."
 
 [screenshotsCta]
 other = "Try it yourself →"
@@ -214,10 +214,10 @@ other = "Security evidence"
 other = "Built for teams that need control and proof"
 
 [trustNewCard1Title]
-other = "AI on your terms"
+other = "Assistive generation, governed"
 
 [trustNewCard1Desc]
-other = "AI drafts rules, tests, runbooks and playbooks and can use existing response steps while refining rules. It never auto-deploys. Disable it entirely if policy requires it."
+other = "Generated rules, tests, runbooks and playbooks stay reviewable and non-destructive. Nothing auto-deploys. Disable generation entirely if policy requires it."
 
 [trustNewCard2Title]
 other = "Security controls included"
@@ -242,7 +242,7 @@ other = "Private GKE, private Cloud SQL, KMS/CMEK, brokered application keys, Bi
 # ──────────────────────────────────────────────
 
 [ctaNewTitle]
-other = "Ready to improve your detection coverage?"
+other = "Ready to work the risks that matter?"
 
 [ctaNewCard1Title]
 other = "I write rules"
@@ -257,7 +257,7 @@ other = "Start free →"
 other = "I manage a SOC"
 
 [ctaNewCard2Desc]
-other = "See how it reduces workload and improves coverage."
+other = "See how the Backlog reduces workload and improves coverage."
 
 [ctaNewCard2Button]
 other = "See ROI →"
@@ -282,10 +282,10 @@ other = "Or talk to us:"
 other = "For Detection Engineers"
 
 [engineersTitle]
-other = "Generate, test and deploy detections as code"
+other = "Ship rules that work in your environment"
 
 [engineersDescription]
-other = "Write in Sigma, your SIEM's native language, or let AI generate rules for you. Add analyst runbooks and incident playbooks from the same rule context. Test live, deploy with approval and roll back in one click."
+other = "Write in Sigma, your SIEM's native language, or generate a draft from a threat. Add analyst runbooks and incident playbooks from the same rule details. Test live, deploy with approval and roll back in one click."
 
 [engineersSourcesLabel]
 other = "Rule sources"
@@ -297,13 +297,13 @@ other = "Four ways to get detection rules"
 other = "Threat intelligence feed"
 
 [engineersSource1Desc]
-other = "Ready-to-use detections for trending and novel threats. Applicability filtering shows what's relevant to your environment."
+other = "Ready-to-use detections for trending and novel threats. Relevance scoring shows what affects your environment."
 
 [engineersSource2Title]
-other = "AI-generated rules and response steps"
+other = "Generated rules and response steps"
 
 [engineersSource2Desc]
-other = "Describe what you want to detect. AI generates the rule, tests, runbook and playbook. Review, edit and approve before anything ships."
+other = "Describe what you want to detect. CraftedSignal drafts the rule, tests, runbook and playbook. Review, edit and approve before anything ships."
 
 [engineersSource3Title]
 other = "Your own repository"
@@ -352,22 +352,22 @@ other = "Read the docs"
 other = "For SOC Leaders"
 
 [socLeadersTitle]
-other = "Measure coverage. Reduce noise. Empower your team."
+other = "Know the Backlog. Reduce risk."
 
 [socLeadersDescription]
-other = "MITRE coverage reports, noise ratio dashboards and team workload metrics. Let juniors submit rule improvements while seniors retain control through approval workflows."
+other = "A Monday-morning dashboard for runtime risk, urgent work, coverage, noise, rule quality and team load. Analysts and engineers work the same ranked queue."
 
 [socLeadersBenefit1Title]
-other = "MITRE coverage & suggestions"
+other = "Threat and coverage priority"
 
 [socLeadersBenefit1Desc]
-other = "See which techniques you detect and where gaps exist. Get actionable suggestions to close coverage gaps from our TI feed and standard rules."
+other = "See which techniques, log sources and business services create the highest risk. Turn only relevant gaps into detection work."
 
 [socLeadersBenefit2Title]
-other = "Noise ratio & quality reports"
+other = "Rule quality and noise"
 
 [socLeadersBenefit2Desc]
-other = "Measure signal-to-noise, team workload, MTTR and rule quality across your detection stack. Know exactly what needs fixing."
+other = "Measure signal-to-noise, team workload, MTTR, false positives, dead rules and test failures across your detection stack. Know exactly what needs fixing."
 
 [socLeadersBenefit3Title]
 other = "Junior submit, senior approve"
@@ -382,13 +382,13 @@ other = "Reports & control"
 other = "Everything your SOC needs to measure and improve"
 
 [socLeadersReportBullet1]
-other = "Noise ratio, team workload, MITRE coverage and MTTR dashboards"
+other = "Runtime risk, Backlog, noise, team workload, MITRE coverage and MTTR dashboards"
 
 [socLeadersReportBullet2]
 other = "Group rules flexibly to monitor and control by team, service, or environment"
 
 [socLeadersReportBullet3]
-other = "TI feed translates threats into actionable detections for your stack"
+other = "Threat briefs and findings are scored by relevance before they create work"
 
 [socLeadersReportBullet4]
 other = "Rollback any rule in one click with impact preview before every deployment"
@@ -453,19 +453,19 @@ other = "Book a call to validate these numbers"
 other = "For CISOs & Compliance"
 
 [cisosTitle]
-other = "See everything. Control everything. No black-box AI."
+other = "Runtime risk, control and audit evidence."
 
 [cisosDescription]
-other = "Immutable audit trails. Full visibility into AI suggestions. Every feature toggleable, with cloud sovereignty options for secured SaaS, customer-controlled keys, private cloud or air-gapped deployments."
+other = "A live view of detection risk, evidence and work in progress. Exportable audit trails, controlled approvals, and deployment choices for SaaS, private cloud or air-gapped environments."
 
 [cisosPostureLabel]
 other = "Risk Posture"
 
 [cisosPostureTitle]
-other = "Know your exposure before the board asks"
+other = "Know what is exposed before the board asks"
 
 [cisosPostureLede]
-other = "Detection coverage mapped to business services and MITRE techniques you actually face, not a generic heatmap. Silently broken rules surfaced the day they stop firing. Every blind spot has a name."
+other = "Detection coverage mapped to business services, current threats, findings, telemetry and MITRE techniques you actually face. Every blind spot has an owner, risk score and next action."
 
 # Legacy audit keys retained for other pages that may reference them.
 [cisosComplianceLabel]
@@ -478,7 +478,7 @@ other = "Built for audit-ready security programs"
 other = "Exposure, quantified"
 
 [cisosCard1Desc]
-other = "Threat-weighted coverage score across your attack paths. One number, drillable to the specific techniques driving it."
+other = "Runtime risk score across threats, assets, telemetry and detection coverage. One number, drillable to the specific items driving it."
 
 [cisosCard2Title]
 other = "Silently broken rules"
@@ -529,7 +529,7 @@ other = "Confidential Space can gate key access to stable attested workloads. Su
 other = "Private deployment"
 
 [cisosSovereigntyCard4Desc]
-other = "Run the same control plane on-premises, in a private cloud, or fully air-gapped with local AI, internal feed mirrors and customer-operated network boundaries."
+other = "Run the same control plane on-premises, in a private cloud, or fully air-gapped with local models, internal feed mirrors and customer-operated network boundaries."
 
 [cisosTestingTitle]
 other = "Independent penetration testing"
@@ -538,28 +538,28 @@ other = "Independent penetration testing"
 other = "Third-party penetration testing and major-change security reviews are part of the assurance program. Findings are triaged, remediated and tracked through closure."
 
 [cisosAiLabel]
-other = "AI Governance"
+other = "Automation Governance"
 
 [cisosAiTitle]
-other = "AI that assists, never acts"
+other = "Assistance that never acts alone"
 
 [cisosAiDescription]
-other = "Unlike black-box platforms that automatically tune your detections, CraftedSignal keeps humans in control. AI suggests improvements. Your team reviews and approves. Nothing deploys without explicit authorization."
+other = "Generated changes stay under human control. CraftedSignal can draft, test and suggest fixes, but your team reviews and approves. Nothing deploys without explicit authorization."
 
 [cisosAiBullet1]
-other = "All AI suggestions require human approval before deployment"
+other = "Generated suggestions require human approval before deployment"
 
 [cisosAiBullet2]
-other = "Self-host AI via Ollama so your data never leaves your infrastructure"
+other = "Self-host models via Ollama so your data never leaves your infrastructure"
 
 [cisosAiBullet3]
-other = "Disable AI entirely if your policy requires it"
+other = "Disable generation entirely if your policy requires it"
 
 [cisosAiBullet4]
-other = "Full audit trail of every AI interaction and decision"
+other = "Full audit trail of every generated suggestion and decision"
 
 [cisosAiExampleTitle]
-other = "AI Suggestion Review"
+other = "Suggestion Review"
 
 [cisosAiExampleStatus]
 other = "Pending Approval"
@@ -697,7 +697,7 @@ other = "Guardrails: noise, cost, coverage"
 # ──────────────────────────────────────────────
 
 [footerTagline]
-other = "Detection Engineering Control Plane"
+other = "Runtime detection risk and backlog platform"
 
 [footerSlogan]
 other = "Detection engineering, done right."

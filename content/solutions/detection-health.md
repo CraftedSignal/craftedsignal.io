@@ -1,6 +1,6 @@
 ---
 title: "Detection Health"
-description: "Catch dead rules, noisy rules, drift, failing tests, and missing context before they become blind spots."
+description: "Catch dead rules, noisy rules, drift, failing tests, missing telemetry and weak mappings before they become blind spots."
 weight: 40
 stage: "04"
 eyebrow: "Monitor"
@@ -8,13 +8,13 @@ nav_summary: "Keep detections working after they ship."
 hero_image: "/screenshots/silently-broken.png"
 hero_alt: "CraftedSignal silently broken detection queue"
 quick_points:
-  - "One queue for dead rules, drift, failed tests, noise, and missing metadata."
+  - "One Backlog for dead rules, drift, failed tests, false positives, missing telemetry, and missing metadata."
   - "Owner-targeted notifications when deployed rules go silent or change out of band."
   - "Noise budgets and monitoring mode protect analysts before alerts go live."
 outcomes:
   - label: "Signal"
     title: "Know when a rule stops working"
-    body: "Per-rule health and firing history expose silent failures before an incident does."
+    body: "Per-rule health, firing history, tests and source coverage expose silent failures before an incident does."
   - label: "Control"
     title: "Noise is budgeted"
     body: "Rules that exceed expected volume can be held, tuned, or left in monitoring mode."
@@ -31,12 +31,12 @@ docs:
   - title: "Noise Budgets"
     url: "/docs/noise-budgets/"
     description: "Daily alert limits by company, team, service, and rule."
-  - title: "Recommendations"
-    url: "/docs/recommendations/"
-    description: "Prioritized action queue for coverage, tuning, mappings, and stale response steps."
-  - title: "AI Quality"
+  - title: "Backlog"
+    url: "/docs/backlog/"
+    description: "Risk-scored action queue for coverage, tuning, telemetry, mappings, and stale response steps."
+  - title: "Generation Quality"
     url: "/docs/ai-quality/"
-    description: "Owner-facing metrics for AI operation quality, retries, errors, and proposals."
+    description: "Owner-facing metrics for generation quality, retries, errors, and proposals."
   - title: "Git-native Backups"
     url: "/docs/git-backup/"
     description: "Scheduled Git mirrors for rules, versions, tests, and restore points."
@@ -50,11 +50,11 @@ Traditional dashboards make this hard to see. Noise, rule health, test failures,
 
 ## How CraftedSignal monitors detections
 
-CraftedSignal keeps health signals attached to the rule lifecycle. Each deployed rule can show recent firing behavior, test status, drift state, noise budget impact, ownership, platform deployment state, and coverage context.
+CraftedSignal keeps health signals attached to the rule lifecycle. Each deployed rule can show recent firing behavior, test status, drift state, false-positive pressure, noise budget impact, ownership, platform deployment state, source coverage, and related risk.
 
-The platform surfaces one operational queue for rules that need attention: dead rules, unexpectedly noisy rules, drifted rules, failing tests, missing ATT&CK mappings, missing owners, and other quality issues. The queue is designed for action, not just observation.
+The platform surfaces one Backlog for rules and telemetry that need attention: dead rules, unexpectedly noisy rules, drifted rules, failing tests, missing ATT&CK mappings, missing owners, missing log sources, and other quality issues. The queue is designed for action, not just observation.
 
-Recommendations turn those signals into next steps: tune this rule, add tests, fix this mapping, review stale runbooks and playbooks, generate a rule for this coverage gap, or retire low-value content.
+Backlog items turn those signals into next steps: tune this rule, add tests, fix this mapping, enable this telemetry, review stale runbooks and playbooks, generate a rule for this coverage gap, or retire low-value content.
 
 ## Noise, drift, and silent failure
 
@@ -66,4 +66,4 @@ Silent rules are handled as a first-class health issue. When a rule that normall
 
 ## What leaders get
 
-SOC leaders get a Monday-morning view of the work that matters: exposure, broken detections, noisy detections, uncovered techniques, and workload. The goal is not to count rules. The goal is to know which protections are alive, which need attention, and which risks remain open.
+SOC leaders get a Monday-morning view of the work that matters: runtime risk, broken detections, noisy detections, uncovered techniques, missing telemetry, and workload. The goal is not to count rules. The goal is to know which protections are alive, which need attention, and which risks remain open.

@@ -1,6 +1,6 @@
 ---
 title: "Runbooks & Playbooks"
-description: "Attach Markdown runbooks and playbooks to rules, hunts, library entries, and threat briefs. Keep response steps synced with rule changes and AI-generated drafts."
+description: "Attach Markdown runbooks and playbooks to rules, hunts, library entries, and threat briefs. Keep response steps synced with rule changes and generated drafts."
 weight: 6
 section: "Core Concepts"
 ---
@@ -44,7 +44,7 @@ This keeps the rule and analyst workflow moving together. A query change can pro
 
 ---
 
-## AI-generated drafts
+## Generated drafts
 
 When AI assistance is enabled, AI can draft the runbook and playbook while analyzing a rule. The draft is grounded in:
 
@@ -54,7 +54,7 @@ When AI assistance is enabled, AI can draft the runbook and playbook while analy
 - Positive and negative tests
 - Available company and threat context
 
-AI-generated drafts are suggestions. They are editable, previewable, and audit-visible. They do not deploy a rule, change an alert, or publish response steps without a human choosing to use them.
+Generated drafts are suggestions. They are editable, previewable, and audit-visible. They do not deploy a rule, change an alert, or publish response steps without a human choosing to use them.
 
 AI can also use existing response steps as context when refining the related rule or tests, so the detection logic and the analyst workflow do not drift into two separate truths.
 

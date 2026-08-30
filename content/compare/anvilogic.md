@@ -1,13 +1,13 @@
 ---
 title: "CraftedSignal vs Anvilogic"
-description: "Compare CraftedSignal and Anvilogic for detection engineering, AI SOC workflows, evidence, deployment control and detection lifecycle governance."
+description: "Compare CraftedSignal and Anvilogic for detection engineering, SOC automation workflows, evidence, deployment control and detection lifecycle governance."
 weight: 10
 competitor: "Anvilogic"
-competitor_positioning: "Broad AI SOC workflows across detection engineering, search, investigation and operational automation."
-craftedsignal_positioning: "A Detection Engineering Control Plane for governed detection work: finding intake, rule authoring, testing, approvals, deployment, rollback, health monitoring and evidence exports."
-summary: "Anvilogic is useful when the buyer wants a broader AI SOC operating layer. CraftedSignal is the sharper fit when detection engineering control matters more: no log movement, self-hosted or air-gapped options, local or disabled AI and evidence for every change."
+competitor_positioning: "Broad SOC automation workflows across detection engineering, search, investigation and operational automation."
+craftedsignal_positioning: "A runtime detection risk and backlog platform for governed detection work: finding intake, rule authoring, testing, approvals, deployment, rollback, health monitoring and evidence exports."
+summary: "Anvilogic is useful when the buyer wants a broader SOC automation operating layer. CraftedSignal is the sharper fit when runtime detection risk and change control matter more: no log movement, self-hosted or air-gapped options, local or disabled generation and evidence for every change."
 best_for_competitor:
-  - "Teams looking for a broad AI SOC workflow platform."
+  - "Teams looking for a broad SOC workflow automation platform."
   - "Organizations that want one vendor narrative across onboarding, search, detection and investigation."
   - "Security leaders prioritizing analyst workflow automation over deployment control."
 best_for_craftedsignal:
@@ -16,14 +16,14 @@ best_for_craftedsignal:
   - "Detection engineers who need tests, approvals, rollback, Git history and exportable evidence."
 rows:
   - area: "Primary job"
-    competitor: "Broad AI SOC workflow automation."
+    competitor: "Broad SOC workflow automation."
     craftedsignal: "Governed detection engineering from finding intake to rollback evidence."
   - area: "Data boundary"
     competitor: "Best evaluated against your data architecture and vendor deployment model."
     craftedsignal: "Rules, tests, approvals and metadata are managed; logs stay in your SIEM."
-  - area: "AI control"
-    competitor: "AI-led SOC workflow assistance."
-    craftedsignal: "AI assists but never deploys. Disable AI entirely or run it locally."
+  - area: "Automation control"
+    competitor: "Automation-led SOC workflow assistance."
+    craftedsignal: "Generated suggestions never deploy by themselves. Disable generation entirely or run it locally."
   - area: "Deployment"
     competitor: "Best for teams comfortable with the vendor's operating model."
     craftedsignal: "More deployment control: SaaS, self-hosted single binary, or fully air-gapped."

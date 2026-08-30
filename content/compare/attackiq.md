@@ -4,7 +4,7 @@ description: "Compare CraftedSignal and AttackIQ for breach and attack simulatio
 weight: 50
 competitor: "AttackIQ"
 competitor_positioning: "Breach and attack simulation and security control validation for measuring whether defenses respond to adversary behaviors."
-craftedsignal_positioning: "A Detection Engineering Control Plane for converting validation findings into governed detection changes across the detection lifecycle."
+craftedsignal_positioning: "A runtime detection risk and backlog platform for converting validation findings into governed detection changes across the detection lifecycle."
 summary: "AttackIQ is useful when the buyer needs simulation and control validation. CraftedSignal should win when the buyer needs a durable detection engineering workflow for the remediation work that validation creates."
 best_for_competitor:
   - "Teams running repeatable adversary emulation and control validation."

@@ -5,10 +5,10 @@
       {{ i18n "cisosBadge" | default "For CISOs & Compliance" }}
     </div>
     <h1 class="font-display text-4xl md:text-5xl font-semibold leading-tight">
-      {{ i18n "cisosTitle" | default "See everything. Control everything. No black-box AI." }}
+      {{ i18n "cisosTitle" | default "Runtime risk, control and audit evidence." }}
     </h1>
     <p class="text-xl text-muted max-w-3xl mx-auto">
-      {{ i18n "cisosDescription" | default "Immutable audit trails. Full visibility into AI suggestions. Every feature toggleable. Deploy on your terms: SaaS or a single binary." }}
+      {{ i18n "cisosDescription" | default "A live view of detection risk, evidence and work in progress. Exportable audit trails, controlled approvals, and deployment choices for SaaS, private cloud or air-gapped environments." }}
     </p>
     <div class="flex flex-wrap justify-center gap-4 pt-4">
       <a class="inline-flex px-6 py-3 rounded-xl bg-accent text-white font-semibold shadow-soft hover:scale-[1.01] transition" href="https://app.craftedsignal.io/" target="_blank" rel="noopener noreferrer">
@@ -26,14 +26,14 @@
   <div class="max-w-6xl mx-auto space-y-8">
     <div class="text-center space-y-4">
       <p class="text-xs font-semibold uppercase tracking-[0.14em] text-accent">{{ i18n "cisosPostureLabel" | default "Risk Posture" }}</p>
-      <h2 class="font-display text-2xl md:text-3xl font-semibold">{{ i18n "cisosPostureTitle" | default "Know your exposure before the board asks" }}</h2>
-      <p class="text-sm text-muted max-w-2xl mx-auto">{{ i18n "cisosPostureLede" | default "Detection coverage mapped to business services and MITRE techniques you actually face, not a generic heatmap. Silently broken rules surfaced the day they stop firing. Every blind spot has a name." }}</p>
+      <h2 class="font-display text-2xl md:text-3xl font-semibold">{{ i18n "cisosPostureTitle" | default "Know what is exposed before the board asks" }}</h2>
+      <p class="text-sm text-muted max-w-2xl mx-auto">{{ i18n "cisosPostureLede" | default "Detection coverage mapped to business services, current threats, findings, telemetry and MITRE techniques you actually face. Every blind spot has an owner, risk score and next action." }}</p>
     </div>
 
     <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
       <div class="rounded-2xl border border-stroke bg-base/70 p-5 space-y-3">
         <h3 class="font-semibold text-text">{{ i18n "cisosCard1Title" | default "Exposure, quantified" }}</h3>
-        <p class="text-sm text-muted">{{ i18n "cisosCard1Desc" | default "Threat-weighted coverage score across your attack paths. One number, drillable to the specific techniques driving it." }}</p>
+        <p class="text-sm text-muted">{{ i18n "cisosCard1Desc" | default "Runtime risk score across threats, assets, telemetry and detection coverage. One number, drillable to the specific items driving it." }}</p>
       </div>
       <div class="rounded-2xl border border-stroke bg-base/70 p-5 space-y-3">
         <h3 class="font-semibold text-text">{{ i18n "cisosCard2Title" | default "Silently broken rules" }}</h3>
@@ -45,7 +45,7 @@
       </div>
       <div class="rounded-2xl border border-stroke bg-base/70 p-5 space-y-3">
         <h3 class="font-semibold text-text">{{ i18n "cisosCard4Title" | default "Everything toggleable" }}</h3>
-        <p class="text-sm text-muted">{{ i18n "cisosCard4Desc" | default "Feature flags for AI, hunts, threat model and threat feed. White-label branding for regulated and MSSP deployments." }}</p>
+        <p class="text-sm text-muted">{{ i18n "cisosCard4Desc" | default "Feature flags for generation, hunts, threat model and threat feed. White-label branding for regulated and MSSP deployments." }}</p>
       </div>
     </div>
   </div>
@@ -75,7 +75,7 @@
       </div>
       <div class="rounded-2xl border border-stroke bg-base/70 p-5 space-y-3">
         <h3 class="font-semibold text-text">{{ i18n "cisosSovereigntyCard4Title" | default "Private deployment" }}</h3>
-        <p class="text-sm text-muted">{{ i18n "cisosSovereigntyCard4Desc" | default "Run the same control plane on-premises, in a private cloud, or fully air-gapped with local AI, internal feed mirrors and customer-operated network boundaries." }}</p>
+        <p class="text-sm text-muted">{{ i18n "cisosSovereigntyCard4Desc" | default "Run the same control plane on-premises, in a private cloud, or fully air-gapped with local models, internal feed mirrors and customer-operated network boundaries." }}</p>
       </div>
     </div>
 
@@ -95,39 +95,39 @@
   </div>
 </section>
 
-<!-- AI Governance -->
+	<!-- Automation Governance -->
 <section class="px-6 py-14 md:py-20 bg-panel/40 border-y border-stroke">
   <div class="max-w-6xl mx-auto">
     <div class="grid lg:grid-cols-2 gap-10 items-center">
       <div class="space-y-6">
-        <p class="text-xs font-semibold uppercase tracking-[0.14em] text-accent">{{ i18n "cisosAiLabel" | default "AI Governance" }}</p>
-        <h2 class="font-display text-2xl md:text-3xl font-semibold">{{ i18n "cisosAiTitle" | default "AI that assists, never acts" }}</h2>
-        <p class="text-muted">{{ i18n "cisosAiDescription" | default "Unlike black-box platforms that automatically tune your detections, CraftedSignal keeps humans in control. AI suggests improvements. Your team reviews and approves. Nothing deploys without explicit authorization." }}</p>
+        <p class="text-xs font-semibold uppercase tracking-[0.14em] text-accent">{{ i18n "cisosAiLabel" | default "Automation Governance" }}</p>
+        <h2 class="font-display text-2xl md:text-3xl font-semibold">{{ i18n "cisosAiTitle" | default "Assistance that never acts alone" }}</h2>
+        <p class="text-muted">{{ i18n "cisosAiDescription" | default "Generated changes stay under human control. CraftedSignal can draft, test and suggest fixes, but your team reviews and approves. Nothing deploys without explicit authorization." }}</p>
 
         <ul class="space-y-3">
           <li class="flex items-start gap-3">
             <svg aria-hidden="true" class="w-5 h-5 text-accent mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
             </svg>
-            <span class="text-sm">{{ i18n "cisosAiBullet1" | default "All AI suggestions require human approval before deployment" }}</span>
+            <span class="text-sm">{{ i18n "cisosAiBullet1" | default "Generated suggestions require human approval before deployment" }}</span>
           </li>
           <li class="flex items-start gap-3">
             <svg aria-hidden="true" class="w-5 h-5 text-accent mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
             </svg>
-            <span class="text-sm">{{ i18n "cisosAiBullet2" | default "Self-host AI via Ollama so your data never leaves your infrastructure" }}</span>
+            <span class="text-sm">{{ i18n "cisosAiBullet2" | default "Self-host models via Ollama so your data never leaves your infrastructure" }}</span>
           </li>
           <li class="flex items-start gap-3">
             <svg aria-hidden="true" class="w-5 h-5 text-accent mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
             </svg>
-            <span class="text-sm">{{ i18n "cisosAiBullet3" | default "Disable AI entirely if your policy requires it" }}</span>
+            <span class="text-sm">{{ i18n "cisosAiBullet3" | default "Disable generation entirely if your policy requires it" }}</span>
           </li>
           <li class="flex items-start gap-3">
             <svg aria-hidden="true" class="w-5 h-5 text-accent mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
             </svg>
-            <span class="text-sm">{{ i18n "cisosAiBullet4" | default "Full audit trail of every AI interaction and decision" }}</span>
+            <span class="text-sm">{{ i18n "cisosAiBullet4" | default "Full audit trail of every generated suggestion and decision" }}</span>
           </li>
         </ul>
       </div>
@@ -135,7 +135,7 @@
       <div class="rounded-2xl border border-stroke bg-panel/60 p-6 space-y-4">
         <div class="flex items-center justify-between">
           <div class="flex items-center gap-2">
-            <span class="text-sm font-semibold">{{ i18n "cisosAiExampleTitle" | default "AI Suggestion Review" }}</span>
+            <span class="text-sm font-semibold">{{ i18n "cisosAiExampleTitle" | default "Suggestion Review" }}</span>
             <span class="px-1.5 py-0.5 rounded bg-base/60 border border-stroke text-muted text-[10px] font-semibold uppercase tracking-wide">Example</span>
           </div>
           <span class="px-2 py-1 rounded-lg bg-yellow-500/10 text-yellow-500 text-xs font-semibold">{{ i18n "cisosAiExampleStatus" | default "Pending Approval" }}</span>
@@ -176,7 +176,7 @@
       </a>
       <a href="/docs/deployment/" class="group rounded-2xl border border-stroke bg-base/70 p-5 space-y-2 hover:border-accent/40 transition">
         <h3 class="font-semibold text-sm group-hover:text-accent transition">{{ i18n "cisosResource4Title" | default "Deployment Guide" }}</h3>
-        <p class="text-xs text-muted">{{ i18n "cisosResource4Desc" | default "SaaS, self-hosted and air-gapped options. Single binary, outbound-only agents, local AI." }}</p>
+        <p class="text-xs text-muted">{{ i18n "cisosResource4Desc" | default "SaaS, self-hosted and air-gapped options. Single binary, outbound-only agents, local models." }}</p>
       </a>
     </div>
   </div>
@@ -200,7 +200,7 @@
       </div>
       <div class="rounded-2xl border border-stroke bg-base/70 p-6 space-y-3">
         <h3 class="font-semibold">Air-gapped</h3>
-        <p class="text-sm text-muted">No public outbound access, internal IP endpoints only, local AI, internal feed mirrors and manual bundle import. You control upgrades, backups and availability.</p>
+        <p class="text-sm text-muted">No public outbound access, internal IP endpoints only, local models, internal feed mirrors and manual bundle import. You control upgrades, backups and availability.</p>
       </div>
     </div>
   </div>

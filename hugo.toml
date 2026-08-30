@@ -9,8 +9,8 @@ enableRobotsTXT = true
 enableMissingTranslationPlaceholders = false
 
 [params]
-  description = "Detection Engineering Control Plane"
-  tagline = "Turn findings, threat intel and coverage gaps into tested, approved and monitored detections across your security stack."
+  description = "Runtime detection risk and backlog platform"
+  tagline = "Turn threats, findings, telemetry gaps and noisy rules into risk-scored detection work across your security stack."
   email = "hello@craftedsignal.io"
   salesEmail = "hello@craftedsignal.io"
   docsURL = "/docs/"
@@ -21,7 +21,7 @@ enableMissingTranslationPlaceholders = false
     label = "English"
     weight = 1
     [languages.en.params]
-      subtitle = "Detection Engineering Control Plane"
+      subtitle = "Runtime detection risk and backlog platform"
 
   # Ready for future languages
   # [languages.de]

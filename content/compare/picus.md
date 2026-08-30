@@ -4,7 +4,7 @@ description: "Compare CraftedSignal and Picus for exposure validation, breach an
 weight: 40
 competitor: "Picus"
 competitor_positioning: "Exposure validation and breach and attack simulation for testing whether security controls prevent, detect, or miss adversary behavior."
-craftedsignal_positioning: "A Detection Engineering Control Plane for turning validation findings into governed hunts, rules, tests, approvals, deployments, monitoring and evidence exports."
+craftedsignal_positioning: "A runtime detection risk and backlog platform for turning validation findings into governed hunts, rules, tests, approvals, deployments, monitoring and evidence exports."
 summary: "Picus is useful when the buyer needs continuous security control validation. CraftedSignal should win when the buyer needs to operationalize missed-detection findings into production changes and preserve evidence of the fix."
 best_for_competitor:
   - "Teams validating whether existing controls detect or prevent attack behaviors."
@@ -19,7 +19,7 @@ rows:
     competitor: "Validate security controls with attack scenarios and exposure testing."
     craftedsignal: "Govern the detection work that follows a failed or weak validation result."
   - area: "Output"
-    competitor: "Validation results, control gaps and prioritization context."
+    competitor: "Validation results, control gaps and prioritization detail."
     craftedsignal: "Owns the next step: hunts, detections, tests, approvals, deploys, rollback history and evidence exports."
   - area: "Detection lifecycle"
     competitor: "Best evaluated for how validation results connect into your engineering workflow."

@@ -4,7 +4,7 @@ description: "Compare CraftedSignal and SOC Prime for detection content, Sigma r
 weight: 60
 competitor: "SOC Prime"
 competitor_positioning: "Threat detection content, Sigma-oriented detection authoring, threat intelligence and AI-assisted translation or rule generation."
-craftedsignal_positioning: "A Detection Engineering Control Plane for adopting, testing, approving, deploying, monitoring and evidencing detection content."
+craftedsignal_positioning: "A runtime detection risk and backlog platform for adopting, testing, approving, deploying, monitoring and evidencing detection content."
 summary: "SOC Prime is useful when the buyer needs detection content, Sigma resources and authoring assistance. CraftedSignal should win when the buyer needs to govern what happens after content is selected: testing, approvals, deployment, rollback, monitoring and evidence."
 best_for_competitor:
   - "Teams looking for external detection content and threat-informed rules."

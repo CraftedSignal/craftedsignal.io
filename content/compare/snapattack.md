@@ -4,7 +4,7 @@ description: "Compare CraftedSignal and SnapAttack for threat-informed detection
 weight: 80
 competitor: "SnapAttack"
 competitor_positioning: "Threat-informed detection engineering with detection content, adversary behavior context, validation workflows and security team collaboration."
-craftedsignal_positioning: "A Detection Engineering Control Plane for controlled adoption, testing, approval, deployment, monitoring, rollback and evidence across the detection lifecycle."
+craftedsignal_positioning: "A runtime detection risk and backlog platform for controlled adoption, testing, approval, deployment, monitoring, rollback and evidence across the detection lifecycle."
 summary: "SnapAttack is useful when the buyer wants threat-informed detection content and validation workflows. CraftedSignal should win when the buyer needs deployment governance, evidence, self-hosted or air-gapped operation and durable detection health management."
 best_for_competitor:
   - "Teams looking for threat-informed detection engineering content and adversary behavior context."

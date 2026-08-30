@@ -20,7 +20,7 @@ Get started with the full platform at no cost.
 | Users | 1 |
 | Storage | 100 MB |
 
-The free tier includes all core features: rule editing, runbooks and playbooks, testing, deployment, rollback, MITRE coverage, recommendations, noise tracking, and AI assistance.
+The free tier includes all core features: rule editing, runbooks and playbooks, testing, deployment, rollback, MITRE coverage, Backlog, noise tracking, and optional generation assistance.
 
 ### Professional
 

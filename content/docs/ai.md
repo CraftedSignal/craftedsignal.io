@@ -44,11 +44,11 @@ When a rule is translated across platforms (e.g., SPL to KQL), AI highlights sem
 
 AI analyzes rule performance and suggests improvements:
 
-- Tuning recommendations for noisy rules
+- Tuning Backlog items for noisy rules
 - Query optimization suggestions
-- Coverage gap recommendations from threat intel
-- Missing runbook and playbook recommendations for rules that do not yet explain the analyst response
-- Stale runbook and playbook recommendations when rule or hunt context changes
+- Coverage gap Backlog items from threat intel
+- Missing runbook and playbook Backlog items for rules that do not yet explain the analyst response
+- Stale runbook and playbook Backlog items when rule or hunt context changes
 
 ### Autofix
 

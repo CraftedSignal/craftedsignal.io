@@ -1,6 +1,6 @@
 ---
 title: "Getting Started"
-description: "Install CraftedSignal (SaaS or self-hosted), connect your SIEM, import or create detection rules, add runbooks and playbooks, and deploy your first rule in minutes with csctl."
+description: "Install CraftedSignal (SaaS or self-hosted), connect your SIEM, import rules, add business context, work the Backlog, and deploy your first tested rule in minutes with csctl."
 weight: 1
 section: "Getting Started"
 ---
@@ -11,7 +11,7 @@ section: "Getting Started"
 
 Sign up at [app.craftedsignal.io](https://app.craftedsignal.io) and start using CraftedSignal immediately. No installation required.
 
-The free tier includes all core features: rule editing, runbooks and playbooks, testing, deployment, rollback, MITRE coverage, noise tracking, and AI assistance.
+The free tier includes all core features: rule editing, runbooks and playbooks, testing, deployment, rollback, MITRE coverage, Backlog, noise tracking, and optional generation assistance.
 
 ### Self-hosted
 
@@ -83,17 +83,33 @@ All credentials are encrypted at rest with your master secret.
 
 See [Targets & Mappings](/docs/targets-mappings/) for read-only targets, automatic sync, field mappings, log source mappings, and suggested overrides.
 
-### 3. Import or create rules
+### 3. Import your current rules
 
-You have three options:
+Start by importing what already exists. CraftedSignal uses the import to understand your current detection surface, rule languages, ATT&CK mappings, telemetry assumptions and rule quality.
 
-- **TI feed**: Browse ready-to-use detections from trending threats
-- **Library**: Import rules and hunts from shared template repositories
-- **Create**: Write a new rule in the editor or generate one with AI
+- **SIEM import**: Pull rules from Splunk, Sentinel, CrowdStrike or Rapid7.
+- **Repository import**: Bring your existing detection-as-code repository.
+- **Library**: Add standard rules and hunts from shared template repositories.
+- **Threat feed**: Adopt rules from briefs that affect your environment.
 
-Rules and hunts can include runbooks and playbooks. Imported content can bring those response steps with it, AI can draft them from rule context, and sync keeps them attached to the rule as it moves between Git and the web UI.
+Rules and hunts can include runbooks and playbooks. Imported content can bring those response steps with it, and sync keeps them attached to the rule as it moves between Git and the web UI.
 
-### 4. Test and deploy
+### 4. Add business context
+
+You do not need a complete CMDB to start. Add the context you have:
+
+- Paste a free-text description of important applications, assets, cloud platforms and data.
+- Add services and data assets manually.
+- Upload a spreadsheet or repository export on a regular cadence.
+- Connect CMDB, scanner, CTEM, CSPM or asset inventory sources later.
+
+If you skip this step, CraftedSignal still derives relevance from SIEM targets, imported rules, observed log sources, threat metadata and service catalog presets. Adding context improves risk scores and reduces irrelevant work.
+
+### 5. Work the Backlog
+
+Go to **Risk > Backlog** to see risk-scored work across new detections, false-positive tuning, missing telemetry, mappings, tests, broken rules, approval work, findings and residual-risk decisions.
+
+### 6. Test and deploy
 
 In the web UI, run tests directly on your rule page. Tests execute against your actual SIEM.
 

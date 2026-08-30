@@ -50,5 +50,5 @@ AI Quality complements the AI usage log described in [AI Assistance](/docs/ai/).
 ## Related docs
 
 - [AI Assistance](/docs/ai/) - AI features, guardrails, privacy, and logging.
-- [Recommendations](/docs/recommendations/) - AI-assisted posture summaries and action queues.
+- [Backlog](/docs/backlog/) - runtime-risk summaries and action queues.
 - [Security](/docs/security/) - audit and data boundaries.

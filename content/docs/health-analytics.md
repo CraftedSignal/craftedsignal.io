@@ -86,7 +86,7 @@ CraftedSignal scores each rule's value to your organization:
 
 Low-value rules are surfaced for retirement or improvement.
 
-See [Recommendations](/docs/recommendations/) for the action queue that turns coverage, noise, mapping, AI and response-step signals into specific next steps.
+See [Backlog](/docs/backlog/) for the action queue that turns coverage, noise, mapping, telemetry and response-step signals into specific next steps.
 
 ---
 

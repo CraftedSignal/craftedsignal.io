@@ -4,7 +4,7 @@ description: "Compare CraftedSignal and Cymulate for exposure validation, breach
 weight: 30
 competitor: "Cymulate"
 competitor_positioning: "Exposure validation and breach and attack simulation for proving where security controls block, detect, or miss adversary behavior."
-craftedsignal_positioning: "A Detection Engineering Control Plane for operationalizing those findings into hunts, rules, tests, approvals, deployments, monitoring and evidence."
+craftedsignal_positioning: "A runtime detection risk and backlog platform for operationalizing those findings into hunts, rules, tests, approvals, deployments, monitoring and evidence."
 summary: "Cymulate is useful when the buyer needs exposure validation and attack simulation. CraftedSignal should win when the problem is operationalizing the result: create, test, approve, deploy and monitor the detection that closes the gap."
 best_for_competitor:
   - "Teams that need breach and attack simulation or continuous exposure validation."
@@ -23,7 +23,7 @@ rows:
     craftedsignal: "Treats validation results, ethical hack findings, threat intel and risk gaps as first-class detection work inputs."
   - area: "Detection creation"
     competitor: "Best evaluated for how findings connect to your engineering workflow."
-    craftedsignal: "Creates hunts, Sigma rules, platform-specific implementations, tests, runbooks and playbooks from the same context."
+    craftedsignal: "Creates hunts, Sigma rules, platform-specific implementations, tests, runbooks and playbooks from the same finding."
   - area: "Approval and deployment"
     competitor: "Focused on validation rather than being the detection change-control layer."
     craftedsignal: "Adds the change-control layer: impact preview, approval gates, monitoring mode, noise budgets, deployment history and rollback."

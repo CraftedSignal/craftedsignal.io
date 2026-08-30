@@ -10,7 +10,7 @@ hero_alt: "CraftedSignal approval diff and projected impact screen"
 quick_points:
   - "Author in Sigma or native SIEM language with per-rule control."
   - "Run positive and negative tests against live Splunk, Sentinel, CrowdStrike, and Rapid7."
-  - "Attach runbooks and playbooks, keep them in sync with rule changes, and let AI draft or refine both sides."
+  - "Attach runbooks and playbooks, keep them in sync with rule changes, and draft or refine both sides under review."
   - "Use approvals, impact previews, audit logs, Git sync, and one-click rollback."
 outcomes:
   - label: "Quality"
@@ -66,7 +66,7 @@ Rules can carry generated or manually written tests. Positive tests confirm know
 
 Rules and hunts can also carry runbooks and playbooks. The runbook gives analysts the concrete triage path: alert intent, evidence to collect, false-positive checks, and escalation criteria. The playbook covers broader response work such as containment, recovery, communications, and follow-up detection work.
 
-Those response steps stay connected to the detection. CLI sync preserves them with the rule, rule edits can mark them stale for review, and hunt promotion carries them into the resulting detection. AI can draft runbooks and playbooks from rule logic, tests, ATT&CK mapping, and threat context. It can also use existing response steps when refining rule logic or tests, but the content remains editable and reviewable before analysts rely on it.
+Those response steps stay connected to the detection. CLI sync preserves them with the rule, rule edits can mark them stale for review, and hunt promotion carries them into the resulting detection. CraftedSignal can draft runbooks and playbooks from rule logic, tests, ATT&CK mapping, and threat details. It can also use existing response steps when refining rule logic or tests, but the content remains editable and reviewable before analysts rely on it.
 
 ## Approval and impact preview
 

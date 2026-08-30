@@ -299,7 +299,7 @@ CraftedSignal uses [Temporal](https://temporal.io) as its workflow orchestration
 - **SIEM health checks** — periodic connectivity and metrics collection (every 5 minutes)
 - **SIEM metrics extraction** — rule performance, trigger counts, false positive ratios (every 30 minutes)
 - **SIEM sync** — importing rules from SIEMs into the platform (every 2 hours)
-- **AI tasks** — rule generation, analysis, test generation, recommendations (on a separate task queue)
+- **Generation tasks** — rule generation, analysis, test generation and Backlog summaries (on a separate task queue)
 - **Threat feed sync** — checking for and downloading new threat intelligence (configurable interval)
 - **Library updates** — syncing detection rule repositories
 - **Email delivery** — verification emails, password resets, notification digests
@@ -379,7 +379,7 @@ All emails are sent asynchronously via Temporal workflows with automatic retries
 
 ### AI
 
-CraftedSignal's AI features use LLMs for rule generation, runbook and playbook drafts, analysis, test case creation and recommendations. The AI engine connects to any OpenAI-compatible API endpoint — typically a local [Ollama](https://ollama.ai) instance for on-prem deployments.
+CraftedSignal's generation features use LLMs for rule generation, runbook and playbook drafts, analysis, test case creation and Backlog summaries. The engine connects to any OpenAI-compatible API endpoint — typically a local [Ollama](https://ollama.ai) instance for on-prem deployments.
 
 | Key | Env var | Type | Default | Description |
 |-----|---------|------|---------|-------------|
@@ -407,7 +407,7 @@ You can configure a secondary LLM provider for language-oriented tasks, letting 
 When configured, tasks are routed automatically:
 
 - **Primary model** — rule generation (code-heavy, needs a strong code model)
-- **Secondary model** — test generation, runbook and playbook drafts, rule analysis, recommendations, summaries, feedback triage, overlap analysis
+- **Secondary model** — test generation, runbook and playbook drafts, rule analysis, Backlog summaries, feedback triage, overlap analysis
 
 This lets you use a powerful but expensive code model (e.g., `qwen2.5-coder:14b` on GPU) for generation while routing language tasks to a faster, cheaper model (e.g., Llama 3 on Groq or Together AI).
 
@@ -456,10 +456,10 @@ The web app also stores per-company feature names for product surfaces:
 
 | Feature name | Admin label | Description |
 |--------------|-------------|-------------|
-| `ai` | AI Features | AI-powered analysis, recommendations, rule generation, test generation and response-step drafts. |
+| `ai` | Generation Features | Analysis, Backlog summaries, rule generation, test generation and response-step drafts. |
 | `rule_generation` | AI Rule Generation | Generate detection rules from natural-language descriptions. |
 | `test_generation` | AI Test Generation | Generate test cases for detection rules. |
-| `rule_suggestions` | AI Rule Suggestions | Show AI-powered improvement suggestions and insights in the rule sidebar. |
+| `rule_suggestions` | Rule Suggestions | Show generated improvement suggestions and insights in the rule sidebar. |
 | company setting | Approval Workflow | Require approval before deploying rule changes. |
 | `maturity` | Rule Monitoring | Require new rules to run in monitoring mode before activation. |
 | `auto_graduation` | Auto-Graduation | Automatically approve monitored rules when monitoring gates pass. |
@@ -467,7 +467,7 @@ The web app also stores per-company feature names for product surfaces:
 | `library` | Rule and Hunt Library | Browse and import reusable rule and hunt templates. |
 | `cloud_library_disabled` | Cloud Libraries | Explicit opt-out from CraftedSignal-managed cloud library content. |
 | `threat_feed` | Threat Feed | Receive curated threat briefs with related detections. |
-| `brief_customization` | Brief Customization | AI-tailor threat briefs to the tenant's stack and context. |
+| `brief_customization` | Brief Customization | Tailor threat briefs to the tenant's stack and business context. |
 | `sigma_auto_translation` | Sigma Auto-Translation | Auto-translate Sigma rules to the target SIEM query language on save. |
 | `feedback` | Feedback & Discussion | Allow rule feedback and discussion. |
 | `hunts` | Hunts | Enable hypothesis-driven threat hunting. |
@@ -527,7 +527,7 @@ The threat feed delivers ready-to-use detection rules for trending and novel thr
 | `threat_feed.disabled` | `THREAT_FEED_DISABLED` | bool | `false` | Disable threat feed syncing |
 | `threat_feed.sync_interval_min` | `THREAT_FEED_SYNC_INTERVAL_MIN` | int | `30` | Minutes between checks for new feed updates |
 
-The sync workflow checks for new feed bundles, downloads and decrypts them using your license key and imports threat indicators. After a successful sync, an AI relevance scoring pass ranks threats by applicability to your environment.
+The sync workflow checks for new feed bundles, downloads and decrypts them using your license key and imports threat indicators. After a successful sync, a relevance scoring pass ranks threats by applicability to your environment.
 
 The threat feed is a licensed feature — it requires `threat_feed` in your license's feature list.
 

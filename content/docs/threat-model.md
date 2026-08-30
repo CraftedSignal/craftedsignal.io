@@ -7,7 +7,7 @@ section: "Core Concepts"
 
 ## Overview
 
-CraftedSignal's threat model is the bridge between the business and detection engineering. You declare what you run, what data matters, and how an attacker would reach it. The platform then weights every MITRE ATT&CK technique on those paths by your real exposure, not a generic heatmap.
+CraftedSignal's threat model is the bridge between the business and detection engineering. You declare what you run, what data matters, and how an attacker would reach it. The platform also infers what it can from SIEM targets, imported rules, observed log sources, threat metadata and service catalog presets. The result weights MITRE ATT&CK techniques by your real exposure, not a generic heatmap.
 
 The output is a single number — **Exposure** — that is drillable to the specific techniques driving it, and in turn to the [risks](/docs/risks/), hunts, and rules that close the gap.
 
@@ -16,7 +16,7 @@ The output is a single number — **Exposure** — that is drillable to the spec
 ## What you declare
 
 ### Services
-Business functions (payment processing, employee auth, data warehouse). Pick from a service catalog or describe your own. Each service has a criticality and a set of data classes.
+Business functions (payment processing, employee auth, data warehouse). Pick from a service catalog, import from a file, paste a plain-text asset description, or describe your own manually. Each service has a criticality and a set of data classes.
 
 ### Data assets
 PII, credentials, intellectual property, compliance-regulated data. Each class has a criticality that propagates through the attack paths it sits on.
@@ -25,10 +25,10 @@ PII, credentials, intellectual property, compliance-regulated data. Each class h
 Ordered MITRE technique sequences leading to a data asset. Generated three ways:
 
 - **Templates** for common chains (initial access → execution → persistence → exfiltration).
-- **Graph-based** AI generation using your service catalog and ATT&CK.
+- **Graph-based** generation using your service catalog and ATT&CK.
 - **Manual** when you need to model something specific.
 
-Accept or reject each path. Rejected paths are remembered so the AI does not propose them again. Critical-severity paths and high-severity-with-high-likelihood paths are **auto-accepted** so the most extreme exposures land in the hunt queue immediately — see [Risks](/docs/risks/) for the lifecycle every accepted path enters.
+Accept or reject each path. Rejected paths are remembered so the platform does not propose them again. Critical-severity paths and high-severity-with-high-likelihood paths are **auto-accepted** so the most extreme exposures land in the hunt queue immediately — see [Risks](/docs/risks/) for the lifecycle every accepted path enters.
 
 ---
 
@@ -91,7 +91,7 @@ The threat model surfaces on the **Risk** tab of the dashboard:
 - **Accepted attack paths** — every path-as-risk with state, priority, and coverage at a glance.
 - **Remediation** — recommended hunts and rules for the highest-priority gaps.
 
-The **Intelligence** tab next to it surfaces the feed-side of the same model: KEV-flagged briefs, recent CVEs, top briefs by priority. Both tabs share the underlying index, so any change you make on one (adopting a rule, modeling a coverage gap, dismissing a brief) updates the other immediately.
+The **Intelligence** tab next to it surfaces the feed-side of the same model: KEV-flagged briefs, recent CVEs, top briefs by priority. Both tabs share the underlying index, so any change you make on one (adopting a rule, modeling a coverage gap, marking a brief not affected, dismissing a brief) updates the other immediately.
 
 ---
 
@@ -102,5 +102,5 @@ The **Intelligence** tab next to it surfaces the feed-side of the same model: KE
 - [Threat Intake](/docs/threat-intake/) — triage candidate threats before committing them to sustained work.
 - [Threat Actors](/docs/threat-actors/) — the catalog briefs are enriched against.
 - [Hunts](/docs/hunts/) — action on technique gaps.
-- [Recommendations](/docs/recommendations/) — prioritized actions from exposure and coverage gaps.
+- [Backlog](/docs/backlog/) — risk-scored actions from threats, findings, exposure, telemetry and coverage gaps.
 - [Rules](/docs/rules/) — the ultimate closure for an accepted threat.

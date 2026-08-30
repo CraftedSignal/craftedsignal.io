@@ -1,13 +1,15 @@
 ---
 title: "Threat Feed"
-description: "Curated threat briefs with Sigma rules, IOCs, runbooks, playbooks, MITRE mappings, and affected vendor/product/OS metadata. Briefs are scored against your context, related to your modeled risks, and can be adopted, hunted, watchlisted, or dismissed per-tenant."
+description: "Curated threat briefs with Sigma rules, IOCs, runbooks, playbooks, MITRE mappings, affected products, and per-tenant relevance scoring. Briefs answer whether the threat affects you, whether you can see it, and whether you are covered."
 weight: 8
 section: "Core Concepts"
 ---
 
 ## Overview
 
-The threat feed delivers curated briefs to the platform as signed bundles. Each brief carries a narrative, a set of Sigma rules, IOCs, runbooks, playbooks, MITRE ATT&CK mappings, and metadata about the vendors, products, and operating systems it affects. The platform indexes and scores every brief against your company context so you triage what matters first.
+The threat feed delivers curated briefs to the platform as signed bundles. Each brief carries a narrative, Sigma rules, IOCs, runbooks, playbooks, MITRE ATT&CK mappings, and metadata about the vendors, products, operating systems and CVEs it affects.
+
+The feed is not a second queue. It is an intelligence surface that scores each brief against your business surface, imported rules, observed telemetry and modeled risks. Relevant briefs can create or raise Backlog work; irrelevant briefs stay out of the operator's way.
 
 Regulated and air-gapped deployments can upload bundles manually; SaaS deployments receive them automatically over a signed channel.
 
@@ -40,9 +42,15 @@ The bundle format is backward-compatible with the legacy single-file `bundle.jso
 
 ---
 
-## Relevance scoring
+## Relevance and risk scoring
 
-Every brief gets a **relevance score** (0–100) per company. The score blends:
+Every brief gets a **relevance score** and a derived **risk priority** per company. The scoring asks:
+
+- **Does this affect us?** Based on industry, business services, manually entered assets, imported inventory, affected products, operating systems, CVEs, watchlists and previous accept/dismiss decisions.
+- **Can we see it?** Based on connected SIEMs, observed log sources, field mappings, source freshness and required telemetry.
+- **Are we covered?** Based on existing rules, tests, health, ATT&CK mapping, related risks, hunts and runbooks.
+
+The relevance score blends:
 
 - Industry profile match (finance, healthcare, SaaS, regulated EU, etc.).
 - Affected vendor / product / OS overlap with what you actually run.
@@ -50,39 +58,42 @@ Every brief gets a **relevance score** (0–100) per company. The score blends:
 - Threat actor overlap with actors already pinned to your hunts or detections.
 - Watchlist matches — keywords or asset names you've explicitly flagged.
 
-A brief's MITRE techniques are matched against your accepted attack paths: overlapping paths show as **related risks** and unmatched techniques as **coverage gaps** you can model in one step. See [Risks → Threat-feed relevance](/docs/risks/#threat-feed-relevance). A high score (≥75, or a critical watchlist match) raises a brief's priority in the feed and the exposure views; it never creates a risk on its own.
+A brief's MITRE techniques are matched against your accepted attack paths: overlapping paths show as **related risks** and unmatched techniques as **coverage gaps** you can model in one step. See [Risks -> Threat-feed relevance](/docs/risks/#threat-feed-relevance). A high score raises a brief's priority in the feed, exposure views and [Backlog](/docs/backlog/) when there is concrete work to do.
+
+An actively exploited critical CVE can still escalate to the top when the platform cannot prove whether the affected product exists in your environment. That item is framed as urgent verification, not assumed exposure.
 
 ---
 
-## Brief customization
+## Per-tenant explanation
 
-When Threat Feed, AI, and Brief Customization are enabled for a tenant, CraftedSignal can generate company-specific context for a brief. The customization uses the tenant's industry, modeled services, technology stack, and existing detection context to explain why the brief matters and what action is likely useful.
+When Threat Feed and Brief Customization are enabled for a tenant, CraftedSignal can generate a company-specific explanation for a brief. The explanation uses industry, modeled services, technology stack, existing detections, known telemetry, and previous affected/not-affected decisions to explain why the brief matters and what action is likely useful.
 
-The original brief remains the source of truth. Customized content is tenant-scoped, AI-generated, and reviewable.
+The original brief remains the source of truth. Customized content is tenant-scoped, reviewable, and does not change rules, hunts, risks or Backlog state without user action.
 
 ---
 
 ## The adoption flow
 
-1. **Review** — narrative, affected vendors/products/OS, MITRE coverage of the brief, and the suggested rules.
+1. **Review** — narrative, affected vendors/products/OS, risk priority, "does this affect us", "can we see it", "are we covered", MITRE coverage, and suggested rules.
 2. **Adopt** a rule in one click: creates a detection in your library linked back to the brief, including any runbook or playbook content carried by the brief.
 3. **Hunt the IOCs** — the brief page generates platform-specific queries from the brief's IOC list. A **Create hunt** button turns the generated query into a new hunt immediately. The hunt is pre-populated with:
    - Title: `"IOC Hunt: <brief title>"`.
    - MITRE tactics and techniques pulled from the brief's TTP list.
    - A backlink to the source brief so you can navigate between the hunt and the brief in both directions.
    - One hunt query carrying the generated IOC query string, marked with source `ioc_generated`.
-4. **Watchlist** the brief for periodic re-check if it isn't actionable right now.
-5. **Dismiss** with a reason — the relevance model learns from the dismissal.
+4. **Mark affected** when it applies, or **mark not affected** with a reason. The decision is remembered and used for future scoring.
+5. **Watchlist** the brief for periodic re-check if it is not actionable right now.
+6. **Dismiss** with a reason when there is no work to do.
 
-Adoption decisions are per-tenant. The same brief can be adopted by one company and dismissed by another without affecting either.
+Adoption, affected/not-affected, watchlist and dismiss decisions are per-tenant. The same brief can be urgent for one company and irrelevant for another without affecting either.
 
 ---
 
-## Per-brief dismiss
+## Per-brief decisions
 
-The dismiss button at `/threat-feed/<slug>` records a per-company acknowledgement: the brief still exists in the feed, but it disappears from your active queue and your dashboard's *Unactioned briefs* counter. Re-open the brief any time to **un-dismiss** — the acknowledgement is reset and the brief flows back into triage.
+The decision controls at `/threat-feed/<slug>` record a per-company acknowledgement. A brief still exists in the feed, but it only contributes to active work when it is relevant, unresolved, watchlisted, or urgently needs verification. Re-open the brief any time to change the decision.
 
-Dismissals are tenant-scoped. A SaaS instance with multiple companies tracks one dismissal record per (company, brief) pair.
+Decisions are tenant-scoped. A SaaS instance with multiple companies tracks separate decisions per (company, brief) pair.
 
 ---
 
@@ -91,14 +102,14 @@ Dismissals are tenant-scoped. A SaaS instance with multiple companies tracks one
 The Intelligence tab on the dashboard is the operations view of the feed. Cards include:
 
 - **Actively exploited** — briefs flagged as KEV (CISA Known Exploited Vulnerabilities).
-- **Unactioned briefs (30d)** — relevance ≥75 that haven't been adopted, hunted, watchlisted, or dismissed.
+- **Unactioned briefs (30d)** — high-priority briefs that haven't been adopted, hunted, watchlisted, marked not affected, or dismissed.
 - **TI-related open risks** — open risks that share techniques with recent high-relevance briefs.
 - **IOCs in scope** and **watchlist hits**.
 - **Recently exploited software** — the last five briefs naming KEV CVEs, with threat actor and CVSS chips.
 - **Recent high/critical CVEs** — distinct CVE IDs (CVSS ≥7) from the last 30 days, linking back to the originating brief.
-- **Top briefs** — the highest-priority briefs from the last 30 days.
+- **Top briefs** — the highest-risk relevant briefs from the last 30 days, with urgent-verification cases separated from confirmed affected threats.
 
-These cards are wired to the same indexes that drive the feed page, so dismissing a brief or adopting a rule updates the dashboard immediately.
+These cards are wired to the same indexes that drive the feed page and Backlog, so changing a brief decision, adopting a rule, starting a hunt, or adding business context updates the dashboard immediately.
 
 ---
 
@@ -113,6 +124,7 @@ See [Air-gapped Mode](/docs/airgapped/) for the full constraint envelope.
 ## Related
 
 - [Threat Model](/docs/threat-model/) — briefs re-weight your risk score.
+- [Backlog](/docs/backlog/) — where relevant threats become prioritized work.
 - [Threat Intake](/docs/threat-intake/) — candidate threats queued for SOC review.
 - [Risks](/docs/risks/) — where briefs relate to your modeled risks.
 - [Threat Actors](/docs/threat-actors/) — how brief actor strings are normalized into the catalog.
