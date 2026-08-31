@@ -4,7 +4,7 @@ description: "Compare CraftedSignal and Elastic Security for SIEM modernization,
 weight: 90
 competitor: "Elastic Security"
 competitor_positioning: "Security analytics, SIEM, endpoint and cloud security workflows built on the Elastic data platform."
-craftedsignal_positioning: "A runtime detection risk and backlog platform that governs detection changes above the stack: intake, authoring, tests, approvals, deployment, rollback, health and evidence without becoming the log data plane."
+craftedsignal_positioning: "A SOC Control Plane that governs detection changes above the stack: intake, authoring, tests, approvals, deployment, rollback, health and evidence without becoming the log data plane."
 summary: "Elastic Security is useful when the buyer wants to standardize on the Elastic analytics platform. CraftedSignal should win when the buyer wants governed detection engineering across the current stack, especially where approvals, rollback, testing, health and evidence matter more than moving log data."
 best_for_competitor:
   - "Teams standardizing security analytics on Elastic."

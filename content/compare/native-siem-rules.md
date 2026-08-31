@@ -7,7 +7,7 @@ nav_label: "Without CraftedSignal"
 competitor: "Native SIEM workflows"
 competitor_fit_heading: "Where the status quo fits"
 competitor_positioning: "Rules managed directly inside individual SIEM consoles, scripts, tickets, spreadsheets and ad hoc repositories."
-craftedsignal_positioning: "A runtime detection risk and backlog platform that adds governed intake, testing, approvals, deployment history, rollback, health monitoring, Git backup and evidence above the tools you already run."
+craftedsignal_positioning: "A SOC Control Plane that adds governed intake, testing, approvals, deployment history, rollback, health monitoring, Git backup and evidence above the tools you already run."
 summary: "Native SIEM workflows are fine when one team manages a small set of rules in one environment. CraftedSignal should win once detection work spans teams, platforms, approvals, audits, drift, tests, rollback and evidence."
 best_for_competitor:
   - "Small teams with one platform and a simple rule-change process."

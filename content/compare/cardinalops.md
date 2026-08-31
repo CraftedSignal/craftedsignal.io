@@ -4,7 +4,7 @@ description: "Compare CraftedSignal and CardinalOps for detection posture manage
 weight: 20
 competitor: "CardinalOps"
 competitor_positioning: "Detection posture management focused on coverage visibility, gap analysis, broken or noisy detections and recommended improvements."
-craftedsignal_positioning: "A runtime detection risk and backlog platform that turns posture gaps into governed work: rules, hunts, tests, approvals, deployment, rollback, monitoring and evidence exports."
+craftedsignal_positioning: "A SOC Control Plane that turns posture gaps into governed work: rules, hunts, tests, approvals, deployment, rollback, monitoring and evidence exports."
 summary: "CardinalOps is closest when the buyer starts with detection posture and ATT&CK coverage. CraftedSignal should win when the buyer needs the operating loop after visibility: fix gaps, approve changes, deploy safely, monitor health and prove the fix stayed in place."
 best_for_competitor:
   - "Teams mainly trying to measure detection posture and ATT&CK coverage."

@@ -4,7 +4,7 @@ description: "Compare CraftedSignal and Panther for modern SIEM workflows, detec
 weight: 70
 competitor: "Panther"
 competitor_positioning: "Modern security analytics and SIEM workflows with detection-as-code, log analytics, alerts and investigation capabilities."
-craftedsignal_positioning: "A runtime detection risk and backlog platform that sits above the security stack to govern rules, tests, approvals, deployment, health and evidence without becoming the log data plane."
+craftedsignal_positioning: "A SOC Control Plane that sits above the security stack to govern rules, tests, approvals, deployment, health and evidence without becoming the log data plane."
 summary: "Panther is useful when the buyer wants a modern SIEM or security analytics platform. CraftedSignal should win when the buyer wants to keep the current stack and add governed detection engineering across it without moving logs."
 best_for_competitor:
   - "Teams evaluating a modern SIEM or security analytics platform."

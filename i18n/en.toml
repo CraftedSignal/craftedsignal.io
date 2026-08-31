@@ -38,24 +38,24 @@ other = "Read the docs"
 # ──────────────────────────────────────────────
 
 [tagline]
-other = "Runtime detection risk and backlog platform"
+other = "SOC Control Plane"
 
 
 [schemaDescription]
-other = "Runtime detection risk and backlog platform for SOC teams. Turn threats, findings, telemetry gaps and noisy rules into tested, approved and monitored detection work across your security stack."
+other = "SOC Control Plane for security teams. Bring threat briefs, findings, quality, telemetry gaps and detection coverage into one risk-scored Backlog, with a live risk view at all times."
 
 # ──────────────────────────────────────────────
 # Homepage – Hero (hero-new.html)
 # ──────────────────────────────────────────────
 
 [heroBanner]
-other = "Runtime detection risk and backlog"
+other = "SOC Control Plane"
 
 [heroNewTitle]
-other = "Know what affects you. Fix what matters."
+other = "Supercharge your SOC."
 
 [heroNewDescription]
-other = "Connect your SIEMs, import rules, describe your business assets, and turn threats, pentest findings, telemetry gaps and noisy rules into one risk-scored Backlog. Your logs stay in your SIEM and every change leaves evidence."
+other = "Bring threat briefs, findings, quality, telemetry gaps, and detection coverage into one risk-scored Backlog, so analysts, engineers, and managers know what matters and what to do next. Meanwhile, retain a live risk view at all times."
 
 [heroNewCtaTry]
 other = "Start free"
@@ -88,7 +88,7 @@ other = "MSSP / MDR"
 # ──────────────────────────────────────────────
 
 [valueProp1Title]
-other = "Answer: does this affect us?"
+other = "Answer does it affect us"
 
 [valueProp1Desc]
 other = "Start lightweight: import assets, paste a plain description, or add services manually. CraftedSignal uses that business surface with threats, findings and telemetry to show what is relevant."
@@ -229,7 +229,7 @@ other = "SSO, Passkey MFA, audit logs, RBAC, approval workflows and exportable e
 other = "SaaS, self-hosted, air-gapped"
 
 [trustNewCard3Desc]
-other = "Use managed SaaS, a self-hosted single binary, or an offline air-gapped deployment. Your logs stay in your SIEM."
+other = "Use SaaS, self-hosted, or air-gapped deployment. Keep operational control without moving raw logs into CraftedSignal."
 
 [trustNewCard4Title]
 other = "Hardened cloud runtime"
@@ -248,7 +248,7 @@ other = "Ready to work the risks that matter?"
 other = "I write rules"
 
 [ctaNewCard1Desc]
-other = "Start free. SaaS or single binary."
+other = "Start free. SaaS or self-hosted."
 
 [ctaNewCard1Button]
 other = "Start free →"
@@ -505,7 +505,7 @@ other = "Cloud Sovereignty"
 other = "Keep the control boundary where policy needs it"
 
 [cisosSovereigntyDescription]
-other = "Choose managed SaaS with hardened GCP controls, add customer-governed key access for sovereign cloud requirements, or run CraftedSignal in your own private cloud or air-gapped environment."
+other = "Choose SaaS with hardened GCP controls, add customer-governed key access for sovereign cloud requirements, or run CraftedSignal in your own private cloud or air-gapped environment."
 
 [cisosSovereigntyCard1Title]
 other = "Secured SaaS"
@@ -697,7 +697,7 @@ other = "Guardrails: noise, cost, coverage"
 # ──────────────────────────────────────────────
 
 [footerTagline]
-other = "Runtime detection risk and backlog platform"
+other = "SOC Control Plane"
 
 [footerSlogan]
 other = "Detection engineering, done right."

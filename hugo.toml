@@ -9,8 +9,8 @@ enableRobotsTXT = true
 enableMissingTranslationPlaceholders = false
 
 [params]
-  description = "Runtime detection risk and backlog platform"
-  tagline = "Turn threats, findings, telemetry gaps and noisy rules into risk-scored detection work across your security stack."
+  description = "SOC Control Plane for risk-scored detection work"
+  tagline = "Bring threat briefs, findings, quality, telemetry gaps and detection coverage into one risk-scored Backlog."
   email = "hello@craftedsignal.io"
   salesEmail = "hello@craftedsignal.io"
   docsURL = "/docs/"
@@ -21,7 +21,7 @@ enableMissingTranslationPlaceholders = false
     label = "English"
     weight = 1
     [languages.en.params]
-      subtitle = "Runtime detection risk and backlog platform"
+      subtitle = "SOC Control Plane"
 
   # Ready for future languages
   # [languages.de]

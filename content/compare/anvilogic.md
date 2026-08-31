@@ -4,8 +4,8 @@ description: "Compare CraftedSignal and Anvilogic for detection engineering, SOC
 weight: 10
 competitor: "Anvilogic"
 competitor_positioning: "Broad SOC automation workflows across detection engineering, search, investigation and operational automation."
-craftedsignal_positioning: "A runtime detection risk and backlog platform for governed detection work: finding intake, rule authoring, testing, approvals, deployment, rollback, health monitoring and evidence exports."
-summary: "Anvilogic is useful when the buyer wants a broader SOC automation operating layer. CraftedSignal is the sharper fit when runtime detection risk and change control matter more: no log movement, self-hosted or air-gapped options, local or disabled generation and evidence for every change."
+craftedsignal_positioning: "A SOC Control Plane for governed detection work: finding intake, rule authoring, testing, approvals, deployment, rollback, health monitoring and evidence exports."
+summary: "Anvilogic is useful when the buyer wants a broader SOC automation operating layer. CraftedSignal is the sharper fit when live risk view and change control matter more: no log movement, self-hosted or air-gapped options, local or disabled generation and evidence for every change."
 best_for_competitor:
   - "Teams looking for a broad SOC workflow automation platform."
   - "Organizations that want one vendor narrative across onboarding, search, detection and investigation."

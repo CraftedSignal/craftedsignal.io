@@ -1,4 +1,4 @@
 ---
 title: "CraftedSignal"
-description: "Runtime detection risk and backlog platform"
+description: "SOC Control Plane for risk-scored detection work"
 ---
