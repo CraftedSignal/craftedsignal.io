@@ -42,7 +42,7 @@ other = "SOC Control Plane"
 
 
 [schemaDescription]
-other = "SOC Control Plane for security teams. Bring threat briefs, findings, quality, telemetry gaps and detection coverage into one risk-scored Backlog, with a live risk view at all times."
+other = "SOC Control Plane for security teams. Bring threats, findings, quality, telemetry gaps and detection coverage into one risk-scored Backlog, with a live risk view at all times."
 
 # ──────────────────────────────────────────────
 # Homepage – Hero (hero-new.html)
@@ -55,7 +55,7 @@ other = "SOC Control Plane"
 other = "Supercharge your SOC."
 
 [heroNewDescription]
-other = "Bring threat briefs, findings, quality, telemetry gaps, and detection coverage into one risk-scored Backlog, so analysts, engineers, and managers know what matters and what to do next. Meanwhile, retain a live risk view at all times."
+other = "Bring threats, findings, quality, telemetry gaps, and detection coverage into one risk-scored Backlog, so analysts, engineers, and managers know what matters and what to do next. Meanwhile, retain a live risk view at all times."
 
 [heroNewCtaTry]
 other = "Start free"
